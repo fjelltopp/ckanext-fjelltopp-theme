@@ -1,0 +1,8 @@
+pytest-ckan
+pytest-factoryboy
+pytest-cov
+pytest-freezegun
+zxcvbn
+mock
+pytest-recording
+freezegun
