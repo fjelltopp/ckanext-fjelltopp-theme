@@ -3,6 +3,6 @@
     "sass": "^1.77.8"
   },
   "scripts": {
-    "build": "sass ckanext/fjelltopp_theme/public/scss/fjelltopp-theme.scss ckanext/fjelltopp_theme/public/css/fjelltopp-theme.css"
+    "build": "sass ckanext/fjelltopp_theme/public/css/fjelltopp-theme.scss ckanext/fjelltopp_theme/public/css/fjelltopp-theme.css"
   }
 }
