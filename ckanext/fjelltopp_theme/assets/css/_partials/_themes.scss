@@ -1,0 +1,43 @@
+@use 'vars' as vars;
+
+$themes: (
+  zarr: (
+    primary: #13240F,
+    secondary: #198A00,
+    background: #DFF0DB,
+    tag: #EF7D00,
+    tag-background: #FCF0E3,
+    dark: #13240F,
+    light: #FFF
+  ),
+  default: (
+    primary: #003647,
+    secondary: #206b82,
+    background: #FFFFFF,
+    tag: #888888,
+    tag-background: #DDDDDD,
+    dark: #111111,
+    light: #EEEEEE
+  )
+);
+
+$breakpoints: (
+  desktop: (992px, 1600px),
+  tablet: (768px, 991px),
+  mobile: (320px, 767px)
+);
+
+@function get-color($color) {
+  $theme-map: map-get($themes, vars.$theme);
+
+  @if $theme-map {
+    @return map-get($theme-map, $color);
+  } @else {
+    @return map-get(map-get($themes, 'default'), $color);
+  }
+}
+
+@mixin apply-color($color-name) {
+  background-color: get-color($color-name);
+  color: #fff;
+}
