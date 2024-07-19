@@ -1,0 +1,6 @@
+@use '_partials/themes'as *;
+
+.account-masthead {
+  @include apply-color('primary');
+}
+
