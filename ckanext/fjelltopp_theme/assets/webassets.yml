@@ -1,0 +1,5 @@
+fjelltopp-theme:
+  filters: cssrewrite
+  output: fjelltopp-theme/%(version)s-fjelltopp-theme.css
+  contents: css/fjelltopp-theme.css
+
