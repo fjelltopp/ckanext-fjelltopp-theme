@@ -1,29 +1,45 @@
 @use '_partials/themes'as *;
+@use '_partials/vars'as config;
 
 /* top first bar */
 .account-masthead {
   @include apply-color('primary');
 }
-
+/* header */
 .masthead {
     @include apply-color('light', 'dark');
 }
 
+/* logo */
 #NavbarLogo {
     display: inline-block;
     height: 64px;
-    padding-right: 19px;
+    @if config.$hide-logo-left-v-bar == true {
+        padding-right: 10px;
+    } @else {
+        padding-right: 19px;
+    }
+
     background-size: cover;
     background-position: center;
 }
 
+/* logo title */
 #NavbarHeadingContainer .title {
     @include apply-font-style();
 }
 
+/* hide logo left bar */
+.masthead #NavbarBrandingContainer a #LogoBorder {
+  @if config.$hide-logo-left-v-bar == true {
+    display: none;
+  } @else {
+      display: inline-block;
+  }
+}
+
 /* top second bar */
 .masthead {
-
 
     .navbar {
         margin-bottom: 0 ;
@@ -37,9 +53,7 @@
 
         a {
             color: var(--primary-navy);
-            #LogoBorder {
-                display: inline-block;
-            }
+
             #NavbarHeadingContainer {
                 line-height: 20px;
                 font-weight: 700;
