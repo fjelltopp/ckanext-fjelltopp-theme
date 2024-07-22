@@ -1,17 +1,14 @@
 @use 'vars' as vars;
 
-$theme: (
-  default: (
-    primary: $primary,
-    secondary: $secondary,
-    background: $background,
-    tag: $tag,
-    tag-background: $tag-background,
-    dark: $dark,
-    light: $light
-  )
+$colors: (
+    primary: vars.$primary,
+    secondary: vars.$secondary,
+    background: vars.$background,
+    tag: vars.$tag,
+    tag-background: vars.$tag-background,
+    dark: vars.$dark,
+    light: vars.$light,
 );
-
 
 $breakpoints: (
   desktop: (992px, 1600px),
@@ -20,13 +17,7 @@ $breakpoints: (
 );
 
 @function get-color($color) {
-  $theme-map: map-get($themes, vars.$theme);
-
-  @if $theme-map {
-    @return map-get($theme-map, $color);
-  } @else {
-    @return map-get(map-get(vars.$themes, 'default'), $color);
-  }
+  @return map-get($colors, $color);
 }
 
 @mixin apply-color($color, $font-color: null) {

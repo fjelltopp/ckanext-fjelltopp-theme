@@ -5,6 +5,10 @@
   @include apply-color('primary');
 }
 
+.masthead {
+    @include apply-color('light', 'dark');
+}
+
 #NavbarLogo {
     display: inline-block;
     height: 64px;
@@ -19,7 +23,7 @@
 
 /* top second bar */
 .masthead {
-    @include apply-color('light', 'dark');
+
 
     .navbar {
         margin-bottom: 0 ;
