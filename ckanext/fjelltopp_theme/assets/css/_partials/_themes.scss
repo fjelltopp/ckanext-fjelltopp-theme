@@ -1,25 +1,17 @@
 @use 'vars' as vars;
 
-$themes: (
-  zarr: (
-    primary: #13240F,
-    secondary: #198A00,
-    background: #DFF0DB,
-    tag: #EF7D00,
-    tag-background: #FCF0E3,
-    dark: #13240F,
-    light: #FFF
-  ),
+$theme: (
   default: (
-    primary: #003647,
-    secondary: #206b82,
-    background: #FFFFFF,
-    tag: #888888,
-    tag-background: #DDDDDD,
-    dark: #111111,
-    light: #EEEEEE
+    primary: $primary,
+    secondary: $secondary,
+    background: $background,
+    tag: $tag,
+    tag-background: $tag-background,
+    dark: $dark,
+    light: $light
   )
 );
+
 
 $breakpoints: (
   desktop: (992px, 1600px),
@@ -33,7 +25,7 @@ $breakpoints: (
   @if $theme-map {
     @return map-get($theme-map, $color);
   } @else {
-    @return map-get(map-get($themes, 'default'), $color);
+    @return map-get(map-get(vars.$themes, 'default'), $color);
   }
 }
 
@@ -44,4 +36,14 @@ $breakpoints: (
   } @else {
     color: #FFF;
   }
+}
+
+@mixin apply-font-style($font-weight: vars.$default-font-weight,
+$font-size: vars.$default-font-size,
+$line-height: vars.$default-line-height,
+$font-color: vars.$default-font-color) {
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $font-color;
 }

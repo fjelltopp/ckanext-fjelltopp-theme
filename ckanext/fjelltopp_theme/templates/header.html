@@ -7,17 +7,15 @@
   <a href="{{ h.url_for('home.index') }}">
       <img
         id="NavbarLogo"
-        src="/images/who-african-region.png"
         alt="{{ g.site_title }}"
         title="{{ g.site_title }}"
-      />
+       src="/images/logo.png"/>
         <img
         id="LogoBorder"
-        src="/images/logo_partial_border.png"
         alt=""
-        />
+         src="/images/vertical_line.png"/>
     <div id="NavbarHeadingContainer">
-        <div><h1 class="title">The Health Data Hub</h1></div>
+        <div><h1 class="title">{% block header_title %}Project Title{% endblock %}</h1></div>
     </div>
   </a>
 </div>
@@ -34,14 +32,14 @@
         {{ h.build_nav_main(
             ('home.about', _('About')),
             ('dataset.search', _('Find Data')),
-            ('insights.index', _('Insights')),
+            ('home.index', _('Insights')),
             ('activity.dashboard', _('My account'))
              ) }}
     {% else %}
         {{ h.build_nav_main(
             ('home.about', _('About')),
             ('dataset.search', _('Find Data')),
-            ('insights.index', _('Insights')),
+            ('home.index', _('Insights')),
             ('user.login', _('Log in'))
              ) }}
     {% endif %}
@@ -58,10 +56,6 @@
         </form>
       {% endblock %}
 
-
-{% block header_account_container_content %}
-    {% snippet "snippets/language_selector.html" %}
-{% endblock %}
 
 
 {% block header_wrapper %}

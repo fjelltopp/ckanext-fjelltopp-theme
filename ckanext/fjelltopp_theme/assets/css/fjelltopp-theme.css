@@ -1,12 +1,18 @@
-/* dynamic config file */
-.account-masthead {
-  background-color: #13240F;
-  color: #FFF;
-}
+/* Error: Undefined variable.
+ *   ,
+ * 5 |     primary: $primary,
+ *   |              ^^^^^^^^
+ *   '
+ *   _partials/_themes.scss 5:14  @use
+ *   fjelltopp-theme.scss 1:1     root stylesheet */
 
-.masthead {
-  background-color: #FFF;
-  color: #13240F;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a   \2577 \a 5 \2502      primary: $primary,\a   \2502               ^^^^^^^^\a   \2575 \a   _partials/_themes.scss 5:14  @use\a   fjelltopp-theme.scss 1:1     root stylesheet";
 }
-
-/*# sourceMappingURL=fjelltopp-theme.css.map */

@@ -1,0 +1,21 @@
+<div class="big-search-form">
+    {% set placeholder = placeholder if placeholder else _('Search datasets...') %}
+    {% set sorting = sorting if sorting else [(_('Name Ascending'), 'name asc'), (_('Name Descending'), 'name desc')] %}
+    {% set search_class = search_class if search_class else 'search-giant' %}
+    {% set no_bottom_border = no_bottom_border if no_bottom_border else false %}
+    {% set form_id = form_id if form_id else false %}
+
+    <form {% if form_id %}id="{{ form_id }}" {% endif %}class="search-form{% if no_bottom_border %} no-bottom-border{% endif %}"  method="get" action="{% url_for 'dataset.search' %}">
+
+        <div class="input-group">
+          <input aria-label="{% block header_site_search_label %}{{ placeholder }}{% endblock %}" id="field-giant-search" type="text" class="form-control input-lg" name="q" value="{{ query }}" autocomplete="off" placeholder="{{ placeholder }}">
+
+          <span class="input-group-btn">
+            <button class="btn btn-default btn-lg lens-btn" type="submit" value="search" aria-label="{{_('Submit')}}">
+                <i class="fa fa-search"></i><span class="search-label">{{ _('Search') }}</span>
+            </button>
+          </span>
+
+        </div>
+    </form>
+</div>
