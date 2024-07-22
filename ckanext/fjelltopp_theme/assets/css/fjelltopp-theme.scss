@@ -8,6 +8,18 @@
 /* header */
 .masthead {
     @include apply-color('light', 'dark');
+    .site-search input {
+        width: 180px;
+        height: 40px;
+        padding: 10px 14px;
+    }
+    .site-search .btn-search .fa-search {
+        color: get-color('secondary');
+        font-size: 20px;
+        position: absolute;
+        top: 0;
+        right: 2px;
+    }
     .navbar {
         margin-bottom: 0 ;
         min-height: 80px;
@@ -76,6 +88,10 @@
   } @else {
       display: inline-block;
   }
+}
+
+#NavbarBrandingContainer a:hover {
+    text-decoration: none; /* removes the line middle logo upon hover */
 }
 
 .navbar-nav {
