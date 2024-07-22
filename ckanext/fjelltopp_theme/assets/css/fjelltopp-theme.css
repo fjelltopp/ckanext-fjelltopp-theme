@@ -1,18 +1,1 @@
-/* Error: Undefined variable.
- *   ,
- * 5 |     primary: $primary,
- *   |              ^^^^^^^^
- *   '
- *   _partials/_themes.scss 5:14  @use
- *   fjelltopp-theme.scss 1:1     root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a   \2577 \a 5 \2502      primary: $primary,\a   \2502               ^^^^^^^^\a   \2575 \a   _partials/_themes.scss 5:14  @use\a   fjelltopp-theme.scss 1:1     root stylesheet";
-}
+.account-masthead{background-color:#13240f;color:#fff}.masthead{background-color:#fff;color:#13240f}.masthead .site-search input{width:180px;height:40px;padding:10px 14px}.masthead .site-search .btn-search .fa-search{color:#198a00;font-size:20px;position:absolute;top:0;right:2px}.masthead .navbar{margin-bottom:0;min-height:80px}.masthead .main-navbar .navbar-nav>li>a{font-style:normal;font-weight:700;font-size:14px;line-height:30px;color:#13240f;flex:none;order:1;flex-grow:0;background-color:rgba(0,0,0,0);padding:5px 0;margin-left:30px}.masthead .main-navbar .navbar-nav li a:hover,.masthead .main-navbar .navbar-nav li a:focus,.masthead .main-navbar .navbar-nav li.active a,.masthead .main-navbar ul li:hover a,.masthead .main-navbar ul li:focus a,.masthead .main-navbar ul li.active a{color:#198a00;background-color:rgba(0,0,0,0)}#NavbarBrandingContainer{position:absolute;top:8px;left:0}#NavbarBrandingContainer a #NavbarHeadingContainer{font-weight:700;font-size:20px;line-height:14px;color:#13240f;margin:10px;display:inline-block;vertical-align:middle}#NavbarLogo{display:inline-block;height:64px;padding-right:10px;background-size:cover;background-position:center}#NavbarHeadingContainer .title{font-weight:700;font-size:18px;line-height:20px;color:#13240f}.masthead #NavbarBrandingContainer a #LogoBorder{display:none}#NavbarBrandingContainer a:hover{text-decoration:none}.navbar-nav{margin:0}@media only screen and (min-width: 992px){.mobile-menu{display:none}.navbar-expand-lg .navbar-toggler{display:none}}/*# sourceMappingURL=fjelltopp-theme.css.map */

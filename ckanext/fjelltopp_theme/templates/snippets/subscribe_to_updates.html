@@ -1,0 +1,18 @@
+{% if not g.userobj %}
+<div class="subscribe">
+    <div class="container">
+        <div class="highlight-box">
+            <h2>{{ _('Subscribe to updates') }}</h2>
+            <div class="subtext">{{ _('Create an account to receive notifications by email or SMS whenever new documents are posted.') }}</div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <a class="register" href="{{ h.url_for("/user/register") }}">{{ _('Create an account') }}</a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-9">
+                    <span class="login">or <a href="{{ h.url_for("/user/login") }}">{{ _('log in') }}</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
