@@ -1,7 +1,12 @@
 /* dynamic config file */
 .account-masthead {
   background-color: #13240F;
-  color: #fff;
+  color: #FFF;
+}
+
+.masthead {
+  background-color: #FFF;
+  color: #13240F;
 }
 
 /*# sourceMappingURL=fjelltopp-theme.css.map */

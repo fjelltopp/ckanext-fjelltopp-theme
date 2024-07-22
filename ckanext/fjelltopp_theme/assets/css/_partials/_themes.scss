@@ -37,7 +37,11 @@ $breakpoints: (
   }
 }
 
-@mixin apply-color($color-name) {
-  background-color: get-color($color-name);
-  color: #fff;
+@mixin apply-color($color, $font-color: null) {
+  background-color: get-color($color);
+  @if $font-color {
+    color: get-color($font-color);
+  } @else {
+    color: #FFF;
+  }
 }

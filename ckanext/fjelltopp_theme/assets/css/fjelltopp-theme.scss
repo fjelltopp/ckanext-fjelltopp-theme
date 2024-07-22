@@ -4,3 +4,14 @@
   @include apply-color('primary');
 }
 
+.masthead {
+  @include apply-color('light', 'dark');
+}
+
+.masthead {
+  .header-image .logo {
+
+  }
+
+
+}

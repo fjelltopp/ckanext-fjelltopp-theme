@@ -1,0 +1,72 @@
+{% ckan_extends %}
+
+{% block header_debug %} {% endblock %}
+
+{% block header_logo %}
+<div id="NavbarBrandingContainer">
+  <a href="{{ h.url_for('home.index') }}">
+      <img
+        id="NavbarLogo"
+        src="/images/who-african-region.png"
+        alt="{{ g.site_title }}"
+        title="{{ g.site_title }}"
+      />
+        <img
+        id="LogoBorder"
+        src="/images/logo_partial_border.png"
+        alt=""
+        />
+    <div id="NavbarHeadingContainer">
+        <div><h1 class="title">The Health Data Hub</h1></div>
+    </div>
+  </a>
+</div>
+{% endblock %}
+
+
+{% block header_site_navigation_tabs %}
+
+    <div class="mobile-menu">
+        {% snippet 'snippets/search_input.html', placeholder='Search' %}
+    </div>
+
+    {% if c.userobj %}
+        {{ h.build_nav_main(
+            ('home.about', _('About')),
+            ('dataset.search', _('Find Data')),
+            ('insights.index', _('Insights')),
+            ('activity.dashboard', _('My account'))
+             ) }}
+    {% else %}
+        {{ h.build_nav_main(
+            ('home.about', _('About')),
+            ('dataset.search', _('Find Data')),
+            ('insights.index', _('Insights')),
+            ('user.login', _('Log in'))
+             ) }}
+    {% endif %}
+
+{% endblock %}
+
+{% block header_site_search %}
+        <form class="section site-search simple-input" action="{% url_for dataset_type ~ '.search' %}" method="get">
+          <div class="field">
+            <label for="field-sitewide-search">{% block header_site_search_label %}{{ h.humanize_entity_type('package', dataset_type, 'search_placeholder') or _('Search Datasets...') }}{% endblock %}</label>
+            <input id="field-sitewide-search" type="text" class="form-control" name="q" placeholder="{{ _('Search data') }}" aria-label="{{ h.humanize_entity_type('package', dataset_type, 'search_placeholder') or _('Search datasets...') }}"/>
+            <button class="btn-search" type="submit" aria-label="{{ _('Submit') }}"><i class="fa fa-search"></i></button>
+          </div>
+        </form>
+      {% endblock %}
+
+
+{% block header_account_container_content %}
+    {% snippet "snippets/language_selector.html" %}
+{% endblock %}
+
+
+{% block header_wrapper %}
+
+  {{ super() }}
+
+  <div class="fluid-white-bar"></div>
+{% endblock %}
