@@ -30,7 +30,7 @@
     .main-navbar ul li:focus a,
     .main-navbar ul li.active a
     {
-        color: var(--who-blue-65-percent);
+        color: get-color('primary65');
         background-color: transparent;
 
     }
