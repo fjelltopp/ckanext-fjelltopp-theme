@@ -222,7 +222,7 @@ p.learn-more a {
 
         H2 {
             margin-bottom: 32px;
-            margin-top: 0px;
+            margin-top: 0;
             @include apply-font-style(400, 36px, 48px);
             color: config.$primary;
         }
@@ -270,8 +270,6 @@ p.learn-more a {
                 max-height: 100%;
             }
         }
-
-
 }
 
 .data-hub-stats {
@@ -279,23 +277,17 @@ p.learn-more a {
     height: 374px;
 
     .insight-small-rect {
-        background-color: white;
+        background-color: get-color('light');
         padding: 19px;
         border-radius: 8px;
         min-height: 101px;
+
+        p:first-child {
+            @include apply-font-style(700, 18px, 24px, 24px);
+        }
     }
 }
 
-
-
-
-
-.insight-small-rect p:first-child {
-    color: var(--primary-navy);
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 24px;
-}
 
 @media only screen and (min-width: 991px) {
     .data-hub-stats {
