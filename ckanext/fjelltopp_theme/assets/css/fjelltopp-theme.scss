@@ -1,10 +1,16 @@
 @use '_partials/themes'as *;
 @use '_partials/vars'as config;
 
+/* global */
+.fa-search {
+    color: get-color('secondary');
+}
+
 /* top first bar */
 .account-masthead {
   @include apply-color('primary');
 }
+
 /* header */
 .masthead {
     @include apply-color('light', 'dark');
@@ -14,7 +20,6 @@
         padding: 10px 14px;
     }
     .site-search .btn-search .fa-search {
-        color: get-color('secondary');
         font-size: 20px;
         position: absolute;
         top: 0;
@@ -154,6 +159,39 @@ p.learn-more a {
     }
 
 }
+
+.big-search-form {
+    #field-giant-search {
+        border: config.$A11y solid 1px;
+        border-radius: 4px;
+        outline: none;
+        height: auto;
+        max-width: 498px;
+        height: 48px;
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        border-right: 0;
+    }
+    .search-form {
+        border-bottom: 0;
+    }
+
+    .lens-btn {
+        border: config.$A11y solid 1px;
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+        border-left: 0;
+        height: 48px;
+    }
+
+    .lens-btn .search-label{
+        display: none;
+    }
+}
+
+
+
+
 
 /*
 .promoted h1{
