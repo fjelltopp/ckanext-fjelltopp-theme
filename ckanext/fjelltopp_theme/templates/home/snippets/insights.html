@@ -13,16 +13,16 @@
     {'label': 'Total Views', 'value': 1200}
 ] %}
 
-{% set labels = labels|default(default_labels) %}
-{% set stats = stats|default(default_stats) %}
+{% set labels = labels | default(default_labels) %}
+{% set stats = stats | default(default_stats) %}
 
 
-<h2>{% block top_container_title %}Title{% endblock %}</h2>
+<h2 class="show-insights-title">{% block top_container_title %}Title{% endblock %}</h2>
 
 {% block top_container %}
-<h3>{% block top_container_label %}Label 1{% endblock %}</h3>
+<h3 class="insights-upper-item">{% block top_container_label %}Label 1{% endblock %}</h3>
     {% for i in range(0, labels|length, 3) %}
-    <div class="row insight-row col-lg-12 col-sm-12 col-xs-12">
+    <div class="row insight-row col-lg-12 col-sm-12 col-xs-12 insights-upper-item">
         {% for j in range(i, i+3) %}
             {% if j < labels|length %}
                 <div class="insight-square col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -39,7 +39,7 @@
 {% endblock %}
 
 {% block bottom_container %}
-<div class="row insight-row col-lg-12 col-sm-12 col-xs-12">
+<div class="row insight-row col-lg-12 col-sm-12 col-xs-12 insights-lower-item">
     <div class="col-lg-6 col-sm-12 col-xs-12">
         <h3>{% block bottom_container_left_label %}Label 2{% endblock %}</h3>
         <div class="insight-rect">
