@@ -370,6 +370,27 @@ $data-hub-stats-height: 374px;
 
 
 /* recently updated */
-.recently-updated .container {
-    margin-top: 64px;
+.group-box {
+    background: get-color("light");
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    margin-bottom: 24px;
+    padding:  20px;
+    height:  110px;
 }
+
+.recently-updated {
+    .container {
+        margin-top: 64px;
+    }
+    H3 {
+        @include apply-font-style(400, 28px, 36px, config.$primary);
+    }
+}
+
+.recently-updated-title {
+    margin-top: 48px;
+    margin-bottom: 24px;
+    position: relative;
+}
+
