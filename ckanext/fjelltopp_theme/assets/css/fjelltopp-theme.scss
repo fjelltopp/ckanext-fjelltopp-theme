@@ -1,5 +1,10 @@
 @use '_partials/themes'as *;
 @use '_partials/vars'as config;
+@use 'sass:math';
+
+$square-insights-width: math.div(100%, 3);
+$half-window-width: math.div(100%, 2);
+
 
 /* global */
 .fa-search {
@@ -272,6 +277,7 @@ p.learn-more a {
         }
 }
 
+/* data hub stats */
 .data-hub-stats {
     margin-top: 48px;
     height: 374px;
@@ -283,17 +289,35 @@ p.learn-more a {
         min-height: 101px;
 
         p:first-child {
-            @include apply-font-style(700, 18px, 24px, 24px);
+            @include apply-font-style(700, 18px, 24px, config.$primary);
         }
+    }
+
+    .row {
+        margin-bottom:  24px;
+    }
+
+    .number span {
+        @include apply-font-style(400, 36px, inherit, config.$primary);
     }
 }
 
+
+.insight-square {
+    margin-right: 24px;
+    width: calc(#{$square-insights-width} - 24px);
+}
+
+.insight-square:last-child {
+    margin-right: 0;
+    width: #{$square-insights-width} ;
+}
 
 @media only screen and (min-width: 991px) {
     .data-hub-stats {
         margin-top: 0;
         margin-left: 24px;
-        width: calc(50% - 24px);
+        width: calc(#{$half-window-width} - 24px);
         height: 374px;
     }
 }
@@ -303,10 +327,6 @@ p.learn-more a {
         margin-left: 24px;
         width: calc(50% - 24px);
     }
-}
-
-.recently-updated .container {
-    margin-top: 64px;
 }
 
 @media only screen and (max-width: 575px) {
@@ -333,24 +353,6 @@ p.learn-more a {
 
 }
 
-.number span {
-    color: var(--primary-navy);
-    font-weight: 400;
-    font-size: 36px;
-}
-
-.data-hub-stats .row {
-    margin-bottom:  24px;
-}
-
-.insight-square {
-    margin-right: 24px;
-    width: calc(33.3% - 24px) ;
-}
-.insight-square:last-child {
-    margin-right: 0;
-    width: calc(33.3%);
-}
 
 @media only screen and (max-width: 575px) {
     .row.insight-row {
@@ -369,3 +371,7 @@ p.learn-more a {
     }
 }
 
+/* recently updated */
+.recently-updated .container {
+    margin-top: 64px;
+}
