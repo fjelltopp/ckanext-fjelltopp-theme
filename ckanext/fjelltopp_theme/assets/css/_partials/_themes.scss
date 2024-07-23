@@ -15,9 +15,10 @@ $colors: (
 );
 
 $breakpoints: (
-  desktop: (992px, 1600px),
-  tablet: (768px, 991px),
-  mobile: (320px, 767px)
+  lg: (992px, 1600px),
+  md: (768px, 991px),
+  sm: (576px, 767px),
+  xs: (300px, 575px)
 );
 
 @function get-color($color) {
