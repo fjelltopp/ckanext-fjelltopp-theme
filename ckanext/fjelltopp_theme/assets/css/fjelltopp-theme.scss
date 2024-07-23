@@ -251,11 +251,13 @@ p.learn-more a {
         .insight-rect p span:nth-child(2) {
             @include apply-font-style(700, 14px, inherit, config.$primary);
         }
-        .insight-square p a span, .insight-rect p a span:last-child {
+        .insight-square p a span, .insight-rect p a span {
             float: right;
             color: get-color(config.$secondary);
         }
-
+        .insight-rect p a {
+            @include apply-font-style(700, 18px, 24px, config.$primary);
+        }
         .insight-img-container {
             padding: 18px;
 
