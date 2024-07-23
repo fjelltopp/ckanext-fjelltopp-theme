@@ -447,25 +447,17 @@ a.tag:hover  {
 
 
 .recently-updated H2 {
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 48px;
-    color: var(--primary-navy);
-    letter-spacing: -0.01em;
+    @include apply-font-style(700, 36px, 48px, config.$secondary, -0.01em);
     margin-bottom: 48px;
     margin-left: 0;
     margin-top: 64px;
 }
 
 .recently-updated H3 {
-    color: var(--primary-navy);
-    font-weight: 400;
-    font-size: 28px;
-    line-height: 36px;
-
+    @include apply-font-style(400, 28px, 36px, config.$secondary);
 }
 
-.recently-updated-title{
+.recently-updated-title {
     margin-top: 48px;
     margin-bottom: 24px;
     position: relative;
@@ -496,7 +488,7 @@ a.tag:hover  {
 
 .homepage-package-list .dataset-item {
     list-style:  none;
-    border: get-color(config.$primary) solid 1px;
+    border: get-color('primary10') solid 1px;
     border-radius: 8px;
     padding: 24px;
     height: 100%;
@@ -556,12 +548,9 @@ a.tag:hover  {
     display: inline-block;
     padding: 6px 16px;
     height: 36px;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
-    text-align: center;
-    color: var(--primary-navy);
-    background: var(--who-blue-ten-percent);
+    @include apply-font-style(700, 16px, 24px, config.$secondary);
+    background: get-color('primary10');
+    border: get-color('secondary') solid 1px;
     border-radius: 4px;
     position: absolute;
     top: 0px;
