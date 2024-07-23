@@ -27,22 +27,23 @@
     <div class="mobile-menu">
         {% snippet 'snippets/search_input.html', placeholder='Search' %}
     </div>
-
-    {% if c.userobj %}
-        {{ h.build_nav_main(
-            ('home.about', _('About')),
-            ('dataset.search', _('Find Data')),
-            ('home.index', _('Insights')),
-            ('activity.dashboard', _('My account'))
-             ) }}
-    {% else %}
-        {{ h.build_nav_main(
-            ('home.about', _('About')),
-            ('dataset.search', _('Find Data')),
-            ('home.index', _('Insights')),
-            ('user.login', _('Log in'))
-             ) }}
-    {% endif %}
+    {% block nav_items %}
+        {% if c.userobj %}
+            {{ h.build_nav_main(
+                ('home.about', _('About')),
+                ('dataset.search', _('Find Data')),
+                ('home.index', _('Insights')),
+                ('activity.dashboard', _('My account'))
+                 ) }}
+        {% else %}
+            {{ h.build_nav_main(
+                ('home.about', _('About')),
+                ('dataset.search', _('Find Data')),
+                ('home.index', _('Insights')),
+                ('user.login', _('Log in'))
+                 ) }}
+        {% endif %}
+    {% endblock %}
 
 {% endblock %}
 
