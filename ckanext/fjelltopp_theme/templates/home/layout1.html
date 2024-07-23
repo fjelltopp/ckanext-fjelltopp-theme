@@ -1,0 +1,31 @@
+<div role="main">
+    <div class="main hero">
+        <div class="promoted-background">
+            <div class="container">
+                {% block promoted %}
+                    {% snippet 'home/snippets/promoted.html' %}
+                {% endblock %}
+            </div>
+        </div>
+    <div class="insights">
+        <div class="container">
+        {% snippet 'home/snippets/insights.html' %}
+        </div>
+    </div>
+    <div class="after-insights"></div>
+    </div>
+    <div class="recently-updated">
+        <div class="container">
+            <div class="recently-updated-title">
+                <h3>{{ _('Featured Datasets') }}</h3>
+                <a class="view-all-btn" href="{{ url_for('dataset.search', tags='Featured') }}">{{ _('See all') }}</a>
+            </div>
+
+            <div class="recently-updated-title">
+                <h3>{{ _('Recently Updated Datasets') }}</h3>
+                <a class="view-all-btn" href="{{ h.url_for('/dataset') }}">{{ _('See all') }}</a>
+            </div>
+
+        </div>
+    </div>
+</div>
