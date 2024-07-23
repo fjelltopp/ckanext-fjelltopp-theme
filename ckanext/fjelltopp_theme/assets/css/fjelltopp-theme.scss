@@ -189,7 +189,24 @@ p.learn-more a {
     }
 }
 
+/* insights */
+.show-insights-title {
+    @if config.$show-insights-title == false {
+        display: none;
+    }
+}
 
+.insights-upper-item {
+    @if config.$upper-container-visible == false {
+        display: none;
+    }
+}
+
+.insights-lower-item {
+    @if config.$lower-container-visible == false {
+        display: none;
+    }
+}
 
 
 
