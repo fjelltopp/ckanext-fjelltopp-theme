@@ -14,18 +14,20 @@
     </div>
     <div class="after-insights"></div>
     </div>
+    {% block featured %}
     <div class="recently-updated">
         <div class="container">
             <div class="recently-updated-title">
-                <h3>{{ _('Featured Datasets') }}</h3>
+                <h3>Featured</h3>
                 <a class="view-all-btn" href="{{ url_for('dataset.search', tags='Featured') }}">{{ _('See all') }}</a>
             </div>
 
             <div class="recently-updated-title">
-                <h3>{{ _('Recently Updated Datasets') }}</h3>
+                <h3>Recently updated</h3>
                 <a class="view-all-btn" href="{{ h.url_for('/dataset') }}">{{ _('See all') }}</a>
             </div>
 
         </div>
     </div>
+    {% endblock %}
 </div>
