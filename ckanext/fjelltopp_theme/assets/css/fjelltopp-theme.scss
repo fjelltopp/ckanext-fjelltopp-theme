@@ -217,9 +217,12 @@ p.learn-more a {
 
 
 .insights {
-    min-height: 484px;
+    min-height: 600px;
     background: config.$primary10;
-    padding: 48px 0;
+    padding-bottom: 120px;
+    padding-top: 48px;
+    padding-left: 0;
+    padding-right: 0;
 
     .insight-row, .data-hub-stats .row {
         --bs-gutter-x: 0;
@@ -361,7 +364,7 @@ $data-hub-stats-height: 374px;
         width: 100%;
         height: 100%;
     }
-    .after-insights {
+    .after-insights { /* TODO fix padding for responsiveness */
         padding-top: 85%;
         background: get-color(config.$primary10);
         min-height: 418px;
