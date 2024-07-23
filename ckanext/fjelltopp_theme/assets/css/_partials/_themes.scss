@@ -15,10 +15,11 @@ $colors: (
 );
 
 $breakpoints: (
-  lg: (992px, 1600px),
-  md: (768px, 991px),
-  sm: (576px, 767px),
-  xs: (300px, 575px)
+  wide: (min: 1601px, max: 2400px),
+  lg: (min: 992px, max: 1600px),
+  md: (min: 768px, max: 991px),
+  sm: (min: 576px, max: 767px),
+  xs: (min: 300px, max: 575px)
 );
 
 @function get-color($color) {

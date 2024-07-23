@@ -278,6 +278,9 @@ p.learn-more a {
 }
 
 /* data hub stats */
+$data-hub-stats-margin-left: 24px;
+$data-hub-stats-margin-right: 24px;
+$data-hub-stats-height: 374px;
 .data-hub-stats {
     margin-top: 48px;
     height: 374px;
@@ -304,8 +307,8 @@ p.learn-more a {
 
 
 .insight-square {
-    margin-right: 24px;
-    width: calc(#{$square-insights-width} - 24px);
+    margin-right: $data-hub-stats-margin-right;
+    width: calc(#{$square-insights-width} - $data-hub-stats-margin-right);
 }
 
 .insight-square:last-child {
@@ -313,19 +316,19 @@ p.learn-more a {
     width: #{$square-insights-width} ;
 }
 
-@media only screen and (min-width: 991px) {
+@media only screen and (min-width: map-get(map-get($breakpoints, lg), min)) {
     .data-hub-stats {
         margin-top: 0;
-        margin-left: 24px;
-        width: calc(#{$half-window-width} - 24px);
-        height: 374px;
+        margin-left: $data-hub-stats-margin-left;
+        width: calc(#{$half-window-width} - #{$data-hub-stats-margin-left});
+        height: $data-hub-stats-height;
     }
 }
 
-@media only screen and (min-width: 576px) {
+@media only screen and (min-width: map-get(map-get($breakpoints, sm), min)) {
     .insight-small-rect:last-child {
-        margin-left: 24px;
-        width: calc(50% - 24px);
+        margin-left: $data-hub-stats-margin-left;
+        width: calc(#{$half-window-width} - #{$data-hub-stats-margin-left});
     }
 }
 
