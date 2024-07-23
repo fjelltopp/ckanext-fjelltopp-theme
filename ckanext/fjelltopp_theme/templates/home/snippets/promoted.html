@@ -1,0 +1,18 @@
+{% block promote %}
+<div class="promoted promoted-home col-xs-12 col-sm-12 col-lg-12" >
+    <div class="promoted-container row">
+
+            <div class="promoted-left-text">
+                <p class="subtitle">Project Title</p>
+                <h1 class="headline">Headline</h1>
+                <p class="description">Project description</p>
+                <p class="learn-more"><a href="{{ h.url_for('home.about') }}">Learn more</a></p>
+            </div>
+
+            <div class="search-section">
+            <h2>{{ _('Search data') }}</h2>
+            {% snippet 'snippets/search_input.html', placeholder='Search' %}
+            </div>
+    </div>
+</div>
+{% endblock %}
