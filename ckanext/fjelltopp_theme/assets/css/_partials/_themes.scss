@@ -33,12 +33,28 @@ $breakpoints: (
   }
 }
 
-@mixin apply-font-style($font-weight: vars.$default-font-weight,
-$font-size: vars.$default-font-size,
-$line-height: vars.$default-line-height,
-$font-color: vars.$default-font-color) {
+//@mixin apply-font-style($font-weight: vars.$default-font-weight,
+//$font-size: vars.$default-font-size,
+//$line-height: vars.$default-line-height,
+//$font-color: vars.$default-font-color) {
+//  font-weight: $font-weight;
+//  font-size: $font-size;
+//  line-height: $line-height;
+//  color: $font-color;
+//}
+
+@mixin apply-font-style(
+  $font-weight: vars.$default-font-weight,
+  $font-size: vars.$default-font-size,
+  $line-height: vars.$default-line-height,
+  $font-color: vars.$default-font-color,
+  $letter-spacing: inherit,
+  $text-align: inherit
+) {
   font-weight: $font-weight;
   font-size: $font-size;
   line-height: $line-height;
   color: $font-color;
+  letter-spacing: $letter-spacing;
+  text-align: $text-align;
 }

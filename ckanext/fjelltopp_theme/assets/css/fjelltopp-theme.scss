@@ -107,3 +107,114 @@
         display: none;
     }
 }
+
+/* promoted */
+.promoted-background {
+    width: 100%;
+    background-color: config.$background-color;
+    color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+}
+
+.promoted, .promoted-home {
+    font-style: normal;
+    font-size:  18px;
+}
+
+.promoted-home .promoted-container {
+    margin: 64px 0;
+}
+
+.promoted .subtitle {
+    @include apply-font-style(700, 16px, 24px, config.$light);
+    color: var(--who-blue-ten-percent);
+    margin-bottom:  15px;
+    letter-spacing: 0;
+}
+
+h1.headline,
+.promoted-left .headline {
+    @include apply-font-style(400, 48px, 56px, config.$light, -0.03em, left);
+}
+
+p.learn-more a {
+    text-decoration: underline;
+    @include apply-font-style(700, 16px, inherit, config.$light);
+}
+
+.promoted .search-section {
+    margin-top: 28px;
+}
+
+.promoted-container {
+    h2 {
+        @include apply-font-style(700, 18px, 24px, config.$light);
+        margin-bottom: 4px;
+    }
+
+}
+
+/*
+.promoted h1{
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.promoted h2 {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+}
+
+.promoted .big-search-form {
+    margin: 0;
+}
+
+.promoted .search-form {
+    border-bottom: none;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.promoted .big-search-form .lens-btn,
+.insights .insight-row .search-section .big-search-form .lens-btn {
+    height:  50px;
+    padding-left: 32px;
+    padding-right: 32px;
+    border-radius: 0 4px 4px 0;
+}
+
+.promoted .big-search-form .lens-btn:hover,
+.insights .insight-row .search-section .big-search-form .lens-btn:hover {
+    border-color: var(--primary-navy) thin 1px !important;
+    color: var(--primary-navy) !important;
+}
+
+.promoted .big-search-form .lens-btn span.search-label,
+.insights .insight-row .search-section .big-search-form .lens-btn span.search-label{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.promoted .big-search-form .fa-search,
+.insights .insight-row .search-section .big-search-form .fa-search {
+    font-size:  20px;
+    margin-right: 2px;
+}
+
+.insights .insight-row .search-section .big-search-form input{
+    height:  50px;
+    border-color: #FFF;
+}
+
+
+.promoted .big-search-form input, .form-control {
+    border: var(--who-blue-25-percent) solid 1px;
+    border-radius: 4px;
+    outline: none;
+    height: auto;
+}
+
+*/
