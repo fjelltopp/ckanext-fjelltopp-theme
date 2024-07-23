@@ -18,6 +18,9 @@ $half-window-width: math.div(100%, 2);
 /* top first bar */
 .account-masthead {
   @include apply-color('primary');
+    @if config.$masthead-visible == false {
+        display: none;
+    }
 }
 
 /* header */
