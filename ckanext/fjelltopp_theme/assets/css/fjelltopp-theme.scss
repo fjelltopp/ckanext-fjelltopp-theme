@@ -424,6 +424,7 @@ $data-hub-stats-height: 374px;
 
 /* recently updated */
 
+/* TODO: determine where are these used
 a.tag,
 a.tag:hover  {
     padding: 2px 6px;
@@ -433,15 +434,17 @@ a.tag:hover  {
     margin-bottom: 24px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    border:  none;
+    border: none;
     color: #056839;
     box-shadow:  none;
 }
 
-.tag-list{
+.tag-list {
     background:  transparent;
     border:  none;
 }
+*/
+
 
 .recently-updated H2 {
     font-weight: 400;
@@ -493,7 +496,7 @@ a.tag:hover  {
 
 .homepage-package-list .dataset-item {
     list-style:  none;
-    border: var(--primary-navy) solid 1px;
+    border: get-color(config.$primary) solid 1px;
     border-radius: 8px;
     padding: 24px;
     height: 100%;
