@@ -957,6 +957,12 @@ a:hover {
   background-color: get-color('secondary');
 }
 
+.btn-primary:hover {
+    color: get-color('light');
+    background-color: get-color('primary');
+    border-color: get-color('primary');
+}
+
 fieldset[disabled] .btn-primary.focus {
   background-color: get-color('secondary');
 }
