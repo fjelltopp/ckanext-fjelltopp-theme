@@ -265,7 +265,7 @@ p.learn-more a {
 
 
 .insights {
-    min-height: 600px;
+    min-height: 484px;
     background: config.$primary10;
     padding: 48px 0 120px;
 
@@ -415,8 +415,8 @@ $data-hub-stats-height: 374px;
     }
     .after-insights { /* TODO fix padding for responsiveness */
         padding-top: 85%;
-        background: get-color(config.$primary10);
-        min-height: 418px;
+        background: get-color('primary10');
+        min-height: config.$after-insights-min-height;
     }
 }
 
@@ -631,7 +631,19 @@ a.tag:hover  {
     .homepage-package-list > .dataset-item:last-of-type {
         border-bottom: get-color('tag-background') solid 1px;
     }
+
+    .container {
+        width: 100%;
+        padding-right: var(--bs-gutter-x, 1.5rem);
+        padding-left: var(--bs-gutter-x, 1.5rem);
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .homepage-package-list .dataset-item {
+        padding: 12px 0;
+    }
 }
+
 
 /* tags margin (recently updated / datasets) */
 .dataset-resources {
