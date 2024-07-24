@@ -473,28 +473,6 @@ $data-hub-stats-height: 374px;
 
 /* recently updated */
 
-/* TODO: determine where are these used
-a.tag,
-a.tag:hover  {
-    padding: 2px 6px;
-    background: #fff1e9;
-    border-radius: 4px;
-    margin-right: 10px;
-    margin-bottom: 24px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    border: none;
-    color: #056839;
-    box-shadow:  none;
-}
-
-.tag-list {
-    background:  transparent;
-    border:  none;
-}
-*/
-
-
 .recently-updated H2 {
     @include apply-font-style(400, 36px, 48px, config.$primary, -0.04em);
     margin-bottom: 48px;
@@ -910,57 +888,6 @@ a.footer-link:hover,
 .navbar-toggle {
     color: get-color('primary');
 }
-
-/*
-.add-group {
-    margin-bottom: 32px;
-}
-
-
-.toolbar .breadcrumb a {
-    color: #505050;
-}
-
-.btn {
-  padding:  10px 40px;
-}
-
-.btn-primary,
-.btn-success,
-.btn-default {
-  background-color: get-color('primary');
-  border: get-color('primary') solid 1px;
-  color: get-color('light');
-}
-
-.btn-danger {
-    background-color: get-color('light');
-    border-color: get-color('primary') solid 1px;
-    color: get-color('primary');
-}
-
-.btn-light:hover,
-.btn-default:hover,
-.btn-primary:hover,
-.btn-danger:hover,
-.btn-primary:active,
-.btn-primary.active,
-.btn-primary:focus,
-.btn-primary.focus,
-.btn-primary:active:hover,
-.btn-primary.active:hover,
-.open > .dropdown-toggle.btn-primary:hover,
-.btn-primary:active:focus,
-.btn-primary.active:focus,
-.open > .dropdown-toggle.btn-primary:focus,
-.btn-primary:active.focus,
-.btn-primary.active.focus,
-.open > .dropdown-toggle.btn-primary.focus  {
-  color: get-color('primary');
-  background-color: get-color('primary10') !important;
-  border-color: get-color('primary10');
-}
-*/
 
 /* dataset page */
 .dataset-heading a {
