@@ -158,12 +158,16 @@ body {
 }
 
 /* promoted */
-.promoted-background {
+.promoted-background,
+.homepage .promoted-background {
     width: 100%;
-    background-color: config.$background-color;
-    color: #FFFFFF;
     position: relative;
     overflow: hidden;
+}
+
+.homepage .promoted-background {
+    background-color: config.$background-color;
+    color: get-color('light');
 }
 
 .promoted, .promoted-home {
@@ -177,7 +181,6 @@ body {
 
 .promoted .subtitle {
     @include apply-font-style(700, 16px, 24px, config.$light);
-    color: var(--who-blue-ten-percent);
     margin-bottom:  15px;
     letter-spacing: 0;
 }
@@ -229,6 +232,12 @@ p.learn-more a {
     .lens-btn .search-label{
         display: none;
     }
+}
+
+/* dataset promoted */
+.promoted .container {
+    padding-top: 64px;
+    padding-bottom: 64px;
 }
 
 /* insights */

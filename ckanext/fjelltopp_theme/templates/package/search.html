@@ -1,0 +1,50 @@
+{% ckan_extends %}
+
+{% set tags = h.get_facet_items_dict('tags', c.search_facets, limit=3) %}
+{% set placeholder = _('E.g. environment') %}
+{% set stats = h.get_site_statistics() %}
+
+{% block subtitle %}{{ _(dataset_type.title()) }}{% endblock %}
+
+{% block promoted_toolbar %}
+{% endblock %}
+
+{% block page_primary_action %}
+{% if h.check_access('package_create') %}
+<div class="page_primary_action">
+    {% snippet 'snippets/dataset_selector.html'%}
+</div>
+{% endif %}
+{% endblock %}
+
+
+{%- block content %}
+    <div role="main">
+        <div class="promoted-background ">
+            <div class="container">
+                <div class="promoted">
+                    <div class="promoted-container container">
+                        <p class="subtitle">Home / </p>
+                        <h1 class="headline">Datasets</h1>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    {{super() }}
+</div>
+{%  endblock %}
+
+
+{% block secondary_content %}
+  <div class="filters">
+    <div>
+      {% for facet in facet_titles %}
+        {% set scheming_choices=h.scheming_field_by_name(h.scheming_get_dataset_schema(dataset_type).dataset_fields, facet).choices %}
+        {{ h.snippet('snippets/facet_list.html', title=facet_titles[facet], name=facet, search_facets=search_facets, scheming_choices=scheming_choices) }}
+      {% endfor %}
+    </div>
+    <a class="close no-text hide-filters"><i class="fa fa-times-circle"></i><span class="text">close</span></a>
+  </div>
+{% endblock %}
