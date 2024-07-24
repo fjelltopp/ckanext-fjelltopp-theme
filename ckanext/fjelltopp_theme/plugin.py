@@ -18,6 +18,9 @@ class FjelltoppThemePlugin(plugins.SingletonPlugin):
     def get_helpers(self):
         return {
             'format_locale': theme_helpers.format_locale,
+            'get_recently_updated_datasets': theme_helpers.get_recently_updated_datasets,
+            'get_last_modifier': theme_helpers.get_last_modifier,
+            'get_featured_datasets': theme_helpers.get_featured_datasets,
         }
 
     def update_config(self, config: CKANConfig):
