@@ -219,10 +219,7 @@ p.learn-more a {
 .insights {
     min-height: 600px;
     background: config.$primary10;
-    padding-bottom: 120px;
-    padding-top: 48px;
-    padding-left: 0;
-    padding-right: 0;
+    padding: 48px 0 120px;
 
     .insight-row, .data-hub-stats .row {
         --bs-gutter-x: 0;
@@ -330,12 +327,14 @@ $data-hub-stats-height: 374px;
     }
 }
 
-@media only screen and (max-width: map-get(map-get($breakpoints, sm), min)) {
+@media only screen and (min-width: map-get(map-get($breakpoints, sm), min)) {
     .insight-small-rect:last-child {
         margin-left: $data-hub-stats-margin-left;
         width: calc(#{$half-window-width} - #{$data-hub-stats-margin-left});
+
     }
 }
+
 
 @media only screen and (max-width: map-get(map-get($breakpoints, xs), max)) {
     .data-hub-stats H3 {
