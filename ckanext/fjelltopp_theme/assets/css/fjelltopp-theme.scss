@@ -7,6 +7,16 @@ $half-window-width: math.div(100%, 2);
 
 
 /* global */
+body {
+    background: #fff;
+    font-family: config.$default-font-family, serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+}
+
 .fa-search {
     color: get-color('secondary');
 }
