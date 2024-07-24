@@ -56,6 +56,20 @@ body {
 }
 
 /* header */
+.navbar-toggler .fa-bars {
+    color: get-color('primary') !important;
+}
+
+.navbar-light .navbar-toggler {
+    border: none;
+}
+
+@media (max-width: map-get(map-get($breakpoints, md), max)) {
+.site-search {
+    display: none;
+  }
+}
+
 .masthead {
     @include apply-color('light', 'dark');
     .site-search input {
@@ -243,6 +257,13 @@ p.learn-more a {
 .toolbar .breadcrumb a {
     color: get-color('light');
 }
+
+@media (max-width: map-get(map-get($breakpoints, md), max)) {
+    .big-search-form #field-giant-search {
+        max-width: 279px;
+    }
+}
+
 
 /* insights */
 .show-insights-title {
