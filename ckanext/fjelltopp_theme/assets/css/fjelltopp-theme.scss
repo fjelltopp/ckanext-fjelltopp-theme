@@ -21,10 +21,6 @@ body {
     color: get-color('secondary');
 }
 
-.main {
-    padding: 0 !important;
-}
-
 .mobile-menu .search-form {
     margin-top: 70px;
     margin-bottom: 0;
@@ -249,7 +245,7 @@ p.learn-more a {
 }
 
 /* dataset promoted */
-.promoted .container, .promoted-background {
+.promoted .container {
     padding-top: 64px;
     padding-bottom: 64px;
 }
