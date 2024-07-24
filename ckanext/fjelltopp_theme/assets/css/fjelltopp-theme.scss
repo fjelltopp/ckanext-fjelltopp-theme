@@ -1286,3 +1286,8 @@ a.thumbnail.active {
     color: get-color('light');
     border: 2px solid get-color('secondary');
 }
+
+/* dashboard */
+.nav-link, .page-header .nav-tabs li a {
+    color: get-color('primary');
+}
