@@ -936,6 +936,170 @@ a.footer-link:hover,
     color: get-color('primary');
 }
 
+
+a:hover {
+  color: get-color('secondary');
+  text-decoration: underline;
+}
+
+.text-primary {
+  color: get-color('secondary');
+}
+
+.bg-primary {
+  background-color: get-color('secondary');
+}
+
+.btn-primary {
+  background-color: get-color('secondary');
+}
+
+fieldset[disabled] .btn-primary.focus {
+  background-color: get-color('secondary');
+}
+
+.btn-primary .badge {
+  color: get-color('secondary');
+}
+
+.btn-link {
+  color: get-color('secondary');
+}
+
+.dropdown-menu > .active > a:focus {
+  background-color: get-color('secondary');
+}
+
+.nav .open > a:focus {
+  border-color: get-color('secondary');
+}
+
+.nav-pills > li.active > a:focus {
+  background-color: get-color('secondary');
+}
+
+.pagination > li > span {
+  color: get-color('secondary');
+}
+
+.pagination > .active > span:focus {
+  background-color: get-color('secondary');
+  border-color: get-color('secondary');
+}
+
+.label-primary {
+  background-color: get-color('secondary');
+}
+
+.nav-pills > .active > a > .badge {
+  color: get-color('secondary');
+}
+
+a.thumbnail.active {
+  border-color: get-color('secondary');
+}
+
+.progress-bar {
+  background-color: get-color('secondary');
+}
+
+.list-group-item.active,
+.list-group-item.active:hover,
+.list-group-item.active:focus {
+  background-color: get-color('secondary');
+  border-color: get-color('secondary');
+}
+
+.panel-primary {
+  border-color: get-color('secondary');
+}
+
+.panel-primary > .panel-heading {
+  background-color: get-color('secondary');
+  border-color: get-color('secondary');
+}
+
+.panel-primary > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: get-color('secondary');
+}
+.panel-primary > .panel-heading .badge {
+  color: get-color('secondary');
+}
+.panel-primary > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: get-color('secondary');
+}
+
+.banner {
+  background-color: get-color('secondary');
+}
+
+.media-view:hover,
+.media-view.hovered {
+  border-color: get-color('secondary');
+}
+
+.media-view:hover .banner,
+.media-view.hovered .banner {
+  background-color: get-color('secondary');
+}
+
+.editor .editor-info-block a {
+  color: get-color('secondary');
+}
+
+.resource-list.reordering .resource-item.ui-sortable-helper {
+  border: 1px solid get-color('secondary');
+}
+.resource-list.reordering .resource-item.ui-sortable-helper .handle {
+  border-color: get-color('secondary');
+}
+
+.view-list li a.active,
+.view-list li a:hover {
+  border-color: get-color('secondary');
+}
+
+.view-list li a.active .icon,
+.view-list li a:hover .icon {
+  background-color: get-color('secondary');
+}
+
+.view-list li .arrow {
+  border-top-color: get-color('secondary');
+}
+
+.view-list li.active a {
+  border-color: get-color('secondary');
+}
+.view-list li.active a .icon {
+  background-color: get-color('secondary');
+}
+
+.view-list.stacked::-webkit-scrollbar-thumb:hover {
+  background-color: get-color('secondary');
+}
+
+.homepage .module-search .module-content {
+  background-color: get-color('secondary');
+}
+
+.popover-followee .nav li a i {
+  background-color: get-color('secondary');
+}
+
+.popover-followee .nav li.active a i {
+  color: get-color('secondary');
+}
+
+.resource-view-list.reordering li.ui-sortable-helper {
+  border: 1px solid get-color('secondary');
+}
+
+.resource-view-list.reordering li.ui-sortable-helper .handle {
+  border-color: get-color('secondary');
+}
+
+
 /* dataset page */
 .dataset-heading a {
     font-style: normal;
