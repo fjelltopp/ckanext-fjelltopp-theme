@@ -1115,6 +1115,15 @@ a.thumbnail.active {
     border-color: get-color('secondary');
 }
 
+.page-link {
+    position: relative;
+    display: block;
+    color: get-color('secondary');
+    background-color: get-color('light');
+    border: 1px solid #dee2e6;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
 /* dataset page */
 .dataset-heading a {
     font-style: normal;
