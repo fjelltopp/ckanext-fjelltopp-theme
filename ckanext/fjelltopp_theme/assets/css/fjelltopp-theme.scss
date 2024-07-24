@@ -949,6 +949,10 @@ a.footer-link:hover,
     }
 }
 
+.account-masthead .account ul li:not(.dev-banner) {
+    display: none;
+}
+
 .dev-banner-container {
     display: none;
     width: 100%;
@@ -1012,19 +1016,17 @@ a.footer-link:hover,
         margin: 0;
         width: 100%;
     }
-
     .dev-banner-mobile a {
         @include apply-font-style(400, 12px, 16px, config.$light);
         text-decoration: none;
     }
-
     .dev-banner-mobile a .clickable {
         margin-left: 6px;
         pointer-events: auto;
         font-weight: 700;
         text-decoration: underline;
-    }
 
+    }
     .dev-banner-mobile a i {
         margin-right: 6px;
         margin-top: -2px;
@@ -1057,6 +1059,7 @@ a.footer-link:hover,
     }
     ul li.dev-banner a {
         margin-left: 0 !important;
+        background-color: get-color('tag') !important;
     }
     .dev-banner a .clickable {
         margin-left: 6px;
