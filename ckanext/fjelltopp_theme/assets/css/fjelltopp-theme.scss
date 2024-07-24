@@ -936,6 +936,9 @@ a.footer-link:hover,
     color: get-color('primary');
 }
 
+a {
+  color: get-color('secondary');
+}
 
 a:hover {
   color: get-color('secondary');
@@ -1099,6 +1102,12 @@ a.thumbnail.active {
   border-color: get-color('secondary');
 }
 
+.page-item.active .page-link {
+    z-index: 3;
+    color: get-color('light');
+    background-color: get-color('secondary');
+    border-color: get-color('secondary');
+}
 
 /* dataset page */
 .dataset-heading a {
