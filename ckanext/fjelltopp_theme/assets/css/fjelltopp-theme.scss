@@ -950,7 +950,10 @@ a.footer-link:hover,
 }
 
 .account-masthead .account ul li:not(.dev-banner) {
-    display: none;
+    @if config.$show-languages == false {
+        display: none;
+    }
+
 }
 
 .dev-banner-container {
