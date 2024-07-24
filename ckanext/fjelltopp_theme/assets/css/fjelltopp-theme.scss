@@ -941,3 +941,160 @@ a.footer-link:hover,
     @include apply-font-style(400, 11px, 20px, config.$primary);
     margin-bottom: 0;
 }
+
+/* dev banner */
+.dev-banner {
+    @if config.$show-development-banner == false {
+        display: none !important;
+    }
+}
+
+.dev-banner-container {
+    display: none;
+    width: 100%;
+}
+
+.nav-for-large-screen {
+    display: block;
+}
+
+.account-masthead .account ul li.dev-banner {
+    display: none;
+}
+
+.dev-banner-mobile {
+    display: none;
+}
+
+
+@media only screen and (max-width: 627px) {
+    .dev-banner-container .row {
+        --bs-gutter-x: 0;
+    }
+    .account-masthead {
+        height: 100%;
+    }
+    .dev-banner-container {
+        display: block;
+    }
+    .nav-for-large-screen {
+        display: none;
+    }
+    .account-masthead .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+    }
+    .dev-banner-container .list-unstyled {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .dev-banner-container .list-unstyled li {
+        width: 100%;
+    }
+    .account-masthead .account ul li a {
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+    .dev-banner-mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+        pointer-events: none;
+        background-color: white;
+        margin: 0;
+        width: 100%;
+    }
+
+    .dev-banner-mobile a {
+        @include apply-font-style(400, 12px, 16px, config.$light);
+        text-decoration: none;
+    }
+
+    .dev-banner-mobile a .clickable {
+        margin-left: 6px;
+        pointer-events: auto;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    .dev-banner-mobile a i {
+        margin-right: 6px;
+        margin-top: -2px;
+    }
+
+}
+
+@media only screen and (min-width: 628px) {
+    .account-masthead .account ul li.dev-banner  {
+        display: block;
+    }
+    .account-masthead .account {
+        float: left;
+    }
+    nav.account {
+        width: 100%;
+    }
+    nav.account ul.list-unstyled {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+    }
+    .dev-banner {
+        margin-right: auto;
+        background-color: get-color('tag');
+        pointer-events: none;
+    }
+    ul li.dev-banner a {
+        margin-left: 0 !important;
+    }
+    .dev-banner a .clickable {
+        margin-left: 6px;
+        pointer-events: auto;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+}
+
+.ckan-circle-exclamation {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    @include apply-font-style(inherit, 16px, 16px, config.$light, inherit, center);
+    margin-right: 7px;
+    vertical-align: middle;
+    margin-top: -1px;
+}
+
+.ckan-circle-exclamation::before {
+    content: '!';
+    position: absolute;
+    top: 50%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    @include apply-font-style(900, 10px, 1px, config.$light);
+
+}
+
+.ckan-circle-exclamation.white {
+    color: get-color('light');
+    border: 2px solid white;
+}
+
+.ckan-circle-exclamation.secondary {
+    color: get-color('light');
+    border: 2px solid get-color('secondary');
+}

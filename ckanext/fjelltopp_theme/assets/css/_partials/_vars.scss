@@ -36,7 +36,8 @@ $upper-container-visible: false;
 $lower-container-visible: true;
 
 /* show masthead */
-$masthead-visible: false;
+$masthead-visible: true;
+$show-development-banner: true;
 
 /* footer */
 $footer-search-section-padding-top: 64px;
