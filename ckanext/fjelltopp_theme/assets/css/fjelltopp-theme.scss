@@ -394,7 +394,7 @@ $data-hub-stats-height: 374px;
     vertical-align: middle;
     width:  100%;
 }
-.group-box .group-text .title{
+.group-box .group-text .title {
     @include apply-font-style(700, 16px, 24px, config.$secondary);
     font-weight: 700;
     font-size: 16px;
@@ -465,14 +465,14 @@ a.tag:hover  {
 }
 
 /* I stopped here */
-@media only screen and (max-width: 559px) {
-    .recently-updated{
+@media only screen and (max-width: map-get(map-get($breakpoints, recenly_updated_sm), max)) {
+    .recently-updated {
         margin-top: 32px;
         margin-bottom: 24px;
     }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: map-get(map-get($breakpoints, md), min)) {
     .recently-updated {
         padding-bottom: 64px;
     }
@@ -488,61 +488,47 @@ a.tag:hover  {
     list-style:  none;
 }
 
-.homepage-package-list .dataset-item {
-    list-style:  none;
-    border: get-color('primary10') solid 1px;
-    border-radius: 8px;
-    padding: 24px;
-    height: 100%;
+.homepage-package-list {
+
+    .dataset-item {
+        list-style:  none;
+        border: get-color('primary10') solid 1px;
+        border-radius: 8px;
+        padding: 24px;
+        height: 100%;
+
+        .dataset-content .dataset-heading {
+            color: get-color('primary');
+        }
+    }
+    .dataset-content div {
+        @include apply-font-style(400, 14px, 20px);
+        margin: 0;
+    }
+
 }
 
 .dataset-content .dataset-heading {
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 24px;
-    margin:  10px 0px;
-}
-
-.homepage-package-list .dataset-content .dataset-heading {
-    color: var(--primary-navy);
+    @include apply-font-style(700, 18px, 24px);
+    margin:  10px 0;
 }
 
 .dataset-content .author {
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 20px;
-    color: #212121;
-    margin-bottom: 0px;
+    @include apply-font-style(700, 14px, 20px, config.$primary);
+    margin-bottom: 0;
 }
 
 .dataset-content .modified {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 20px;
-    color: var(--primary-navy);
+    @include apply-font-style(400, 12px, 20px, config.$primary);
     padding-bottom: 12px;
 }
 
 .dataset-content div:last-child {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
-    text-align: left;
-    color: var(--primary-navy);
+    @include apply-font-style(400, 14px, 20px, config.$primary, inherit, left);
 }
-
 
 .dataset-content div {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    margin: 0;
-}
-
-.homepage-package-list .dataset-content div {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
+    @include apply-font-style(400, 14px, 20px);
     margin: 0;
 }
 
@@ -555,11 +541,11 @@ a.tag:hover  {
     border: get-color('secondary') solid 1px;
     border-radius: 4px;
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: 0;
+    right: 0;
 }
 
-@media only screen and (max-width: 415px) {
+@media only screen and (max-width: map-get(map-get($breakpoints, recenly_updated_xs), max)) {
     .recently-updated .view-all-btn {
         margin-top: 10px;
         position: static;

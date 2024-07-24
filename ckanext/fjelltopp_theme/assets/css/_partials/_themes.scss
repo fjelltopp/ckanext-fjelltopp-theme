@@ -19,7 +19,9 @@ $breakpoints: (
   lg: (min: 992px, max: 1600px),
   md: (min: 768px, max: 991px),
   sm: (min: 576px, max: 767px),
-  xs: (min: 300px, max: 575px)
+  xs: (min: 300px, max: 575px),
+  recenly_updated_sm: (min: 416px, max: 559px),
+  recenly_updated_xs: (min: 300px, max: 415px),
 );
 
 @function get-color($color) {
