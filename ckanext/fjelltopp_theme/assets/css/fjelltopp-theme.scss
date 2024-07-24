@@ -260,6 +260,36 @@ p.learn-more a {
     }
 }
 
+.promoted-breadcrumbs .toolbar {
+    height: 170px;
+}
+
+
+.promoted-breadcrumbs .toolbar{
+    height:  170px;
+}
+
+.promoted-breadcrumbs .breadcrumb li{
+    margin: 5px 0;
+}
+
+.promoted-breadcrumbs .toolbar .breadcrumb a{
+    color: get-color('light');
+
+}
+
+.promoted-breadcrumbs .toolbar .breadcrumb{
+    position: absolute;
+    bottom: 32px;
+    font-size: 16px;
+}
+
+@media only screen and (min-width: 992px) {
+    .promoted-breadcrumbs .toolbar .breadcrumb {
+        font-size: 24px;
+    }
+}
+
 
 /* insights */
 .show-insights-title {
