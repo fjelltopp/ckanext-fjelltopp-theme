@@ -235,9 +235,13 @@ p.learn-more a {
 }
 
 /* dataset promoted */
-.promoted .container {
+.promoted .container, .promoted-background {
     padding-top: 64px;
     padding-bottom: 64px;
+}
+
+.toolbar .breadcrumb a {
+    color: get-color('light');
 }
 
 /* insights */
@@ -492,7 +496,7 @@ a.tag:hover  {
 
 
 .recently-updated H2 {
-    @include apply-font-style(700, 36px, 48px, config.$secondary, -0.01em);
+    @include apply-font-style(400, 36px, 48px, config.$primary, -0.04em);
     margin-bottom: 48px;
     margin-left: 0;
     margin-top: 64px;

@@ -17,16 +17,17 @@
     {% block featured %}
     <div class="recently-updated">
         <div class="container">
+            <h2>{% block title %}{% endblock %}</h2>
             <div class="recently-updated-title">
-                <h3>Featured</h3>
+                <h3>{% block first_row_title %}First row title{% endblock %}</h3>
                 <a class="view-all-btn" href="{{ url_for('dataset.search', tags='Featured') }}">{{ _('See all') }}</a>
             </div>
-
+            {% snippet 'home/snippets/recently_updated.html', packages=h.get_featured_datasets(), origin='homepage' %}
             <div class="recently-updated-title">
-                <h3>Recently updated</h3>
+                <h3>{% block second_row_title %}Second row title{% endblock %}</h3>
                 <a class="view-all-btn" href="{{ h.url_for('/dataset') }}">{{ _('See all') }}</a>
             </div>
-
+            {% snippet 'home/snippets/recently_updated.html', packages=h.get_recently_updated_datasets(), origin='homepage' %}
         </div>
     </div>
     {% endblock %}
