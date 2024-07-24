@@ -7,9 +7,13 @@
     {% snippet 'snippets/search_input.html', placeholder='Search' %}
   </div>
 </div>
+
   <div class="col-xs-6 col-sm-3 col-lg-2 footer-links">
-    <a href="https://who.int" target="_blank"><img class="footer-logo" src="/images/WHO-Logo.png" alt=""/></a>
+  {% block footer_logo_section %}
+    <a href="https://who.int" target="_blank"><img class="footer-logo" src="/images/{% block footer_logo %}WHO-Logo.png{% endblock %}" alt=""/></a>
+  {% endblock %}
   </div>
+
 
 <div class="row">
   <div class="col-xs-12 col-sm-9 col-lg-12 footer-links">
@@ -27,18 +31,22 @@
                     </li>
                 {% endblock %}
               </ul>
+            {% block footer_description_tablet %}
                   <span class="desc desc-tablet">{% trans %}© WHO 2024. An open source <a class="hide-text" target="_blank" href="https://ckan.org/">
             CKAN</a> project, built by <a class="hide-text" target="_blank" href="https://fjelltopp.org">Fjelltopp</a>{% endtrans %}</span>
+            {% endblock %}
         </div>
 
 
         <div class="desc-mobile">
+            {% block footer_mobile_links %}
             <p><a class="footer-link" href="{{ h.url_for('/organization') }}">{{ _('Organizations') }}</a></p>
             <p><a class="footer-link" href="{{ h.url_for('/user/login') }}">{{ _('Account login') }}</a></p>
             <p><a class="footer-link" href="{{ h.url_for('/terms/') }}" target="_blank">{{ _('Terms and conditions') }}</a><br />
             <p><a class="footer-link" href="http://docs.ckan.org/en/2.10/api/" target="_blank">{{ _('API Docs') }}</a></p>
           <p class="desc desc-mobile">{% trans %}© WHO 2024. An open source <a class="hide-text" target="_blank" href="https://ckan.org/">
             CKAN</a> project, built by <a class="hide-text" target="_blank" href="https://fjelltopp.org">Fjelltopp</a>{% endtrans %}</p>
+            {% endblock %}
         </div>
 
 
