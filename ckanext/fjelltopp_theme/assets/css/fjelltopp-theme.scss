@@ -8,13 +8,10 @@ $half-window-width: math.div(100%, 2);
 
 /* global */
 body {
-    background: #fff;
+    background: config.$light;
     font-family: config.$default-font-family, serif;
+    @include apply-font-style(400, 16px, 24px, config.$primary);
     font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: #000000;
 }
 
 .fa-search {
@@ -498,18 +495,14 @@ $data-hub-stats-height: 374px;
 }
 
 .group-box .group-text .desc{
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    color: #212121;
+    @include apply-font-style(400, 14px, 20px, config.$primary);
     overflow:  hidden;
     height:  50px;
 }
 
 .group-box .btn-delete {
+    @include apply-font-style(inherit, 20px, inherit, config.$secondary);
     background: transparent;
-    color: #008dc9;
-    font-size: 20px;
     padding: 20px;
     position: absolute;
     bottom: 10px;
