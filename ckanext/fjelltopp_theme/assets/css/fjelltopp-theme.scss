@@ -335,7 +335,7 @@ p.learn-more a {
             margin-bottom: 48px;
         }
         .insight-square p, .insight-rect p span:first-child {
-            @include apply-font-style(700, 18px, 24px, config.$primary);
+            @include apply-font-style(700, 18px, 24px, config.$secondary);
         }
         .insight-rect p span:nth-child(2) {
             @include apply-font-style(700, 14px, inherit, config.$primary);
