@@ -1016,6 +1016,7 @@ a:hover {
 
 .btn-primary {
   background-color: get-color('secondary');
+  border-color: get-color('secondary');
 }
 
 .btn-primary:hover {
