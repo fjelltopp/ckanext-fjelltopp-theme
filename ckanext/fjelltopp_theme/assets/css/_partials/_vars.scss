@@ -1,46 +1,48 @@
+@use 'zarr' as _c;
+
 /* global */
 $theme: 'zarr';
 
 /* palette */
-$primary: #13240F;
-$secondary: #198A00;
-$background: #DFF0DB;
-$tag: #EF7D00;
-$tag-dark: none;
-$tag-light: none;
-$tag-background: #FCF0E3;
-$dark: #13240F;
-$light: #FFFFFF;
-$primary65: #9ad98c;
-$primary25: #DFF0DB;
-$primary10: #EBF1EA;
-$neutral-light-grey: #e6e7e8;
-$A11y: #757575;
+$primary: _c.$primary;
+$secondary: _c.$secondary;
+$background: _c.$background;
+$tag: _c.$tag;
+$tag-dark: _c.$tag-dark;
+$tag-light: _c.$tag-light;
+$tag-background: _c.$tag-background;
+$dark: _c.$dark;
+$light: _c.$light;
+$primary65: _c.$primary65;
+$primary25: _c.$primary25;
+$primary10: _c.$primary10;
+$neutral-light-grey: _c.$neutral-light-grey;
+$A11y: _c.$A11y;
 
 /* title */
-$default-font-weight: 700;
-$default-font-size: 18px;
-$default-line-height: 20px;
-$default-font-family: 'Inter';
-$default-font-color: #13240F;
+$default-font-weight: _c.$default-font-weight;
+$default-font-size: _c.$default-font-size;
+$default-line-height: _c.$default-line-height;
+$default-font-family: _c.$default-font-family;
+$default-font-color: _c.$default-font-color;
 
 /* hide logo left border */
-$hide-logo-left-v-bar: true;
+$hide-logo-left-v-bar: _c.$hide-logo-left-v-bar;
 
 /* promoted */
-$background-color: $primary;
+$background-color: _c.$primary;
 
 /* insights */
-$show-insights-title: false;
-$upper-container-visible: false;
-$lower-container-visible: true;
-$after-insights-min-height: 480px;
+$show-insights-title: _c.$show-insights-title;
+$upper-container-visible: _c.$upper-container-visible;
+$lower-container-visible: _c.$lower-container-visible;
+$after-insights-min-height: _c.$after-insights-min-height;
 
 /* show masthead */
-$masthead-visible: true;
-$show-development-banner: true;
-$show-languages: false;
+$masthead-visible: _c.$masthead-visible;
+$show-development-banner: _c.$show-development-banner;
+$show-languages: _c.$show-languages;
 
 /* footer */
-$footer-search-section-padding-top: 64px;
-$footer-search-section-padding-bottom: 0px;
+$footer-search-section-padding-top: _c.$footer-search-section-padding-top;
+$footer-search-section-padding-bottom: _c.$footer-search-section-padding-bottom;
