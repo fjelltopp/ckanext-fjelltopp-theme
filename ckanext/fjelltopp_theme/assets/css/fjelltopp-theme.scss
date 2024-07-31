@@ -611,13 +611,6 @@ $data-hub-stats-height: 374px;
     right: 0;
 }
 
-@media only screen and (max-width: map-get(map-get($breakpoints, recenly_updated_xs), max)) {
-    .recently-updated .view-all-btn {
-        margin-top: 10px;
-        position: static;
-    }
-}
-
 .recently-updated .view-all-btn:hover {
     text-decoration: none;
 }
@@ -627,6 +620,10 @@ $data-hub-stats-height: 374px;
 }
 
 @media only screen and (max-width: map-get(map-get($breakpoints, recenly_updated_xs), max)) {
+    .recently-updated .view-all-btn {
+        margin-top: 10px;
+        position: static;
+    }
     .no-row {
         display: none;
     }
@@ -639,6 +636,13 @@ $data-hub-stats-height: 374px;
         width: 90px;
     }
 }
+
+@media only screen and (max-width: map-get(map-get($breakpoints, recenly_updated_sm), max)) {
+    .recently-updated .view-all-btn {
+        position: static;
+    }
+}
+
 
 @media only screen and (max-width: map-get(map-get($breakpoints, sm), max)) {
     .homepage-package-list > .dataset-item {
@@ -660,6 +664,7 @@ $data-hub-stats-height: 374px;
     .homepage-package-list .dataset-item {
         padding: 12px 0;
     }
+
 }
 
 
@@ -1205,7 +1210,7 @@ a.thumbnail.active {
         text-align: center;
         padding: 10px;
         pointer-events: none;
-        background-color: white;
+        background-color: get-color('primary');
         margin: 0;
         width: 100%;
     }
