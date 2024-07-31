@@ -104,6 +104,13 @@ body {
     }
 }
 
+@media only screen and (max-width: map-get(map-get($breakpoints, md), max)) {
+    .masthead .main-navbar .navbar-nav>li>a {
+        margin-left: 0;
+    }
+}
+
+
 #NavbarBrandingContainer {
     position: absolute;
     top: 8px;
