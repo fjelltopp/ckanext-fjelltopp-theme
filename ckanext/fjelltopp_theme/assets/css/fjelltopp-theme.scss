@@ -518,6 +518,10 @@ $data-hub-stats-height: 374px;
     margin-bottom: 48px;
     margin-left: 0;
     margin-top: 64px;
+    @if config.$show-recently-updated-title == false {
+        display: none;
+    }
+
 }
 
 .recently-updated H3 {
