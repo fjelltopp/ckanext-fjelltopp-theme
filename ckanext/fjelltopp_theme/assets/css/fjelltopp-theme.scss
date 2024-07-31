@@ -539,7 +539,13 @@ H2.dataset-heading a {
     position: relative;
 }
 
-/* I stopped here */
+@media only screen and (max-width: map-get(map-get($breakpoints, recenly_updated_sm), max)) {
+    .recently-updated-title {
+        margin-top: 32px;
+    }
+}
+
+
 @media only screen and (max-width: map-get(map-get($breakpoints, recenly_updated_sm), max)) {
     .recently-updated {
         margin-top: 32px;
@@ -659,8 +665,16 @@ H2.dataset-heading a {
         border-radius: 0;
         /*padding: 24px;*/
     }
-    .homepage-package-list > .dataset-item:last-of-type {
-        border-bottom: get-color('tag-background') solid 1px;
+    //.homepage-package-list .dataset-item {
+    //    border-bottom: get-color('primary25') solid 1px;
+    //}
+
+    .homepage-package-list  {
+        border-bottom: get-color('primary25') solid 1px;
+    }
+
+    .homepage-package-list:last-child  {
+        border-bottom: none;
     }
 
     .container {
@@ -757,6 +771,15 @@ H2.dataset-heading a {
         }
     }
 
+}
+
+@media only screen and (max-width: map-get(map-get($breakpoints, xs), max)){
+    .subscribe .subtext {
+        @include apply-font-style(400, 14px, 20px, config.$light);
+    }
+    .subscribe .register {
+        @include apply-font-style(700, 16px, 24px, config.$light, inherit, center);
+    }
 }
 
 .highlight-box h2 {
