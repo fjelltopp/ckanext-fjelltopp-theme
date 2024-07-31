@@ -829,7 +829,13 @@ $data-hub-stats-height: 374px;
     .container {
         padding-bottom: 32px;
 
+        .desc {
+            @include apply-font-style(400, 14px, 20px);
+        }
+
         .footer-links {
+            @include apply-font-style(400, 14px, 20px);
+
             img {
                 width:  100%;
                 margin-bottom: 30px;
@@ -837,13 +843,6 @@ $data-hub-stats-height: 374px;
             .desc {
                 color: get-color('light');
                 margin-bottom: 0;
-            }
-            .desc-mobile {
-                display: none;
-            }
-            .desc-tablet {
-                margin-top: 0;
-                display: none;
             }
         }
     }
@@ -856,6 +855,29 @@ $data-hub-stats-height: 374px;
 .desc-tablet {
     margin-top: 0;
     display: none;
+}
+
+@media only screen and (max-width: 575px) {
+    .desc-mobile {
+        display: block;
+        margin-top: 24px;
+    }
+    .desc-large {
+        display: none;
+    }
+    .desc-tablet {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .desc-wide {
+        display: none;
+    }
+    .desc-tablet {
+        display: block;
+        margin-top: 5px;
+    }
 }
 
 a.footer-link:hover,
