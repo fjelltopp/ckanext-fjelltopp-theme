@@ -512,15 +512,20 @@ $data-hub-stats-height: 374px;
 
 
 /* recently updated */
-
-.recently-updated H2 {
+.recently-updated .container > H2:first-child {
     @include apply-font-style(400, 36px, 48px, config.$primary, -0.04em);
-    margin-bottom: 48px;
-    margin-left: 0;
     margin-top: 64px;
     @if config.$show-recently-updated-title == false {
         display: none;
     }
+}
+
+H2.dataset-heading a {
+    @include apply-font-style(700, 18px, 24px, config.$primary);
+    margin-bottom: 48px;
+    margin-left: 0;
+    margin-top: 64px;
+
 
 }
 
