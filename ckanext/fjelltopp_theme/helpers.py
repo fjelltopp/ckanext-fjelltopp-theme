@@ -24,13 +24,10 @@ def get_recently_updated_datasets():
 
 
 def get_last_modifier(package_id):
-    try:
-        package_activity = toolkit.get_action('package_activity_list')(
-            data_dict={'id': package_id}
-        )
-        return get_user_from_id(package_activity[0]['user_id'])
-    except Exception:  # TODO: An error is generated, to be investigated, for demo purpose added an exception
-        return None
+    package_activity = toolkit.get_action('package_activity_list')(
+        data_dict={'id': package_id}
+    )
+    return get_user_from_id(package_activity[0]['user_id'])
 
 
 def get_featured_datasets():
