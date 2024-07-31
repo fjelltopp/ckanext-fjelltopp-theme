@@ -2,7 +2,7 @@
 @use 'zarr' as _c;
 
 /* global */
-$theme: 'zarr';
+$theme: _c.$theme;
 
 /* palette */
 $primary: _c.$primary;

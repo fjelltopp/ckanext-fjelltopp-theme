@@ -1,17 +1,17 @@
-@use 'vars' as vars;
+@use 'config' as config;
 
 $colors: (
-    primary: vars.$primary,
-    secondary: vars.$secondary,
-    background: vars.$background,
-    tag: vars.$tag,
-    tag-background: vars.$tag-background,
-    dark: vars.$dark,
-    light: vars.$light,
-    primary65: vars.$primary65,
-    primary25: vars.$primary25,
-    primary10: vars.$primary10,
-    neutral-light-grey: vars.$neutral-light-grey,
+    primary: config.$primary,
+    secondary: config.$secondary,
+    background: config.$background,
+    tag: config.$tag,
+    tag-background: config.$tag-background,
+    dark: config.$dark,
+    light: config.$light,
+    primary65: config.$primary65,
+    primary25: config.$primary25,
+    primary10: config.$primary10,
+    neutral-light-grey: config.$neutral-light-grey,
 );
 
 $breakpoints: (
@@ -38,10 +38,10 @@ $breakpoints: (
 }
 
 @mixin apply-font-style(
-  $font-weight: vars.$default-font-weight,
-  $font-size: vars.$default-font-size,
-  $line-height: vars.$default-line-height,
-  $font-color: vars.$default-font-color,
+  $font-weight: config.$default-font-weight,
+  $font-size: config.$default-font-size,
+  $line-height: config.$default-line-height,
+  $font-color: config.$default-font-color,
   $letter-spacing: inherit,
   $text-align: inherit
 ) {

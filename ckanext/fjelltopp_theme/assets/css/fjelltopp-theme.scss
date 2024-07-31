@@ -1,5 +1,5 @@
 @use '_partials/themes'as *;
-@use '_partials/vars'as config;
+@use '_partials/config'as config;
 @use 'sass:math';
 
 $square-insights-width: math.div(100%, 3);
