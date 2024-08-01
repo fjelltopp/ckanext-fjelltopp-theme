@@ -1035,6 +1035,17 @@ a:hover {
     border-color: get-color('primary');
 }
 
+.btn-danger {
+  background-color: config.$tag-light;
+  border-color: config.$tag-light;
+}
+
+.btn-danger:hover {
+    color: config.$light;
+    background-color: config.$tag-dark;
+    border-color: config.$tag-dark;
+}
+
 fieldset[disabled] .btn-primary.focus {
   background-color: get-color('secondary');
 }
