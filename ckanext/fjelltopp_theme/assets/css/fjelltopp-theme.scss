@@ -458,11 +458,11 @@ $data-hub-stats-height: 374px;
     .insight-small-rect:last-child {
         margin-top: 24px;
     }
-    .insights .container {
-        min-height: 1750px;
-    }
     .row.insight-row {
-        display: block;
+        @if config.$upper-container-visible == true {
+            display: block;
+        }
+
     }
     .insight-square, .insight-square:last-child {
         margin-right: 0;
