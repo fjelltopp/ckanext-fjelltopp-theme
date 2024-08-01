@@ -1,18 +1,25 @@
 <div role="main">
+    {%  block hero %}
     <div class="main hero">
+    {% block promoted %}
         <div class="promoted-background">
             <div class="container">
-                {% block promoted %}
                     {% snippet 'home/snippets/promoted.html' %}
-                {% endblock %}
             </div>
         </div>
+    {% endblock %}
+
+    {% block groups %}
+    {% endblock %}
+
+    {% block insights %}
     <div class="insights">
         <div class="container">
         {% snippet 'home/snippets/insights.html' %}
         </div>
     </div>
     <div class="after-insights"></div>
+    {% endblock %}
     </div>
     {% block featured %}
     <div class="recently-updated">
@@ -31,4 +38,5 @@
         </div>
     </div>
     {% endblock %}
+{% endblock %}
 </div>
