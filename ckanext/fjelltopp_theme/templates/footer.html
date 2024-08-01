@@ -1,5 +1,8 @@
 {% ckan_extends %}
 
+{% set copyrights_owner = 'Fjelltopp 2024' %}
+{% set devs = '<a class="hide-text" target="_blank" href="https://fjelltopp.org">Fjelltopp</a>' %}
+
 {% block footer_content %}
 <div class="row footer-search-section">
   <div class="col-xs-12 col-sm-9 col-lg-6">
@@ -26,14 +29,14 @@
                     <li><a class="footer-link" href="{{ h.url_for('/terms/') }}" target="_blank">{{ _('Terms and conditions') }}</a><br />
                     <li><a class="footer-link" href="http://docs.ckan.org/en/2.10/api/" target="_blank">{{ _('API Docs') }}</a></li>
                     <li>
-                      <span class="desc desc-wide">{% trans %}© WHO 2024. An open source <a class="hide-text" target="_blank" href="https://ckan.org/">
-                CKAN</a> project, built by <a class="hide-text" target="_blank" href="https://fjelltopp.org">Fjelltopp</a>{% endtrans %}</span>
+                      <span class="desc desc-wide">{% trans %}© {{ copyrights_owner }}. An open source <a class="hide-text" target="_blank" href="https://ckan.org/">
+                CKAN</a> project, built by {% endtrans %} {{ devs | safe }}</span>
                     </li>
                 {% endblock %}
               </ul>
             {% block footer_description_tablet %}
-                  <span class="desc desc-tablet">{% trans %}© WHO 2024. An open source <a class="hide-text" target="_blank" href="https://ckan.org/">
-            CKAN</a> project, built by <a class="hide-text" target="_blank" href="https://fjelltopp.org">Fjelltopp</a>{% endtrans %}</span>
+                  <span class="desc desc-tablet">{% trans %}© {{ copyrights_owner }}. An open source <a class="hide-text" target="_blank" href="https://ckan.org/">
+            CKAN</a> project, built by{% endtrans %} {{ devs | safe }}</span>
             {% endblock %}
         </div>
 
@@ -44,8 +47,8 @@
             <p><a class="footer-link" href="{{ h.url_for('/user/login') }}">{{ _('Account login') }}</a></p>
             <p><a class="footer-link" href="{{ h.url_for('/terms/') }}" target="_blank">{{ _('Terms and conditions') }}</a><br />
             <p><a class="footer-link" href="http://docs.ckan.org/en/2.10/api/" target="_blank">{{ _('API Docs') }}</a></p>
-          <p class="desc desc-mobile">{% trans %}© WHO 2024. An open source <a class="hide-text" target="_blank" href="https://ckan.org/">
-            CKAN</a> project, built by <a class="hide-text" target="_blank" href="https://fjelltopp.org">Fjelltopp</a>{% endtrans %}</p>
+          <p class="desc desc-mobile">{% trans %}© {{ copyrights_owner }}. An open source <a class="hide-text" target="_blank" href="https://ckan.org/">
+            CKAN</a> project, built by{% endtrans %} {{ devs | safe }}</p>
             {% endblock %}
         </div>
 
