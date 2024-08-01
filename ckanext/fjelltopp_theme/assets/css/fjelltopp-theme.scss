@@ -318,7 +318,7 @@ p.learn-more a {
 .insights {
     min-height: 484px;
     background: config.$primary10;
-    padding: 48px 0 120px;
+    padding: 48px 0 65px;
 
     .insight-row, .data-hub-stats .row {
         --bs-gutter-x: 0;
@@ -368,7 +368,7 @@ p.learn-more a {
             background-color: white;
             padding: 16px;
             border-radius: 8px;
-            height: 354px;
+            height: 374px;
 
             img {
                 object-fit: cover;
@@ -378,6 +378,13 @@ p.learn-more a {
         }
 }
 
+@media only screen and (min-width: 576px) and (max-width: 991px) {
+    .insights {
+        padding: 48px 0 90px;
+    }
+
+}
+
 /* data hub stats */
 $data-hub-stats-margin-left: 24px;
 $data-hub-stats-margin-right: 24px;
@@ -385,7 +392,6 @@ $data-hub-stats-height: 374px;
 .data-hub-stats {
     margin-top: 48px;
     height: 374px;
-
     .insight-small-rect {
         background-color: get-color('light');
         padding: 19px;
