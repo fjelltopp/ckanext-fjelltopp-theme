@@ -1,0 +1,49 @@
+/* global */
+$theme: 'fjelltopp';
+
+/* palette */
+$primary: #002920;
+$secondary: #02A67F;
+$background: #F2F2FC;
+$tag: #7D3667;
+$tag-dark: #7D3667;
+$tag-light: #C770A4;
+$tag-background: #C770A4;
+$dark: #000000;
+$light: #FFFFFF;
+$primary65: #015945;
+$primary25: #015945;
+$primary10: #C4F2DA;
+$neutral-light-grey: #F2F2FC;
+$A11y: #2A2F38;
+
+/* title */
+$default-font-weight: 700;
+$default-font-size: 18px;
+$default-line-height: 20px;
+$default-font-family: 'Inter';
+$default-font-color: #13240F;
+
+/* hide logo left border */
+$hide-logo-left-v-bar: true;
+
+/* promoted */
+$background-color: $primary;
+
+/* insights */
+$show-insights-title: false;
+$upper-container-visible: false;
+$lower-container-visible: true;
+$after-insights-min-height: 480px;
+
+/* show masthead */
+$masthead-visible: true;
+$show-development-banner: true;
+$show-languages: false;
+
+/* recently updated */
+$show-recently-updated-title: false;
+
+/* footer */
+$footer-search-section-padding-top: 64px;
+$footer-search-section-padding-bottom: 0px;
