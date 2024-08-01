@@ -47,3 +47,28 @@ $show-recently-updated-title: false;
 /* footer */
 $footer-search-section-padding-top: 64px;
 $footer-search-section-padding-bottom: 0px;
+
+
+.promoted-home {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.promoted-container {
+    position: relative;
+    min-height: 500px;
+    z-index: 1;
+}
+
+#background-video {
+    position: absolute;
+    right: 0;
+    bottom: -200px;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    background-size: cover;
+}

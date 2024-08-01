@@ -1,12 +1,15 @@
 {% block promote %}
 <div class="promoted promoted-home col-xs-12 col-sm-12 col-lg-12" >
+    <video autoplay muted loop id="background-video">
+    <source src="/images/fjelltopp.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
     <div class="promoted-container row">
-
             <div class="promoted-left-text">
-                <p class="subtitle">Project Subtitle</p>
-                <h1 class="headline">Headline</h1>
-                <p class="description">Project description</p>
-                <p class="learn-more"><a href="{{ h.url_for('home.about') }}">Learn more</a></p>
+                <p class="subtitle">{{ _('Fjelltopp Theme') }}</p>
+                <h1 class="headline">{{ _('Default theme for all Fjelltopp projects') }}</h1>
+                <p class="description">{{ _('Because better data means better decisions for better health across the world.') }}</p>
+                <p class="learn-more"><a href="{{ h.url_for('home.about') }}">{{ _('Learn more') }}</a></p>
             </div>
 
             <div class="search-section">
