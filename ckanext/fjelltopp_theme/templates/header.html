@@ -2,13 +2,19 @@
 
 {% block header_debug %} {% endblock %}
 
+{#
+    set_title to g.site_title to update this
+#}
+{% set project_title = 'The Fjelltopp theme' %}
+{% set site_title = project_title | default(g.site_title) %}
+
 {% block header_logo %}
 <div id="NavbarBrandingContainer">
   <a href="{{ h.url_for('home.index') }}">
       <img
         id="NavbarLogo"
-        alt="{{ g.site_title }}"
-        title="{{ g.site_title }}"
+        alt="{{ site_title }}"
+        title="{{ site_title }}"
        src="/images/{% block logo %}fjelltopp-logo.png{% endblock %}"/>
         <img
         id="LogoBorder"
