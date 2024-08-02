@@ -1,8 +1,5 @@
 {% ckan_extends %}
 
-{% set copyrights_owner = 'Fjelltopp 2024' %}
-{% set devs = '<a class="hide-text" target="_blank" href="https://fjelltopp.org">Fjelltopp</a>' %}
-
 {% block footer_content %}
 <div class="row footer-search-section">
   <div class="col-xs-12 col-sm-9 col-lg-6">
@@ -21,7 +18,7 @@
 <div class="row">
   <div class="col-xs-12 col-sm-9 col-lg-12 footer-links">
     {% block footer_nav %}
-        {% snippet 'snippets/footer_links.html', copyrights_owner='Fjelltopp' %}
+        {% snippet 'snippets/footer_links.html', copyrights_owner='Fjelltopp', devs='<a class="hide-text" target="_blank" href="https://fjelltopp.org">Fjelltopp</a>' %}
     {% endblock %}
   </div>
 
