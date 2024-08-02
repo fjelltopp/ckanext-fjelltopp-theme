@@ -743,7 +743,7 @@ H2.dataset-heading a {
 .dataset-resources li a.badge:hover {
     display: inline-block;
     background-color: transparent;
-    color: get-color('tag');
+    color: get-color('tag-light');
     text-decoration: none;
     border-radius: 4px;
     font-size: config.$badge-font-size;
