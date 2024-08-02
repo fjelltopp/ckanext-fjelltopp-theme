@@ -21,6 +21,8 @@ class FjelltoppThemePlugin(plugins.SingletonPlugin):
             'get_recently_updated_datasets': theme_helpers.get_recently_updated_datasets,
             'get_last_modifier': theme_helpers.get_last_modifier,
             'get_featured_datasets': theme_helpers.get_featured_datasets,
+            'get_datahub_stats': theme_helpers.get_datahub_stats,
+            'get_activity_stream_limit': theme_helpers.get_activity_stream_limit,
         }
 
     def update_config(self, config: CKANConfig):

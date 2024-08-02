@@ -445,7 +445,10 @@ $data-hub-stats-height: 374px;
     .insight-small-rect:last-child {
         margin-left: $data-hub-stats-margin-left;
         width: calc(#{$half-window-width} - #{$data-hub-stats-margin-left});
-
+    }
+    .insight-small-rect:first-child {
+        margin-left: 0;
+        width: #{$half-window-width};
     }
 }
 
@@ -466,6 +469,9 @@ $data-hub-stats-height: 374px;
     }
     .insight-small-rect:last-child {
         margin-top: 24px;
+    }
+    .insight-small-rect:first-child {
+        margin-top: 0;
     }
     .row.insight-row {
         @if config.$upper-container-visible == true {
