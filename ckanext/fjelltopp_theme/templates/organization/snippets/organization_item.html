@@ -1,0 +1,34 @@
+{% ckan_extends %}
+
+{% if organization.package_count %}
+  {% set package_count = organization.package_count %}
+{% else %}
+  {% set package_count = 0 %}
+{% endif %}
+
+{% block image %}
+    <a href="{{ url }}" title="{{ _('View {organization_name}').format(organization_name=organization.display_name) }}">
+    <img src="{{ organization.image_display_url or h.url_for_static('/base/images/placeholder-organization.png') }}" alt="{{ organization.name }}" class="img-fluid media-image">
+{% endblock %}
+
+{% block description %}
+    {% if organization.description %}
+    <p class="media-description">{{ h.markdown_extract(organization.description, extract_length=80) }}</p>
+    {% endif %}
+{% endblock %}
+
+{% block datasets %}
+    <p class="grid-item-tags">
+        <span class="package-count">{{ ungettext('{num} Dataset', '{num} Datasets', organization.package_count).format(num=package_count) }}</span>
+{% endblock %}
+
+{% block capacity %}
+    {% if show_capacity and organization.capacity %}
+        <span class="org-owner">{{ h.roles_translated().get(organization.capacity, organization.capacity) }}</span>
+    {% endif %}
+    </p>
+</a>
+{% endblock %}
+
+{% block link %}
+{% endblock %}

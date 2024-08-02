@@ -1,0 +1,19 @@
+{% ckan_extends %}
+
+{% block promoted_toolbar %}{% endblock %}
+
+{% block maintag %}<div class="main logout-page">{% endblock %}
+
+{% block main_content %}
+    {% block primary %}
+        {% block primary_content %}
+            {% block page_heading %}
+                <div class="logout-options">
+                    <h1>{{ _('You are now logged out') }}</h1>
+                    <a href="{{ h.url_for('user.login') }}" class="btn btn-primary">{{ _('Log in') }}</a>
+                    <a href="{{ h.url_for('home.index') }}" class="btn btn-outline-dark">{{ _('Back to homepage') }}</a>
+                </div>
+            {% endblock %}
+        {% endblock %}
+    {% endblock %}
+{% endblock %}

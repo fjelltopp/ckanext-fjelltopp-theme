@@ -1,0 +1,24 @@
+{% ckan_extends %}
+
+{% if not user_dict %}
+    {% set user_dict = h.get_user_obj() %}
+{% endif %}
+
+{%- block header %}
+    {% include "user/account_header.html" %}
+{% endblock -%}
+
+{% block breadcrumb %}
+    {% if self.breadcrumb_content() | trim %}
+      <ol class="profile-page breadcrumb">
+        {% snippet 'snippets/home_breadcrumb_item.html' %}
+        {% block breadcrumb_content %}
+              <li><a href="{{ h.url_for('activity.dashboard') }}">{{ _('My account') }}</a></li>
+              <li class="active"><a>{{ _('System admin settings') }}</a></li>
+        {% endblock %}
+      </ol>
+    {% endif %}
+{% endblock %}
+
+
+{% block maintag %}<div class="main admin_page">{% endblock %}

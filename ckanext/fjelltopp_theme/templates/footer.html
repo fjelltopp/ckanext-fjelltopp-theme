@@ -29,7 +29,7 @@
                         {% if not c.userobj %}
                             <a class="footer-link" href="{{ h.url_for('/user/login') }}">{{ _('Account login') }}</a>
                         {% else %}
-                            <a class="footer-link" href="{{ h.url_for('dashboard.index') }}">{{ _('My account') }}</a>
+                            <a class="footer-link" href="{{ h.url_for('activity.dashboard') }}">{{ _('My account') }}</a>
                         {% endif %}
                   </li>
                     <li><a class="footer-link" href="{{ h.url_for('/terms/') }}" target="_blank">{{ _('Terms and conditions') }}</a><br />
@@ -54,7 +54,7 @@
                 {% if not c.userobj %}
                     <a class="footer-link" href="{{ h.url_for('/user/login') }}">{{ _('Account login') }}</a>
                 {% else %}
-                    <a class="footer-link" href="{{ h.url_for('dashboard.index') }}">{{ _('My account') }}</a>
+                    <a class="footer-link" href="{{ h.url_for('activity.dashboard') }}">{{ _('My account') }}</a>
                 {% endif %}
             </p>
             <p><a class="footer-link" href="{{ h.url_for('/terms/') }}" target="_blank">{{ _('Terms and conditions') }}</a><br />

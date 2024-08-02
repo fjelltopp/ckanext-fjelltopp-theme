@@ -23,9 +23,11 @@ class FjelltoppThemePlugin(plugins.SingletonPlugin):
             'get_featured_datasets': theme_helpers.get_featured_datasets,
             'get_datahub_stats': theme_helpers.get_datahub_stats,
             'get_activity_stream_limit': theme_helpers.get_activity_stream_limit,
+            'get_user_obj': theme_helpers.get_user_obj,
         }
 
     def update_config(self, config: CKANConfig):
         toolkit.add_template_directory(config, "templates")
         toolkit.add_public_directory(config, 'public')
         toolkit.add_resource('assets', 'fjelltopp-theme')
+

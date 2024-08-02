@@ -79,9 +79,14 @@ def get_datahub_stats(**kwargs):
     ] + valid_values
 
 
-
-
 def get_activity_stream_limit():
     base_limit = toolkit.config.get("ckan.activity_list_limit")
     max_limit = toolkit.config.get("ckan.activity_list_limit_max")
     return min(base_limit, max_limit)
+
+
+def get_user_obj(field=""):
+    """
+    Returns an attribute of the user object, or returns the whole user object.
+    """
+    return getattr(g.userobj, field, g.userobj)
