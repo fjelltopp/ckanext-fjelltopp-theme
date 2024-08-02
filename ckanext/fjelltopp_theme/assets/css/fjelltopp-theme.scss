@@ -802,7 +802,7 @@ H2.dataset-heading a {
         @include apply-font-style(400, 14px, 20px, config.$light);
     }
     .subscribe .register {
-        @include apply-font-style(700, 16px, 24px, config.$light, inherit, center);
+        @include apply-font-style(700, 16px, 24px, config.$primary, inherit, center);
     }
 }
 
