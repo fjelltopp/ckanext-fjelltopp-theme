@@ -27,7 +27,7 @@
 {% endblock %}
 
 {% block footer %}
-    <div class="big-footer">
+    <div class="big-footer {% if c.userobj %}connected{% endif %}">
     {% snippet 'snippets/subscribe_to_updates.html' %}
 
     {{ super() }}
