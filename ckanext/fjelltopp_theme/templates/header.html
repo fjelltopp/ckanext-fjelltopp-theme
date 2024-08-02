@@ -3,22 +3,7 @@
 {% block header_debug %} {% endblock %}
 
 {% block header_logo %}
-<div id="NavbarBrandingContainer">
-  <a href="{{ h.url_for('home.index') }}">
-      <img
-        id="NavbarLogo"
-        alt="{% block logo_alt %}Fjelltopp theme for CKAN{% endblock %}"
-        title="{% block logo_title %}Fjelltopp theme for CKAN{% endblock %}"
-       src="/images/{% block logo %}fjelltopp-logo.png{% endblock %}"/>
-        <img
-        id="LogoBorder"
-        alt=""
-         src="/images/vertical_line.png"/>
-    <div id="NavbarHeadingContainer">
-        <div><h1 class="title">{% block header_title %}{% endblock %}</h1></div>
-    </div>
-  </a>
-</div>
+    {% snippet 'snippets/header_logo.html', site_title = 'Fjelltopp theme for CKAN', logo='/images/fjelltopp-logo.png', header_title='' %}
 {% endblock %}
 
 
