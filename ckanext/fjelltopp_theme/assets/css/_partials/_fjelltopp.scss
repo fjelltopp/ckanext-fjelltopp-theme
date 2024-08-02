@@ -49,6 +49,8 @@ $footer-search-section-padding-top: 64px;
 $footer-search-section-padding-bottom: 0px;
 
 
+/* for demo purpose only */
+
 .promoted-home {
     margin: 0;
     padding: 0;
@@ -84,7 +86,7 @@ $background-images : (
 
 
 .big-footer {
-    background-image: nth($background-images, 5);
+    background-image: nth($background-images, 5) !important;
     background-size: cover !important;
 }
 

@@ -841,6 +841,10 @@ H2.dataset-heading a {
 }
 
 /* footer */
+.big-footer {
+    background: get-color('primary');
+}
+
 .site-footer {
     background: get-color('primary');
     width: 100%;
