@@ -746,6 +746,7 @@ H2.dataset-heading a {
     color: get-color('tag');
     text-decoration: none;
     border-radius: 4px;
+    font-size: config.$badge-font-size;
 }
 /* end tags margin */
 
