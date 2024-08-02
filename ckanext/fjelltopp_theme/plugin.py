@@ -4,6 +4,7 @@ import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 from ckan.common import CKANConfig
 import ckanext.fjelltopp_theme.helpers as theme_helpers
+import ckanext.fjelltopp_theme.blueprints as fjelltopp_theme_blueprints
 
 log = logging.getLogger(__name__)
 
@@ -14,6 +15,7 @@ class FjelltoppThemePlugin(plugins.SingletonPlugin):
     # Declare that this class implements IConfigurer.
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.ITemplateHelpers)
+    plugins.implements(plugins.IBlueprint)
 
     def get_helpers(self):
         return {
@@ -31,3 +33,6 @@ class FjelltoppThemePlugin(plugins.SingletonPlugin):
         toolkit.add_public_directory(config, 'public')
         toolkit.add_resource('assets', 'fjelltopp-theme')
 
+    def get_blueprint(self):
+        log.info(f"Registering the following blueprints: {fjelltopp_theme_blueprints.get_blueprints()}")
+        return fjelltopp_theme_blueprints.get_blueprints()
