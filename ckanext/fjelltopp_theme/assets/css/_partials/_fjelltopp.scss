@@ -73,8 +73,18 @@ $footer-search-section-padding-bottom: 0px;
     background-size: cover;
 }
 
+$fjelltopp-background-images : (
+    url("/images/bgs/aditya-chinchure-mpzFnoQCwWU-unsplash.jpg"),
+    url("/images/bgs/geran-de-klerk-qzgN45hseN0-unsplash.jpg"),
+    url("/images/bgs/ivan-bandura-V5-Pmz1vzRg-unsplash.jpg"),
+    url("/images/bgs/marita-kavelashvili-ugnrXk1129g-unsplash.jpg"),
+    url("/images/bgs/pine-watt-2Hzmz15wGik-unsplash.jpg"),
+    url("/images/bgs/silas-baisch-Wn4ulyzVoD4-unsplash.jpg"),
+);
+
+
 .big-footer {
-    background-image: url("/images/geran-de-klerk-qzgN45hseN0-unsplash.jpg") !important;
+    background-image: nth($fjelltopp-background-images, 2);
     background-size: cover !important;
 }
 
@@ -82,3 +92,12 @@ $footer-search-section-padding-bottom: 0px;
     background: none !important;
 }
 
+.promoted-background {
+    background-image: nth($fjelltopp-background-images, 6);
+    background-size: cover;
+}
+
+.hero .promoted-background {
+    background-color: $primary !important;
+    background-image: none !important;
+}
