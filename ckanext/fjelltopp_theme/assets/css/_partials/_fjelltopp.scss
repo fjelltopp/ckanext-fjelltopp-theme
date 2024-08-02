@@ -84,7 +84,7 @@ $fjelltopp-background-images : (
 
 
 .big-footer {
-    background-image: nth($fjelltopp-background-images, 2);
+    background-image: nth($fjelltopp-background-images, 5);
     background-size: cover !important;
 }
 
@@ -93,7 +93,7 @@ $fjelltopp-background-images : (
 }
 
 .promoted-background {
-    background-image: nth($fjelltopp-background-images, 6);
+    background-image: nth($fjelltopp-background-images, 1);
     background-size: cover;
 }
 
