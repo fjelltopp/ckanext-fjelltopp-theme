@@ -1208,7 +1208,7 @@ a.thumbnail.active {
 }
 
 /* pills , badges */
-.pill, .module-narrow .nav-item.active a {
+.pill, .module-narrow .nav-item.active a, .module-narrow .nav-item.active a:hover {
     background-color: config.$secondary;
     color: config.$light;
 }
