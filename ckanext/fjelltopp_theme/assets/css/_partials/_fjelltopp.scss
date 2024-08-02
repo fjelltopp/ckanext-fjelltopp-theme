@@ -73,7 +73,7 @@ $footer-search-section-padding-bottom: 0px;
     background-size: cover;
 }
 
-$fjelltopp-background-images : (
+$background-images : (
     url("/images/fjelltopp-bgs/aditya-chinchure-mpzFnoQCwWU-unsplash.jpg"),
     url("/images/fjelltopp-bgs/geran-de-klerk-qzgN45hseN0-unsplash.jpg"),
     url("/images/fjelltopp-bgs/ivan-bandura-V5-Pmz1vzRg-unsplash.jpg"),
@@ -84,7 +84,7 @@ $fjelltopp-background-images : (
 
 
 .big-footer {
-    background-image: nth($fjelltopp-background-images, 5);
+    background-image: nth($background-images, 5);
     background-size: cover !important;
 }
 
@@ -93,7 +93,7 @@ $fjelltopp-background-images : (
 }
 
 .promoted-background {
-    background-image: nth($fjelltopp-background-images, 1);
+    background-image: nth($background-images, 1);
     background-size: cover;
 }
 
