@@ -131,11 +131,7 @@ body {
 #NavbarLogo {
     display: inline-block;
     height: 64px;
-    @if config.$hide-logo-left-v-bar == true {
-        padding-right: 10px;
-    } @else {
-        padding-right: 19px;
-    }
+    padding-right: var(--logo-left-v-bar-padding-right);
     background-size: cover;
     background-position: center;
 }
@@ -147,11 +143,7 @@ body {
 
 /* hide logo left bar */
 .masthead #NavbarBrandingContainer a #LogoBorder {
-  @if config.$hide-logo-left-v-bar == true {
-    display: none;
-  } @else {
-      display: inline-block;
-  }
+    display: var(--logo-left-v-bar-display);
 }
 
 #NavbarBrandingContainer a:hover {
@@ -759,7 +751,7 @@ H2.dataset-heading a {
         padding-top: 64px;
     }
     .highlight-box {
-        $bg-color: adjust-color(config.$primary, $lightness: +3%) ;
+        $bg-color: config.$highlight-box-bgcolor;
         background-color: $bg-color;
         border-radius: 4px;
         padding: 36px;
