@@ -460,7 +460,7 @@ $data-hub-stats-height: 374px;
         width: 100%;
         height: 100%;
     }
-    .after-insights { /* TODO fix padding for responsiveness */
+    .after-insights {
         padding-top: 85%;
         background: config.$primary10;
         min-height: config.$after-insights-min-height;

@@ -500,7 +500,7 @@ p.learn-more a {
     width: 100%;
     height: 100%;
   }
-  .after-insights { /* TODO fix padding for responsiveness */
+  .after-insights {
     padding-top: 85%;
     background: var(--primary10);
     min-height: var(--after-insights-min-height);
