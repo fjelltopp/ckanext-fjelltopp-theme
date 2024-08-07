@@ -35,18 +35,15 @@ $background-color: var(--primary);
 /* insights */
 $after-insights-min-height: var(--after-insights-min-height);
 
-/* show masthead */
-$show-languages: _c.$show-languages;
-
 /* recently updated */
 $show-recently-updated-title: _c.$show-recently-updated-title;
 
 /* footer */
-$footer-search-section-padding-top: _c.$footer-search-section-padding-top;
-$footer-search-section-padding-bottom: _c.$footer-search-section-padding-bottom;
+$footer-search-section-padding-top: var(--footer-search-section-padding-top);
+$footer-search-section-padding-bottom: var(--footer-search-section-padding-bottom);
 
 /* badge */
-$badge-font-size: _c.$badge-font-size;
+$badge-font-size: var(--badge-font-size);
 
 /* userprofile */
-$breadcrumbs-color: $light;
+$breadcrumbs-color: var(--breadcrumbs-color);

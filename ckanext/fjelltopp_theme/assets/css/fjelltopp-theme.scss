@@ -1430,6 +1430,10 @@ a.thumbnail.active {
     border-radius: 0 4px 4px 0;
 }
 
+.dataset-resources li a.badge, .dataset-resources li a.badge:hover {
+    color: config.$light;
+}
+
 /* forms */
 
 .form-select {
