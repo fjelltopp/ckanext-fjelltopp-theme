@@ -3,7 +3,6 @@ fjelltopp-theme:
   output: fjelltopp-theme/%(version)s-fjelltopp-theme.css
   contents:
     - css/inter.css
-    - css/source-sans-3VF.css
     - css/palette.css
     - css/fjelltopp-theme.css
     - css/fjelltopp-theme-extended.css
