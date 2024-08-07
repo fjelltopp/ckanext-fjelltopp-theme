@@ -33,14 +33,9 @@ $default-font-color: var(--default-font-color);
 $background-color: var(--primary);
 
 /* insights */
-$show-insights-title: _c.$show-insights-title;
-$upper-container-visible: _c.$upper-container-visible;
-$lower-container-visible: _c.$lower-container-visible;
-$after-insights-min-height: _c.$after-insights-min-height;
+$after-insights-min-height: var(--after-insights-min-height);
 
 /* show masthead */
-$masthead-visible: _c.$masthead-visible;
-$show-development-banner: _c.$show-development-banner;
 $show-languages: _c.$show-languages;
 
 /* recently updated */

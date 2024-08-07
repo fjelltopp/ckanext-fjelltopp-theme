@@ -44,9 +44,7 @@ body {
 /* top first bar */
 .account-masthead {
   @include apply-color(config.$primary);
-    @if config.$masthead-visible == false {
-        display: none;
-    }
+  display: var(--masthead-visibility);
 }
 
 /* header */
@@ -1266,16 +1264,11 @@ a.thumbnail.active {
 
 /* dev banner */
 .dev-banner {
-    @if config.$show-development-banner == false {
-        display: none !important;
-    }
+    display: var(--development-banner-visibility);
 }
 
 .account-masthead .account ul li:not(.dev-banner) {
-    @if config.$show-languages == false {
-        display: none;
-    }
-
+    display: var(--locales-visibility);
 }
 
 .dev-banner-container {
