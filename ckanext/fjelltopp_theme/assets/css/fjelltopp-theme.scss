@@ -293,21 +293,15 @@ p.learn-more a {
 
 /* insights */
 .show-insights-title {
-    @if config.$show-insights-title == false {
-        display: none;
-    }
+    display: var(--show-insights-title-display);
 }
 
 .insights-upper-item {
-    @if config.$upper-container-visible == false {
-        display: none;
-    }
+    display: var(--upper-container-display);
 }
 
 .insights-lower-item {
-    @if config.$lower-container-visible == false {
-        display: none;
-    }
+    display: var(--lower-container-display);
 }
 
 
@@ -460,11 +454,8 @@ $data-hub-stats-height: 374px;
     .insight-small-rect:first-child {
         margin-top: 0;
     }
-    .row.insight-row {
-        @if config.$upper-container-visible == true {
-            display: block;
-        }
-
+    .insights-upper-item {
+        display: var(--upper-container-display-mobile);
     }
     .insight-square, .insight-square:last-child {
         margin-right: 0;
