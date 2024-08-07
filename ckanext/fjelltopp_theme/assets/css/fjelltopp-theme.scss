@@ -1,7 +1,6 @@
 @use '_partials/themes' as *;
 @use '_partials/config' as config;
 @use 'sass:math';
-@use '_partials/userprofile' as *;
 
 $square-insights-width: math.div(100%, 3);
 $half-window-width: math.div(100%, 2);
@@ -10,7 +9,7 @@ $half-window-width: math.div(100%, 2);
 /* global */
 body {
     background: config.$light;
-    font-family: config.$default-font-family, serif;
+    font-family: config.$default-font-family, sans-serif;
     @include apply-font-style(400, 16px, 24px, config.$primary);
     font-style: normal;
 }
