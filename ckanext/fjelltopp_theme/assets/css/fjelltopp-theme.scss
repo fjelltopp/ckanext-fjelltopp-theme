@@ -993,6 +993,10 @@ a.footer-link:hover,
 }
 
 /* misc */
+#background-video {
+    display: none;
+}
+
 .navbar-toggle {
     color: config.$primary;
 }

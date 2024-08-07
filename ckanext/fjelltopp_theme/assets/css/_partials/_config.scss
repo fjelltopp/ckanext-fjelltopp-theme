@@ -1,7 +1,3 @@
-/* change to another scss file for project */
-@use 'fjelltopp' as _c;
-
-
 /* global */
 $theme: var(--theme);
 
@@ -34,9 +30,6 @@ $background-color: var(--primary);
 
 /* insights */
 $after-insights-min-height: var(--after-insights-min-height);
-
-/* recently updated */
-$show-recently-updated-title: _c.$show-recently-updated-title;
 
 /* footer */
 $footer-search-section-padding-top: var(--footer-search-section-padding-top);
