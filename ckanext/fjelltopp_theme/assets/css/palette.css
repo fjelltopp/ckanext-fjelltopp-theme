@@ -1,0 +1,51 @@
+
+:root {
+    /* theme*/
+    --theme: 'fjelltopp';
+    /* palette */
+    --primary: #002920;
+    --secondary: #02A67F;
+    --background: #F2F2FC;
+    --tag: #7D3667;
+    --tag-dark: #7D3667;
+    --tag-light: #C770A4;
+    --tag-background: #C770A4;
+    --dark: #000000;
+    --light: #FFFFFF;
+    --primary65: #36E07E;
+    --primary25: #C4F2DA;
+    --primary10: #F2F2FC;
+    --neutral-light-grey:#F2F2FC;
+    --A11y: #2A2F38;
+    --highlight-box-bgcolor: #00382c;
+    /* fonts */
+    --default-font-weight: 700;
+    --default-font-size: 18px;
+    --default-line-height: 20px;
+    --default-font-family: 'Inter';
+    --default-font-color: #13240F;
+    /* logo vertical bar (right) */
+    --logo-left-v-bar-display: none; /* or inline-block if shown */
+    --logo-left-v-bar-padding-right: 10px; /* set to 19px if visible */
+    /* promoted background color */
+    --promoted-background-color: #002920;
+    /* insights */
+    --show-insights-title-display: none;  /* set to block to show */
+    --upper-container-display: none;  /* set to flex to show */
+    --upper-container-display-mobile: none; /* set to block to show */
+    --lower-container-display: flex;  /* set to flex to show */
+    --after-insights-min-height: 400px;
+    /* masthead */
+    --masthead-visibility: block;
+    --development-banner-visibility: block;
+    --locales-visibility: none;
+    /* recently updated */
+    --show-recently-updated-title: true;
+    /* footer */
+    --footer-search-section-padding-top: 64px;
+    --footer-search-section-padding-bottom: 0px;
+    /* badge */
+    --badge-font-size: 0.7em;
+    /* user profile */
+    --breadcrumbs-color: #FFFFFF;
+}

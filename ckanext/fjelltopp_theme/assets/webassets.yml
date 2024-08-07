@@ -4,4 +4,5 @@ fjelltopp-theme:
   contents:
     - css/inter.css
     - css/source-sans-3VF.css
+    - css/palette.css
     - css/fjelltopp-theme.css
