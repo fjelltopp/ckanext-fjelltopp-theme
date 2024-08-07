@@ -29,9 +29,9 @@ $breakpoints: (
 }
 
 @mixin apply-color($color, $font-color: null) {
-  background-color: get-color($color);
+  background-color: $color;
   @if $font-color {
-    color: get-color($font-color);
+    color: $font-color;
   } @else {
     color: #FFF;
   }

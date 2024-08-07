@@ -45,9 +45,9 @@
 .logout-options a.btn-outline-dark,
 .logout-options a.btn-outline-dark:hover {
     margin-left: 16px;
-    border-color: get-color('primary');
-    color: get-color('primary');
-    background-color: get-color('light');
+    border-color: config.$primary;
+    color: config.$primary;
+    background-color: config.$light;
 }
 
 @media only screen and (max-width: 327px) {
@@ -71,7 +71,7 @@
 }
 
 .masthead {
-    border-bottom: get-color('primary65') thin solid;
+    border-bottom: config.$primary65 thin solid;
 }
 
 /* breadcrumbs */
@@ -148,11 +148,11 @@
 .media-item {
     position: initial !important;
     float: none;
-    background-color: get-color('light');
+    background-color: config.$light;
     margin: 0;
     width: 100%;
     padding: 12px;
-    border: get-color('primary65') thin solid;
+    border: config.$primary65 thin solid;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -189,7 +189,7 @@
 
 .media-grid .package-count {
     border-radius: 4px;
-    background-color: get-color('primary10');
+    background-color: config.$primary10;
     padding: 2px 6px 2px 6px;
     @include apply-font-style(400, 12px, 16px, config.$secondary, 0.1em);
     text-transform: uppercase;
@@ -207,15 +207,15 @@
 
 /** tab active **/
 .user-dashboard-main .page-header .nav-tabs li:last-child.active a {
-    background-color: get-color('primary10');
+    background-color: config.$primary10;
     border: 1px solid transparent;
-    border-bottom-color: get-color('primary65');
+    border-bottom-color: config.$primary65;
 }
 
 .user-dashboard-activity .page-header .nav-tabs li:first-child.active a {
-    background-color: get-color('primary10');
+    background-color: config.$primary10;
     border: 1px solid transparent;
-    border-bottom-color: get-color('primary65');
+    border-bottom-color: config.$primary65;
 }
 
 /* user profile styles */
@@ -226,13 +226,13 @@
 .user-profile-page .page-heading {
       margin-top: 32px;
       margin-bottom: 32px !important;
-      color: get-color('primary');
+      color: config.$primary;
 }
 
 /** activity section heading **/
 .user-profile-page .page-heading small.text-muted.fs-5 {
     @include apply-font-style(400, 28px, 36px, config.$primary, 0.01em, left);
-    color: get-color('primary') !important;
+    color: config.$primary !important;
     font-size: 28px !important;
 }
 
@@ -240,9 +240,9 @@
     @include apply-font-style(inherit, 16px, 24px, config.$primary, 0.01em, center);
     padding: 12px 16px;
     border-radius: 4px;
-    border: get-color('primary') thin solid;
-    color: get-color('primary');
-    background: get-color('light');
+    border: config.$primary thin solid;
+    color: config.$primary;
+    background: config.$light;
 }
 
 .user-profile-page #followee-popover span:first-child {
@@ -258,7 +258,7 @@
     margin-top: 64px;
     margin-bottom: 48px;
     padding: 32px;
-    background-color: get-color('primary10');
+    background-color: config.$primary10;
     border-radius: 4px 0 0 0;
 }
 
@@ -290,7 +290,7 @@
   width: 64px;
   height: 64px;
   border-radius: 2px;
-  border: get-color('light') 2px solid;
+  border: config.$light 2px solid;
 }
 
 .user-profile-page .profile-info {
@@ -346,7 +346,7 @@
     }
     .user-profile-page .profile-left-info-details li:not(:first-child)::before {
       content: '|';
-      color: get-color('primary65');
+      color: config.$primary65;
       margin-left: 16px;
       margin-right: 16px;
     }
@@ -377,7 +377,7 @@
   font-weight: 700;
 }
 .user-profile-page .right-content ul li:nth-child(2) {
-  border: get-color('primary') thin solid;
+  border: config.$primary thin solid;
   border-radius: 4px;
   padding: 12px 16px;
   cursor: pointer;
@@ -390,7 +390,7 @@
 
 .user-profile-page .right-content .logout-btn:hover {
     text-decoration: none;
-    background: get-color('primary65');
+    background: config.$primary65;
 }
 
 .user-profile-page .right-content .logout-btn a {
@@ -422,11 +422,11 @@
 }
 
 .user-profile-page .page-header {
-    background-color: get-color('light');
+    background-color: config.$light;
 }
 
 .user-profile-page div.module-content {
-    border: get-color('primary65') thin solid;
+    border: config.$primary65 thin solid;
     border-top: none;
 }
 
@@ -450,24 +450,24 @@
 }
 
 .user-profile-page .page-header .nav-tabs li.active a {
-    border: get-color('primary65') thin solid;
-    background-color: get-color('light');
+    border: config.$primary65 thin solid;
+    background-color: config.$light;
     border-bottom-color: transparent;
 }
 
 .user-profile-page .nav-tabs .nav-link, .user-profile-page .page-header .nav-tabs li a,
 .user-profile-page .nav-tabs .nav-link, .user-profile-page .page-header .nav-tabs li a:hover {
-    background-color: get-color('primary10');
+    background-color: config.$primary10;
 }
 
 .user-profile-page .nav-tabs,
 .user-profile-page .nav-tabs .nav-link,
 .user-profile-page .page-header .nav-tabs li a {
-    border-bottom-color: get-color('primary65');
+    border-bottom-color: config.$primary65;
 }
 
 .user-profile-page .nav.nav-tabs li a {
-    color: get-color('primary');
+    color: config.$primary;
     @include apply-font-style(700, 16px, 20px, inherit, inherit, center);
 }
 
@@ -541,7 +541,7 @@
 /* header navbar */
 @media only screen and (min-width: 992px) {
     .masthead .main-navbar ul li.active a {
-        color: get-color('primary') !important;
+        color: config.$primary !important;
     }
 
     .masthead .main-navbar ul li.active.my_account {
@@ -550,7 +550,7 @@
 
     .masthead .main-navbar ul li.active a {
         padding-bottom: 37px !important;
-        border-bottom: get-color('secondary') 4px solid;
+        border-bottom: config.$secondary 4px solid;
         border-radius: 0;
         z-index: 0;
     }

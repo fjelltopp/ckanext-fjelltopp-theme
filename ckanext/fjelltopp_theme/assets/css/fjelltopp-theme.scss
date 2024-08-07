@@ -19,12 +19,6 @@ body {
     background-color: config.$primary;
 }
 
-/*
-.fa-search {
-    color: get-color('secondary');
-}
-*/
-
 .mobile-menu .search-form {
     margin-top: 70px;
     margin-bottom: 0;
@@ -37,7 +31,7 @@ body {
     min-height: 80vh;
     padding-top: 32px;
     padding-bottom: 64px;
-    background: get-color('light');
+    background: config.$light;
 }
 
 .homepage .main,
@@ -49,7 +43,7 @@ body {
 
 /* top first bar */
 .account-masthead {
-  @include apply-color('primary');
+  @include apply-color(config.$primary);
     @if config.$masthead-visible == false {
         display: none;
     }
@@ -57,7 +51,7 @@ body {
 
 /* header */
 .navbar-toggler .fa-bars {
-    color: get-color('primary') !important;
+    color: config.$primary !important;
 }
 
 .navbar-light .navbar-toggler {
@@ -71,7 +65,7 @@ body {
 }
 
 .masthead {
-    @include apply-color('light', 'dark');
+    @include apply-color(config.$light, config.$dark);
     .site-search input {
         width: 180px;
         height: 40px;
@@ -105,7 +99,7 @@ body {
     .main-navbar ul li:focus a,
     .main-navbar ul li.active a
     {
-        color: get-color('secondary');
+        color: config.$secondary;
         background-color: transparent;
 
     }
@@ -123,7 +117,7 @@ body {
     top: 8px;
     left: 0;
     a {
-        color: get-color(config.$primary);
+        color: config.$primary;
         #NavbarHeadingContainer {
             @include apply-font-style(700, 20px, 14px);
             margin: 10px;
@@ -188,7 +182,7 @@ body {
 
 .homepage .promoted-background {
     background-color: config.$background-color;
-    color: get-color('light');
+    color: config.$light;
 }
 
 .promoted, .promoted-home {
@@ -246,7 +240,7 @@ p.learn-more a {
     .lens-btn {
         /*border: config.$A11y solid 1px;*/
         border: 0;
-        background-color: get-color('secondary');
+        background-color: config.$secondary;
         border-top-left-radius: 0 !important;
         border-bottom-left-radius: 0 !important;
         /*border-left: 0;*/
@@ -265,7 +259,7 @@ p.learn-more a {
 }
 
 .toolbar .breadcrumb a {
-    color: get-color('light');
+    color: config.$light;
 }
 
 @media (max-width: map-get(map-get($breakpoints, md), max)) {
@@ -288,7 +282,7 @@ p.learn-more a {
 }
 
 .promoted-breadcrumbs .toolbar .breadcrumb a{
-    color: get-color('light');
+    color: config.$light;
 
 }
 
@@ -359,7 +353,7 @@ p.learn-more a {
         }
         .insight-square p a span, .insight-rect p a span {
             float: right;
-            color: get-color(config.$secondary);
+            color: config.$secondary;
         }
         .insight-rect p a {
             @include apply-font-style(700, 18px, 24px, config.$primary);
@@ -403,7 +397,7 @@ $data-hub-stats-height: 374px;
     margin-top: 48px;
     height: 374px;
     .insight-small-rect {
-        background-color: get-color('light');
+        background-color: config.$light;
         padding: 19px;
         border-radius: 8px;
         min-height: 101px;
@@ -488,14 +482,14 @@ $data-hub-stats-height: 374px;
     }
     .after-insights { /* TODO fix padding for responsiveness */
         padding-top: 85%;
-        background: get-color('primary10');
+        background: config.$primary10;
         min-height: config.$after-insights-min-height;
     }
 }
 
 /* group box (group page?) template update might be needed as well TODO */
 .group-box {
-    background: get-color('light');
+    background: config.$light;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
     border-radius: 4px;
     margin-bottom: 24px;
@@ -600,13 +594,13 @@ H2.dataset-heading a {
 
     .dataset-item {
         list-style:  none;
-        border: get-color('primary10') solid 1px;
+        border: config.$primary10 solid 1px;
         border-radius: 8px;
         padding: 24px;
         height: 100%;
 
         .dataset-content .dataset-heading {
-            color: get-color('primary');
+            color: config.$primary;
         }
     }
     .dataset-content div {
@@ -645,8 +639,8 @@ H2.dataset-heading a {
     padding: 6px 16px;
     height: 36px;
     @include apply-font-style(700, 16px, 24px, config.$secondary);
-    background: get-color('primary10');
-    border: get-color('secondary') solid 1px;
+    background: config.$primary10;
+    border: config.$secondary solid 1px;
     border-radius: 4px;
     position: absolute;
     top: 0;
@@ -701,7 +695,7 @@ H2.dataset-heading a {
         border-radius: 0;
     }
     .homepage-package-list  {
-        border-bottom: get-color('primary25') solid 1px;
+        border-bottom: config.$primary25 solid 1px;
     }
 
     .homepage-package-list:last-child  {
@@ -736,7 +730,7 @@ H2.dataset-heading a {
     justify-content: center;
     align-items: center;
     padding: 2px 6px;
-    background: get-color('tag-background');
+    background: config.$tag-background;
     border-radius: 4px;
     margin-left: 0;
     margin-right: 8px;
@@ -750,7 +744,7 @@ H2.dataset-heading a {
 .dataset-resources li a.badge:hover {
     display: inline-block;
     background-color: transparent;
-    color: get-color('tag-light');
+    color: config.$tag-light;
     text-decoration: none;
     border-radius: 4px;
     font-size: config.$badge-font-size;
@@ -759,13 +753,13 @@ H2.dataset-heading a {
 
 /* subscribe to updates */
 .subscribe {
-    background-color: get-color('primary');
+    background-color: config.$primary;
 
     .container {
         padding-top: 64px;
     }
     .highlight-box {
-        $bg-color: adjust-color(get-color('primary'), $lightness: +3%) ;
+        $bg-color: adjust-color(config.$primary, $lightness: +3%) ;
         background-color: $bg-color;
         border-radius: 4px;
         padding: 36px;
@@ -775,17 +769,17 @@ H2.dataset-heading a {
         }
     }
     h2 {
-        color: get-color('light');
+        color: config.$light;
         margin-top: 0;
     }
     .subtext {
-        color: get-color('light');
+        color: config.$light;
         margin-bottom: 24px;
     }
     .register {
         @include apply-font-style(700, 16px, 24px, config.$primary, inherit, center);
         height: 48px;
-        background: get-color('light');
+        background: config.$light;
         border-radius: 4px;
         display: inline-block;
         padding: 12px 16px;
@@ -798,7 +792,7 @@ H2.dataset-heading a {
 
         a, a:hover {
             margin-left: 10px;
-            color: get-color('light');
+            color: config.$light;
             text-decoration: underline;
         }
     }
@@ -855,11 +849,11 @@ H2.dataset-heading a {
 
 /* footer */
 .big-footer {
-    background: get-color('primary');
+    background: config.$primary;
 }
 
 .site-footer {
-    background: get-color('primary');
+    background: config.$primary;
     width: 100%;
     padding: 0;
     margin-bottom: -25px;
@@ -881,7 +875,7 @@ H2.dataset-heading a {
             flex-grow: 0;
 
             a {
-                color: get-color('light');
+                color: config.$light;
             }
         }
         li:last-child {
@@ -905,7 +899,7 @@ H2.dataset-heading a {
                 margin-bottom: 30px;
             }
             .desc {
-                color: get-color('light');
+                color: config.$light;
                 margin-bottom: 0;
             }
         }
@@ -947,7 +941,7 @@ H2.dataset-heading a {
 a.footer-link:hover,
 .site-footer .desc a,
 .site-footer .desc a:hover {
-    color: get-color('light');
+    color: config.$light;
     text-decoration: underline;
 }
 
@@ -973,7 +967,7 @@ a.footer-link:hover,
 }
 
 .footer-search-section  .lens-btn {
-    background-color: get-color('primary10');
+    background-color: config.$primary10;
     border: 0;
     border-radius: 0 4px 4px 0;
     padding-left: 36px;
@@ -994,8 +988,8 @@ a.footer-link:hover,
 }
 
 .footer-search-section .lens-btn {
-    border-left-color: get-color('primary');
-    color: get-color('primary');
+    border-left-color: config.$primary;
+    color: config.$primary;
 }
 
 @media only screen and (max-width: map-get(map-get($breakpoints, xs), max)) {
@@ -1021,24 +1015,24 @@ a.footer-link:hover,
 
 /* misc */
 .navbar-toggle {
-    color: get-color('primary');
+    color: config.$primary;
 }
 
 a {
-  color: get-color('secondary');
+  color: config.$secondary;
 }
 
 a:hover {
-  color: get-color('secondary');
+  color: config.$secondary;
   text-decoration: underline;
 }
 
 .text-primary {
-  color: get-color('secondary');
+  color: config.$secondary;
 }
 
 .bg-primary {
-  background-color: get-color('secondary');
+  background-color: config.$secondary;
 }
 
 .btn {
@@ -1046,22 +1040,22 @@ a:hover {
 }
 
 .btn-primary {
-  background-color: get-color('secondary');
-  border-color: get-color('secondary');
+  background-color: config.$secondary;
+  border-color: config.$secondary;
 }
 
 .btn-primary:hover {
-    color: get-color('light');
-    background-color: get-color('primary');
-    border-color: get-color('primary');
+    color: config.$light;
+    background-color: config.$primary;
+    border-color: config.$primary;
 }
 
 .btn-primary,
 .btn-success,
 .btn-default {
-  background-color: get-color('primary');
-  border: get-color('primary') solid 1px;
-  color: get-color('light');
+  background-color: config.$primary;
+  border: config.$primary solid 1px;
+  color: config.$light;
 }
 
 .btn-danger {
@@ -1092,168 +1086,168 @@ a:hover {
 .btn-primary:active.focus,
 .btn-primary.active.focus,
 .open > .dropdown-toggle.btn-primary.focus  {
-  color: get-color('primary');
-  background-color: get-color('primary10') !important;  /* to overwrite default */
-  border-color: get-color('primary10');
+  color: config.$primary;
+  background-color: config.$primary10 !important;  /* to overwrite default */
+  border-color: config.$primary10;
 }
 
 fieldset[disabled] .btn-primary.focus {
-  background-color: get-color('secondary');
+  background-color: config.$secondary;
 }
 
 .btn-primary .badge {
-  color: get-color('secondary');
+  color: config.$secondary;
 }
 
 .btn-link {
-  color: get-color('secondary');
+  color: config.$secondary;
 }
 
 .dropdown-menu > .active > a:focus {
-  background-color: get-color('secondary');
+  background-color: config.$secondary;
 }
 
 .nav .open > a:focus {
-  border-color: get-color('secondary');
+  border-color: config.$secondary;
 }
 
 .nav-pills > li.active > a:focus {
-  background-color: get-color('secondary');
+  background-color: config.$secondary;
 }
 
 .pagination > li > span {
-  color: get-color('secondary');
+  color: config.$secondary;
 }
 
 .pagination > .active > span:focus {
-  background-color: get-color('secondary');
-  border-color: get-color('secondary');
+  background-color: config.$secondary;
+  border-color: config.$secondary;
 }
 
 .label-primary {
-  background-color: get-color('secondary');
+  background-color: config.$secondary;
 }
 
 .nav-pills > .active > a > .badge {
-  color: get-color('secondary');
+  color: config.$secondary;
 }
 
 a.thumbnail.active {
-  border-color: get-color('secondary');
+  border-color: config.$secondary;
 }
 
 .progress-bar {
-  background-color: get-color('secondary');
+  background-color: config.$secondary;
 }
 
 .list-group-item.active,
 .list-group-item.active:hover,
 .list-group-item.active:focus {
-  background-color: get-color('secondary');
-  border-color: get-color('secondary');
+  background-color: config.$secondary;
+  border-color: config.$secondary;
 }
 
 .panel-primary {
-  border-color: get-color('secondary');
+  border-color: config.$secondary;
 }
 
 .panel-primary > .panel-heading {
-  background-color: get-color('secondary');
-  border-color: get-color('secondary');
+  background-color: config.$secondary;
+  border-color: config.$secondary;
 }
 
 .panel-primary > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: get-color('secondary');
+  border-top-color: config.$secondary;
 }
 .panel-primary > .panel-heading .badge {
-  color: get-color('secondary');
+  color: config.$secondary;
 }
 .panel-primary > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: get-color('secondary');
+  border-bottom-color: config.$secondary;
 }
 
 .banner {
-  background-color: get-color('secondary');
+  background-color: config.$secondary;
 }
 
 .media-view:hover,
 .media-view.hovered {
-  border-color: get-color('secondary');
+  border-color: config.$secondary;
 }
 
 .media-view:hover .banner,
 .media-view.hovered .banner {
-  background-color: get-color('secondary');
+  background-color: config.$secondary;
 }
 
 .editor .editor-info-block a {
-  color: get-color('secondary');
+  color: config.$secondary;
 }
 
 .resource-list.reordering .resource-item.ui-sortable-helper {
-  border: 1px solid get-color('secondary');
+  border: 1px solid config.$secondary;
 }
 .resource-list.reordering .resource-item.ui-sortable-helper .handle {
-  border-color: get-color('secondary');
+  border-color: config.$secondary;
 }
 
 .view-list li a.active,
 .view-list li a:hover {
-  border-color: get-color('secondary');
+  border-color: config.$secondary;
 }
 
 .view-list li a.active .icon,
 .view-list li a:hover .icon {
-  background-color: get-color('secondary');
+  background-color: config.$secondary;
 }
 
 .view-list li .arrow {
-  border-top-color: get-color('secondary');
+  border-top-color: config.$secondary;
 }
 
 .view-list li.active a {
-  border-color: get-color('secondary');
+  border-color: config.$secondary;
 }
 .view-list li.active a .icon {
-  background-color: get-color('secondary');
+  background-color: config.$secondary;
 }
 
 .view-list.stacked::-webkit-scrollbar-thumb:hover {
-  background-color: get-color('secondary');
+  background-color: config.$secondary;
 }
 
 .homepage .module-search .module-content {
-  background-color: get-color('secondary');
+  background-color: config.$secondary;
 }
 
 .popover-followee .nav li a i {
-  background-color: get-color('secondary');
+  background-color: config.$secondary;
 }
 
 .popover-followee .nav li.active a i {
-  color: get-color('secondary');
+  color: config.$secondary;
 }
 
 .resource-view-list.reordering li.ui-sortable-helper {
-  border: 1px solid get-color('secondary');
+  border: 1px solid config.$secondary;
 }
 
 .resource-view-list.reordering li.ui-sortable-helper .handle {
-  border-color: get-color('secondary');
+  border-color: config.$secondary;
 }
 
 .page-item.active .page-link {
     z-index: 3;
-    color: get-color('light');
-    background-color: get-color('secondary');
-    border-color: get-color('secondary');
+    color: config.$light;
+    background-color: config.$secondary;
+    border-color: config.$secondary;
 }
 
 .page-link {
     position: relative;
     display: block;
-    color: get-color('secondary');
-    background-color: get-color('light');
+    color: config.$secondary;
+    background-color: config.$light;
     border: 1px solid #dee2e6;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -1360,7 +1354,7 @@ a.thumbnail.active {
         text-align: center;
         padding: 10px;
         pointer-events: none;
-        background-color: get-color('primary');
+        background-color: config.$primary;
         margin: 0;
         width: 100%;
     }
@@ -1402,12 +1396,12 @@ a.thumbnail.active {
     }
     .dev-banner {
         margin-right: auto;
-        background-color: get-color('tag');
+        background-color: config.$tag;
         pointer-events: none;
     }
     ul li.dev-banner a {
         margin-left: 0 !important;
-        background-color: get-color('tag') !important;
+        background-color: config.$tag !important;
     }
     .dev-banner a .clickable {
         margin-left: 6px;
@@ -1441,18 +1435,18 @@ a.thumbnail.active {
 }
 
 .ckan-circle-exclamation.white {
-    color: get-color('light');
+    color: config.$light;
     border: 2px solid white;
 }
 
 .ckan-circle-exclamation.secondary {
-    color: get-color('light');
-    border: 2px solid get-color('secondary');
+    color: config.$light;
+    border: 2px solid config.$secondary;
 }
 
 /* dashboard */
 .nav-link, .page-header .nav-tabs li a {
-    color: get-color('primary');
+    color: config.$primary;
 }
 
 /*packages page */
@@ -1468,16 +1462,16 @@ a.thumbnail.active {
     padding: 0.375rem 2.25rem 0.375rem 0.75rem;
     -moz-padding-start: calc(0.75rem - 3px);
     @include apply-font-style(400, 0.875rem, 1.5, config.$dark);
-    background-color: get-color('light');
-    border: 1px solid get-color('secondary');
+    background-color: config.$light;
+    border: 1px solid config.$secondary;
     border-radius: 0.25rem;
-    box-shadow: inset 0 1px 2px get-color('primary10');
+    box-shadow: inset 0 1px 2px config.$primary10;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     appearance: none;
 }
 
 .promoted .big-search-form input, .form-control {
-    border: get-color('primary25') solid 1px;
+    border: config.$primary25 solid 1px;
     border-radius: 4px;
     outline: none;
     height: auto;
