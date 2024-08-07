@@ -40,7 +40,7 @@
     --development-banner-visibility: block;
     --locales-visibility: none;
     /* recently updated */
-    --show-recently-updated-title: true;
+    --recently-updated-title-visibility: none;
     /* footer */
     --footer-search-section-padding-top: 64px;
     --footer-search-section-padding-bottom: 0px;

@@ -519,9 +519,7 @@ $data-hub-stats-height: 374px;
 .recently-updated .container > H2:first-child {
     @include apply-font-style(400, 36px, 48px, config.$primary, -0.04em);
     margin-top: 64px;
-    @if config.$show-recently-updated-title == false {
-        display: none;
-    }
+    display: var(--recently-updated-title-visibility);
 }
 
 H2.dataset-heading a {
