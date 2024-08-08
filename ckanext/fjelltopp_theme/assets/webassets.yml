@@ -5,4 +5,10 @@ fjelltopp-theme:
     - css/inter.css
     - css/palette.css
     - css/fjelltopp-theme.css
+
+
+fjelltopp-theme-extended:
+  filters: cssrewrite
+  output: fjelltopp-theme/%(version)s-fjelltopp-theme-extended.css
+  contents:
     - css/fjelltopp-theme-extended.css

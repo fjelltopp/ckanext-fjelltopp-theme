@@ -3,4 +3,5 @@
 {% block styles %}
     {{ super() }}
     {% asset 'fjelltopp-theme/fjelltopp-theme' %}
+    {% block fjelltopp_theme_extended %}{% asset 'fjelltopp-theme/fjelltopp-theme-extended' %}{% endblock %}
 {% endblock %}
