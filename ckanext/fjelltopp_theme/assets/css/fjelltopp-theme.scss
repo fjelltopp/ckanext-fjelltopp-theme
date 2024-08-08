@@ -737,8 +737,7 @@ H2.dataset-heading a {
         padding-top: 64px;
     }
     .highlight-box {
-        $bg-color: config.$highlight-box-bgcolor;
-        background-color: $bg-color;
+        background-color: config.$highlight-box-bgcolor;
         border-radius: 4px;
         padding: 36px;
 
