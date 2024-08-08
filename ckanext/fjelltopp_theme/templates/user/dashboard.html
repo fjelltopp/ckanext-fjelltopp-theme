@@ -1,0 +1,96 @@
+{% ckan_extends %}
+
+{% block breadcrumb %}
+    {% if self.breadcrumb_content() | trim %}
+      <ol class="profile-page breadcrumb">
+        {% snippet 'snippets/home_breadcrumb_item.html' %}
+        {% block breadcrumb_content %}
+          <li class="active"><a>{{ _('My account') }}</a></li>
+        {% endblock %}
+      </ol>
+    {% endif %}
+{% endblock %}
+
+{% block maintag %}
+    {% if request.args.get("id", "") == 'user_activity' %}
+        <div class="main user-profile-page user-dashboard-activity">
+    {% else %}
+        <div class="main user-profile-page user-dashboard-main">
+    {% endif %}
+{% endblock %}
+
+
+{% block page_header %}
+  <header class="module-content page-header hug">
+  {% block content_primary_nav %}
+    <ul class="nav nav-tabs">
+      {% block dashboard_nav_links %}
+        {{ h.build_nav_icon('activity.dashboard', _('Newsfeed')) }}
+        {{ h.build_nav_icon('dashboard.datasets', h.humanize_entity_type('package', dataset_type, 'my label') or _('My datasets')) }}
+        {{ h.build_nav_icon('dashboard.organizations', h.humanize_entity_type('organization', org_type, 'my label') or _('My organizations')) }}
+        {{ h.build_nav_icon('activity.dashboard', _('My activity'), type='user', name=user.name, id="user_activity") }}
+      {% endblock dashboard_nav_links %}
+    </ul>
+ {% endblock %}
+  </header>
+{% endblock %}
+
+
+{% block page_heading %}
+{% endblock %}
+
+
+{% block pre_primary %}
+<div class="upper-content">
+    {% block profile %}
+        <div class="row">
+            <div class="col-md-8 col-sm-12 col-xs-12 left-content">
+                <div class="user-basic-info">
+                    <ul class="profile-left-info">
+                        <li class="profile-pic">{{ h.user_image(user.id, size=64) }}</li>
+                        <li class="profile-info">
+                            <div>
+                                <p>{{ _('Welcome') }} {{ user.name }}</p>
+                                <ul class="profile-left-info-details no-padding">
+                                    <li>{{ user.fullname }}</li>
+                                    <li>{{ user.email }}</li>
+                                    <li><a href="{{ h.url_for('user.read', id=user.name) }}" style="font-weight: 700">{{ _('View / edit profile') }}</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 right-content">
+                <ul>
+                    <li class="sysadmin-item">
+                        {% if c.userobj.sysadmin %}
+                            <a href="{{ h.url_for('admin.index') }}">{{ _('System admin settings') }}</a>
+                        {% endif %}
+                    </li>
+                    <li class="logout-btn"><a href="{{ h.url_for('user.logout') }}">{{ _('Log out') }}</a></li>
+                </ul>
+            </div>
+
+        </div>
+    {% endblock %}
+</div>
+{% endblock %}
+
+
+{% block page_primary_action %}
+    {% if request.args.get("id", "") == 'user_activity' %}
+        <p></p>
+    {% else %}
+        {{ super() }}
+    {% endif %}
+{% endblock %}
+
+{% block primary_content_inner %}
+    {% if request.args.get("id", "") == 'user_activity' %}
+        {% snippet 'snippets/stream.html', activity_stream=dashboard_activity_stream, id=id, object_type='user' %}
+        {% snippet 'snippets/pagination.html', newer_activities_url=newer_activities_url, older_activities_url=older_activities_url %}
+    {% else %}
+        {{ super() }}
+    {% endif %}
+{% endblock %}

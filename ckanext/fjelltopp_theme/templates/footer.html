@@ -1,0 +1,33 @@
+{% ckan_extends %}
+
+{% block footer_content %}
+<div class="row footer-search-section">
+  <div class="col-xs-12 col-sm-9 col-lg-6">
+    <h2>{{ _('Search all datasets') }}</h2>
+    {% snippet 'snippets/search_input.html', placeholder='Search' %}
+  </div>
+</div>
+
+  <div class="col-xs-6 col-sm-3 col-lg-2 footer-links">
+  {% block footer_logo_section %}
+    <a href="https://fjelltopp.org" target="_blank"><img class="footer-logo" src="/images/{% block footer_logo %}logo-white.png{% endblock %}" alt=""/></a>
+  {% endblock %}
+  </div>
+
+
+<div class="row">
+  <div class="col-xs-12 col-sm-9 col-lg-12 footer-links">
+    {% block footer_nav %}
+        {% snippet 'snippets/footer_links.html', copyrights_owner='Fjelltopp', devs='<a class="hide-text" target="_blank" href="https://fjelltopp.org">Fjelltopp</a>' %}
+    {% endblock %}
+  </div>
+
+{% endblock %}
+
+{% block footer_attribution %}
+
+{% endblock %}
+
+{% block footer_lang %}
+{% endblock %}
+</div>

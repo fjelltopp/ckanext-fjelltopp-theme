@@ -1,0 +1,42 @@
+<div role="main">
+    {%  block hero %}
+    <div class="main hero">
+    {% block promoted %}
+        <div class="promoted-background">
+            <div class="container">
+                    {% snippet 'home/snippets/promoted.html' %}
+            </div>
+        </div>
+    {% endblock %}
+
+    {% block groups %}
+    {% endblock %}
+
+    {% block insights %}
+    <div class="insights">
+        <div class="container">
+        {% snippet 'home/snippets/insights.html' %}
+        </div>
+    </div>
+    <div class="after-insights"></div>
+    {% endblock %}
+    </div>
+    {% block featured %}
+    <div class="recently-updated">
+        <div class="container">
+            <h2>{% block title %}{% endblock %}</h2>
+            <div class="recently-updated-title">
+                <h3>{% block first_row_title %}Featured datasets{% endblock %}</h3>
+                <a class="view-all-btn" href="{{ url_for('dataset.search', tags='Featured') }}">{{ _('See all') }}</a>
+            </div>
+            {% snippet 'home/snippets/recently_updated.html', packages=h.get_featured_datasets(), origin='homepage' %}
+            <div class="recently-updated-title">
+                <h3>{% block second_row_title %}Recently updated datasets{% endblock %}</h3>
+                <a class="view-all-btn" href="{{ h.url_for('/dataset') }}">{{ _('See all') }}</a>
+            </div>
+            {% snippet 'home/snippets/recently_updated.html', packages=h.get_recently_updated_datasets(), origin='homepage' %}
+        </div>
+    </div>
+    {% endblock %}
+{% endblock %}
+</div>

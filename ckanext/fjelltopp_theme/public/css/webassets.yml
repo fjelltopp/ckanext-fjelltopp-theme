@@ -1,4 +1,0 @@
-fjelltopp-theme:
-  filters: cssrewrite
-  output: base/%(version)s_fjelltopp_theme.css
-  contents: fjelltopp-theme.css

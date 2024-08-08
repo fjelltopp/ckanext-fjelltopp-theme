@@ -1,0 +1,25 @@
+{% ckan_extends %}
+
+{%- block header %}
+    {% include "user/account_header.html" %}
+{% endblock -%}
+
+{% block page_primary_action %}
+    <h2 class="page-heading mb-4">
+    {% if not user_dict.datasets %}
+        <small class="text-muted fs-5">{{ _("You haven’t created any datasets")}}</small>
+        {% if h.check_access('package_create') %}
+            {% link_for _('Create new dataset'), named_route='dataset.new', class_="btn btn-primary dashboard-add-dataset-btn" %}
+        {% endif %}
+    {% endif %}
+
+    </h2>
+{% endblock %}
+
+
+{% block primary_content_inner %}
+  {% if user_dict.datasets %}
+    {% snippet 'snippets/package_list.html', packages=user_dict.datasets %}
+  {% endif %}
+  <a class="show-all-pkg" href="{{ h.url_for('dataset.search') }}">{{ _('See all datasets') }}</a>
+{% endblock %}

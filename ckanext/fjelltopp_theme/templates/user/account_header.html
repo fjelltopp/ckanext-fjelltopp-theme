@@ -1,0 +1,25 @@
+{% extends 'header.html' %}
+
+{% block header_site_navigation_tabs %}
+
+    <div class="mobile-menu">
+        {% snippet 'snippets/search_input.html', placeholder='Search' %}
+    </div>
+
+    {% if c.userobj %}
+        {{ h.build_nav_main(
+            ('home.about', _('About')),
+            ('dataset.search', _('Find Data')),
+             ) }}
+            <li class="{% if user_dict.name == g.userobj.name %}active my_account{% endif %}">
+                <a href="{{ h.url_for('activity.dashboard') }}">{{ _('My account') }}</a>
+            </li>
+    {% else %}
+        {{ h.build_nav_main(
+            ('home.about', _('About')),
+            ('dataset.search', _('Find Data')),
+            ('user.login', _('Log in'))
+             ) }}
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,52 @@
+/* global */
+$theme: 'zarr';
+
+/* palette */
+$primary: #13240F;
+$secondary: #198A00;
+$background: #DFF0DB;
+$tag: #EF7D00;
+$tag-dark: none;
+$tag-light: none;
+$tag-background: #FCF0E3;
+$dark: #13240F;
+$light: #FFFFFF;
+$primary65: #9ad98c;
+$primary25: #DFF0DB;
+$primary10: #EBF1EA;
+$neutral-light-grey: #e6e7e8;
+$A11y: #757575;
+
+/* title */
+$default-font-weight: 700;
+$default-font-size: 18px;
+$default-line-height: 20px;
+$default-font-family: 'Inter';
+$default-font-color: #13240F;
+
+/* hide logo left border */
+$hide-logo-left-v-bar: true;
+
+/* promoted */
+$background-color: $primary;
+
+/* insights */
+$show-insights-title: false;
+$upper-container-visible: false;
+$lower-container-visible: true;
+$after-insights-min-height: 400px;
+
+/* show masthead */
+$masthead-visible: true;
+$show-development-banner: true;
+$show-languages: false;
+
+/* recently updated */
+$show-recently-updated-title: false;
+
+/* footer */
+$footer-search-section-padding-top: 64px;
+$footer-search-section-padding-bottom: 0px;
+
+/* badge */
+$badge-font-size: 0.7em;

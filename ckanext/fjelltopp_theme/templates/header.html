@@ -1,0 +1,54 @@
+{% ckan_extends %}
+
+{% block header_debug %} {% endblock %}
+
+{% block header_logo %}
+    {% snippet 'snippets/header_logo.html', site_title = 'Fjelltopp theme for CKAN', logo='/images/fjelltopp-logo.png', header_title='' %}
+{% endblock %}
+
+
+{% block header_site_navigation_tabs %}
+
+    <div class="mobile-menu">
+        {% snippet 'snippets/search_input.html', placeholder='Search' %}
+    </div>
+    {% block nav_items %}
+        {% if c.userobj %}
+            {{ h.build_nav_main(
+                ('home.about', _('About')),
+                ('dataset.search', _('Find data')),
+                ('activity.dashboard', _('My account'))
+                 ) }}
+        {% else %}
+            {{ h.build_nav_main(
+                ('home.about', _('About')),
+                ('dataset.search', _('Find data')),
+                ('user.login', _('Log in'))
+                 ) }}
+        {% endif %}
+    {% endblock %}
+
+{% endblock %}
+
+{% block header_site_search %}
+        <form class="section site-search simple-input" action="{% url_for dataset_type ~ '.search' %}" method="get">
+          <div class="field">
+            <label for="field-sitewide-search">{% block header_site_search_label %}{{ h.humanize_entity_type('package', dataset_type, 'search_placeholder') or _('Search Datasets...') }}{% endblock %}</label>
+            <input id="field-sitewide-search" type="text" class="form-control" name="q" placeholder="{{ _('Search data') }}" aria-label="{{ h.humanize_entity_type('package', dataset_type, 'search_placeholder') or _('Search datasets...') }}"/>
+            <button class="btn-search" type="submit" aria-label="{{ _('Submit') }}"><i class="fa fa-search"></i></button>
+          </div>
+        </form>
+      {% endblock %}
+
+
+{% block header_account_container_content %}
+    {% snippet "snippets/language_selector.html" %}
+{% endblock %}
+
+
+{% block header_wrapper %}
+
+  {{ super() }}
+
+  <div class="fluid-white-bar"></div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "page.html" %}
+
+{% block subtitle %}{{ _('Terms and conditions') }}{% endblock %}
+
+{% block breadcrumb_content %}
+  <li class="active">{% link_for _('Terms and conditions'), named_route='/terms/' %}</li>
+{% endblock %}
+
+{% block primary %}
+  <article class="module" role="main">
+    <div class="module-content">
+          {% snippet 'home/snippets/disclaimer.html' %}
+    </div>
+  </article>
+{% endblock %}
+
+{% block secondary %}{% endblock %}

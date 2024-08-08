@@ -1,0 +1,9 @@
+{% block package_list %}
+    <div class="row">
+        {% for dataset in packages %}
+            <div class="homepage-package-list col-md-4 col-xs-12">
+                {% snippet 'snippets/package_item.html', package=dataset %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
