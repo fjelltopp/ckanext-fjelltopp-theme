@@ -2,6 +2,8 @@
 
 {% block styles %}
     {{ super() }}
+    {% block fjelltopp_theme_fonts %}{% asset 'fjelltopp-theme/fjelltopp-theme-fonts' %}{% endblock %}
+    {% block fjelltopp_theme_palette %}{% asset 'fjelltopp-theme/fjelltopp-theme-palette' %}{% endblock %}
     {% asset 'fjelltopp-theme/fjelltopp-theme' %}
     {% block fjelltopp_theme_extended %}{% asset 'fjelltopp-theme/fjelltopp-theme-extended' %}{% endblock %}
 {% endblock %}
