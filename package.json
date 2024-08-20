@@ -4,7 +4,7 @@
   },
   "scripts": {
     "compile": "npx sass ckanext/fjelltopp_theme/assets/css/:ckanext/fjelltopp_theme/assets/css/",
-    "watch": "sass --watch ckanext/fjelltopp_theme/assets/css/:ckanext/fjelltopp_theme/assets/css/"
+    "watch": "npx sass --watch ckanext/fjelltopp_theme/assets/css/:ckanext/fjelltopp_theme/assets/css/"
 
   }
 }
