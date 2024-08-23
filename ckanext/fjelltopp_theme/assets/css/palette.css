@@ -48,4 +48,7 @@
     --badge-font-size: 0.7em;
     /* user profile */
     --breadcrumbs-color: #FFFFFF;
+    /* breadcrumbs */
+    --breadcrumbs-text-decoration: none;
+    --breadcrumbs-font-weight: 700;
 }
