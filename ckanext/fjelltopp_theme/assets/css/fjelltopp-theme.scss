@@ -1243,6 +1243,13 @@ a.thumbnail.active {
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.resource-editor .btn {
+    width: 100%;
+    margin: 0;
+    background-color: var(--primary);
+    font-size: inherit;
+}
+
 /* pills , badges */
 .pill, .module-narrow .nav-item.active a, .module-narrow .nav-item.active a:hover {
     background-color: config.$secondary;
