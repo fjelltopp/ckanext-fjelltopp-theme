@@ -1611,11 +1611,12 @@ a.thumbnail.active {
 
 .media-grid .media-image {
     width: auto;
-    aspect-ratio: 9 / 4;
+    aspect-ratio: 16/ 9;
     height: auto;
     max-width: 100%;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
+    background-color: config.$light;
 }
 
 .media-item {
