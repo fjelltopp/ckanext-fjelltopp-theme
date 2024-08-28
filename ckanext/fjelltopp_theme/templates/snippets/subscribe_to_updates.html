@@ -4,7 +4,7 @@
         <div class="highlight-box">
             {% block contents %}
             <h2>{{ _('Subscribe to updates') }}</h2>
-            <div class="subtext">{% block subtext %}{{ _('Create an account to receive notifications by email or SMS whenever new documents are posted.') }}{% endblock %}</div>
+            <div class="subtext">{% block subtext %}{{ _('Create an account to receive notifications by email whenever new documents are posted.') }}{% endblock %}</div>
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-3">
                     <a class="register" href="{{ h.url_for("/user/register") }}">{{ _('Create an account') }}</a>
