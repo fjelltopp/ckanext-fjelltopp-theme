@@ -1,0 +1,20 @@
+{% block promote %}
+<div class="promoted promoted-home col-xs-12 col-sm-12 col-lg-12" >
+    {% block backgroundvideo %}
+    <img src="/images/fjelltopp-bgs/fjelltopp.webp" alt="Background Animation" id="background-video">
+    {% endblock %}
+    <div class="promoted-container row">
+            <div class="promoted-left-text">
+                <p class="subtitle">{{ _('Fjelltopp Theme') }}</p>
+                <h1 class="headline">{{ _('Default theme for Fjelltopp projects') }}</h1>
+                <p class="description">{{ _('Because better data means better decisions for better health across the world.') }}</p>
+                <p class="learn-more"><a href="{{ h.url_for('home.about') }}">{{ _('Learn more') }}</a></p>
+            </div>
+
+            <div class="search-section">
+            <h2>{{ _('Search data') }}</h2>
+            {% snippet 'snippets/search_input.html', placeholder='Search' %}
+            </div>
+    </div>
+</div>
+{% endblock %}

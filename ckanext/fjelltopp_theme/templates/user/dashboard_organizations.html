@@ -1,0 +1,37 @@
+{% ckan_extends %}
+
+{%- block header %}
+    {% include "user/account_header.html" %}
+{% endblock -%}
+
+{% set organizations = h.organizations_available(permission='manage_group',
+    include_dataset_count=True) %}
+
+{% set org_count = organizations|length %}
+
+{% block maintag %}<div class="main user-profile-page dashboard-organisation-main">{% endblock %}
+
+{% block page_primary_action %}
+    {% set group_type = h.default_group_type('organization') %}
+    <h2 class="page-heading mb-4">
+    {% if organizations %}
+        {% if org_count == 1 %}
+            <small class="text-muted fs-5">{{ _("You're part of one organization")}}</small>
+        {% else %}
+            <small class="text-muted fs-5">{{ _("You're part of {num} organizations").format(num=org_count) }}</small>
+        {% endif %}
+    {% else %}
+        <small class="text-muted fs-5">{{ _('You are not a member of any organizations.') }}</small>
+    {% endif %}
+    {% if h.check_access('organization_create') %}
+        {% link_for _('Add Organization'), named_route='organization.new', class_="btn btn-primary dashboard-add-team-btn" %}
+    {% endif %}
+    </h2>
+{% endblock %}
+
+{% block primary_content_inner %}
+  {% if organizations %}
+      {% snippet "organization/snippets/organization_list.html", organizations=organizations, show_capacity=True %}
+  {% endif %}
+  <a class="show-all-org" href="{{ h.url_for('organization.index') }}">{{ _('See all organizations') }}</a>
+{% endblock %}

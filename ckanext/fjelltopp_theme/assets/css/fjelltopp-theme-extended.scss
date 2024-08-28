@@ -1,0 +1,65 @@
+/* global */
+$theme: 'fjelltopp';
+
+/* for demo purpose only */
+#background-video {
+    display: block !important;
+}
+
+.promoted-home {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.promoted-home .promoted-container {
+    position: relative;
+    min-height: 500px;
+    z-index: 1;
+}
+
+#background-video {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -200px;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    background-size: cover;
+}
+
+$background-images : (
+    url("/images/fjelltopp-bgs/aditya-chinchure-mpzFnoQCwWU-unsplash.jpg"),
+    url("/images/fjelltopp-bgs/geran-de-klerk-qzgN45hseN0-unsplash.jpg"),
+    url("/images/fjelltopp-bgs/ivan-bandura-V5-Pmz1vzRg-unsplash.jpg"),
+    url("/images/fjelltopp-bgs/marita-kavelashvili-ugnrXk1129g-unsplash.jpg"),
+    url("/images/fjelltopp-bgs/pine-watt-2Hzmz15wGik-unsplash.jpg"),
+    url("/images/fjelltopp-bgs/silas-baisch-Wn4ulyzVoD4-unsplash.jpg"),
+);
+
+
+.big-footer {
+    background-image: nth($background-images, 5) !important;
+    background-size: cover !important;
+}
+
+.connected {
+    background-image: nth($background-images, 6) !important;
+}
+
+.subscribe, .site-footer {
+    background: none !important;
+}
+
+.promoted-background {
+    background-image: nth($background-images, 1);
+    background-size: cover;
+}
+
+.hero .promoted-background {
+    background-color: var(--primary) !important;
+    background-image: none !important;
+}

@@ -1,0 +1,66 @@
+{% set default_labels = [
+    {'label': 'Insight 1', 'image': 'insight_img_1.png'},
+    {'label': 'Insight 2', 'image': 'insight_img_2.png'},
+    {'label': 'Insight 3', 'image': 'insight_img_3.png'},
+] %}
+
+{% set default_stats =  h.get_datahub_stats(more = {'label': 'Something else', 'value': 0}) %}
+
+{% set labels = labels | default(default_labels) %}
+{% set stats = stats | default(default_stats) %}
+
+
+
+<h2 class="show-insights-title">{% block top_container_title %}Title{% endblock %}</h2>
+
+{% block top_container %}
+<h3 class="insights-upper-item">{% block top_container_label %}Label 1{% endblock %}</h3>
+    {% for i in range(0, labels|length, 3) %}
+    <div class="row insight-row col-lg-12 col-sm-12 col-xs-12 insights-upper-item">
+        {% for j in range(i, i+3) %}
+            {% if j < labels|length %}
+                <div class="insight-square col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <p><a href="#">{{ labels[j].label }}</a></p>
+                    <div class="insight-img-container">
+                        <img src="/images/{{ labels[j]['image'] }}" alt="image"/>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endfor %}
+
+{% endblock %}
+
+{% block bottom_container %}
+<div class="row insight-row col-lg-12 col-sm-12 col-xs-12 insights-lower-item">
+    <div class="col-lg-6 col-sm-12 col-xs-12">
+        <h3>{% block bottom_container_left_label %}{{ _('Analytics data') }}{% endblock %}</h3>
+        <div class="insight-rect">
+            <p><a href="#">{% block bottom_container_left_content_label %}{{ _('Charts') }}{% endblock %} <span>&rarr;</span></a></p>
+            <img
+                src="/images/insight_img_4.png"
+                alt="image"
+            />
+        </div>
+    </div>
+
+    <div class="data-hub-stats col-lg-6 col-sm-12 col-xs-12">
+        <h3>{% block bottom_container_right_label %}{{ _('Data hub stats') }}{% endblock %}</h3>
+        {% for i in range(0, stats|length, 2) %}
+            <div class="row">
+                {% for j in range(i, i+2) %}
+                    {% if j < stats|length %}
+                        <div class="insight-small-rect col-lg-6 col-sm-6 col-xs-12">
+                            <p>{{ stats[j]['label'] }}</p>
+                            <div class="number">
+                                <span>{{ stats[j]['value'] }}</span>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

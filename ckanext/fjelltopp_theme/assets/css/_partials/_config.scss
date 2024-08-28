@@ -1,0 +1,46 @@
+/* global */
+$theme: var(--theme);
+
+/* palette */
+$primary: var(--primary);
+$secondary: var(--secondary);
+$background: var(--background);
+$tag: var(--tag);
+$tag-dark: var(--tag-dark);
+$tag-light: var(--tag-light);
+$tag-background: var(--tag-background);
+$dark: var(--dark);
+$light: var(--light);
+$primary65: var(--primary65);
+$primary25: var(--primary25);
+$primary10: var(--primary10);
+$neutral-light-grey: var(--neutral-light-grey);
+$A11y: var(--A11y);
+$highlight-box-bgcolor: var(--highlight-box-bgcolor);
+
+/* title */
+$default-font-weight: var(--default-font-weight);
+$default-font-size: var(--default-font-size);
+$default-line-height: var(--default-line-height);
+$default-font-family: var(--default-font-family);
+$default-font-color: var(--default-font-color);
+
+/* promoted */
+$background-color: var(--primary);
+
+/* insights */
+$after-insights-min-height: var(--after-insights-min-height);
+
+/* footer */
+$footer-search-section-padding-top: var(--footer-search-section-padding-top);
+$footer-search-section-padding-bottom: var(--footer-search-section-padding-bottom);
+
+/* badge */
+$badge-font-size: var(--badge-font-size);
+
+/* userprofile */
+$breadcrumbs-color: var(--breadcrumbs-color);
+
+/* breadcrumb */
+$breadcrumbs-text-decoration: var(--breadcrumbs-text-decoration);
+$breadcrumbs-font-weight: var(--breadcrumbs-font-weight);

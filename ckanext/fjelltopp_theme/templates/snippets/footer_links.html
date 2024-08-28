@@ -1,0 +1,36 @@
+        <div class="desc-large">
+              <ul class="list-unstyled">
+                    <li><a class="footer-link" href="{{ h.url_for('/organization') }}">{{ _('Organizations') }}</a></li>
+                    <li>
+                        {% if not c.userobj %}
+                            <a class="footer-link" href="{{ h.url_for('/user/login') }}">{{ _('Account login') }}</a>
+                        {% else %}
+                            <a class="footer-link" href="{{ h.url_for('activity.dashboard') }}">{{ _('My account') }}</a>
+                        {% endif %}
+                  </li>
+                    <li><a class="footer-link" href="{{ h.url_for('/terms/') }}" target="_blank">{{ _('Terms and conditions') }}</a><br />
+                    <li><a class="footer-link" href="http://docs.ckan.org/en/2.10/api/" target="_blank">{{ _('API Docs') }}</a></li>
+                    <li>
+                      <span class="desc desc-wide">{% trans %}© {{ copyrights_owner }}. An open source <a class="hide-text" target="_blank" href="https://ckan.org/">
+                CKAN</a> project, built by {% endtrans %} {{ devs | safe }}</span>
+                    </li>
+              </ul>
+                  <span class="desc desc-tablet">{% trans %}© {{ copyrights_owner }}. An open source <a class="hide-text" target="_blank" href="https://ckan.org/">
+            CKAN</a> project, built by{% endtrans %} {{ devs | safe }}</span>
+        </div>
+
+
+        <div class="desc-mobile">
+            <p><a class="footer-link" href="{{ h.url_for('/organization') }}">{{ _('Organizations') }}</a></p>
+            <p>
+                {% if not c.userobj %}
+                    <a class="footer-link" href="{{ h.url_for('/user/login') }}">{{ _('Account login') }}</a>
+                {% else %}
+                    <a class="footer-link" href="{{ h.url_for('activity.dashboard') }}">{{ _('My account') }}</a>
+                {% endif %}
+            </p>
+            <p><a class="footer-link" href="{{ h.url_for('/terms/') }}" target="_blank">{{ _('Terms and conditions') }}</a><br />
+            <p><a class="footer-link" href="http://docs.ckan.org/en/2.10/api/" target="_blank">{{ _('API Docs') }}</a></p>
+          <p class="desc desc-mobile">{% trans %}© {{ copyrights_owner }}. An open source <a class="hide-text" target="_blank" href="https://ckan.org/">
+            CKAN</a> project, built by{% endtrans %} {{ devs | safe }}</p>
+        </div>

@@ -1,0 +1,2050 @@
+@use '_partials/themes' as *;
+@use '_partials/config' as config;
+@use 'sass:math';
+
+$square-insights-width: math.div(100%, 3);
+$half-window-width: math.div(100%, 2);
+
+
+/* global */
+body {
+    background: config.$light;
+    font-family: config.$default-font-family, sans-serif;
+    @include apply-font-style(400, 16px, 24px, config.$primary);
+    font-style: normal;
+}
+
+.promoted-background {
+    background-color: config.$primary;
+}
+
+.mobile-menu .search-form {
+    margin-top: 70px;
+    margin-bottom: 0;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    border-bottom: none;
+}
+
+.main, .homepage .hero {
+    min-height: 80vh;
+    padding-top: 32px;
+    padding-bottom: 64px;
+    background: config.$light;
+}
+
+.homepage .main,
+.homepage .hero,
+.groups .main,
+.groups .hero {
+    padding: 0;
+}
+
+/* top first bar */
+.account-masthead {
+  @include apply-color(config.$primary);
+  display: var(--masthead-visibility);
+}
+
+/* header */
+.navbar-toggler .fa-bars {
+    color: config.$primary !important;
+}
+
+.navbar-light .navbar-toggler {
+    border: none;
+}
+
+@media (max-width: map-get(map-get($breakpoints, md), max)) {
+.site-search {
+    display: none;
+  }
+}
+
+.masthead {
+    @include apply-color(config.$light, config.$dark);
+    .site-search input {
+        width: 180px;
+        height: 40px;
+        padding: 10px 14px;
+    }
+    .site-search .btn-search .fa-search {
+        font-size: 20px;
+        position: absolute;
+        top: 0;
+        right: 2px;
+    }
+    .navbar {
+        margin-bottom: 0 ;
+        min-height: 80px;
+    }
+    .main-navbar .navbar-nav > li > a
+    {
+        font-style: normal;
+        @include apply-font-style(700, 14px, 30px);
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        background-color: transparent;
+        padding: 5px 0;
+        margin-left: 30px;
+    }
+    .main-navbar .navbar-nav li a:hover,
+    .main-navbar .navbar-nav li a:focus,
+    .main-navbar .navbar-nav li.active a,
+    .main-navbar ul li:hover a,
+    .main-navbar ul li:focus a,
+    .main-navbar ul li.active a
+    {
+        color: config.$secondary;
+        background-color: transparent;
+
+    }
+}
+
+@media only screen and (max-width: map-get(map-get($breakpoints, md), max)) {
+    .masthead .main-navbar .navbar-nav>li>a {
+        margin-left: 0;
+    }
+}
+
+
+#NavbarBrandingContainer {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    a {
+        color: config.$primary;
+        #NavbarHeadingContainer {
+            @include apply-font-style(700, 20px, 14px);
+            margin: 10px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+}
+
+/* logo */
+#NavbarLogo {
+    display: inline-block;
+    height: 64px;
+    padding-right: var(--logo-left-v-bar-padding-right);
+    background-size: cover;
+    background-position: center;
+}
+
+/* logo title */
+#NavbarHeadingContainer .title {
+    @include apply-font-style(700, 18px, 20px);
+}
+
+/* hide logo left bar */
+.masthead #NavbarBrandingContainer a #LogoBorder {
+    display: var(--logo-left-v-bar-display);
+}
+
+#NavbarBrandingContainer a:hover {
+    text-decoration: none; /* removes the line middle logo upon hover */
+}
+
+/* small fix */
+.navbar-nav {
+    margin: 0;
+}
+
+@media only screen and (min-width: 992px) {
+    .mobile-menu {
+        display: none;
+    }
+    .navbar-expand-lg .navbar-toggler {
+        display: none;
+    }
+}
+
+.page-header {
+    background-color: var(--primary10);
+    width: 100%;
+}
+
+.update-dataset-page .form-label {
+    margin-bottom: 0.5rem;
+}
+
+
+/* promoted */
+.promoted-background,
+.homepage .promoted-background {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.homepage .promoted-background {
+    background-color: config.$background-color;
+    color: config.$light;
+}
+
+.promoted, .promoted-home {
+    font-style: normal;
+    font-size:  18px;
+}
+
+.promoted-home .promoted-container {
+    margin: 64px 0;
+}
+
+.promoted .subtitle {
+    @include apply-font-style(700, 16px, 24px, config.$light);
+    margin-bottom:  15px;
+    letter-spacing: 0;
+}
+
+h1.headline,
+.promoted-left .headline {
+    @include apply-font-style(400, 48px, 56px, config.$light, -0.03em, left);
+}
+
+p.learn-more a {
+    text-decoration: underline;
+    @include apply-font-style(700, 16px, inherit, config.$light);
+}
+
+.promoted .search-section {
+    margin-top: 28px;
+}
+
+.promoted-container {
+    h2 {
+        @include apply-font-style(700, 18px, 24px, config.$light);
+        margin-bottom: 4px;
+    }
+
+}
+
+.big-search-form {
+    #field-giant-search {
+        /*border: config.$A11y solid 1px;*/
+        border: 0;
+        border-radius: 4px;
+        outline: none;
+        max-width: 498px;
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        /*border-right: 0;*/
+    }
+    .search-form {
+        border-bottom: 0;
+    }
+
+    .lens-btn {
+        /*border: config.$A11y solid 1px;*/
+        border: 0;
+        background-color: config.$secondary;
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+        /*border-left: 0;*/
+        height: 48px;
+    }
+
+    .lens-btn .search-label{
+        display: none;
+    }
+}
+
+/* dataset promoted */
+.promoted .container {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+.toolbar .breadcrumb a {
+    color: config.$light;
+}
+
+@media (max-width: map-get(map-get($breakpoints, md), max)) {
+    .big-search-form #field-giant-search {
+        max-width: 279px;
+    }
+}
+
+.promoted-breadcrumbs .toolbar {
+    height: 170px;
+}
+
+
+.promoted-breadcrumbs .toolbar{
+    height:  170px;
+}
+
+.promoted-breadcrumbs .breadcrumb li{
+    margin: 5px 0;
+}
+
+.promoted-breadcrumbs .toolbar .breadcrumb a{
+    color: config.$light;
+
+}
+
+.promoted-breadcrumbs .toolbar .breadcrumb{
+    position: absolute;
+    bottom: 32px;
+    font-size: 16px;
+}
+
+@media only screen and (min-width: 992px) {
+    .promoted-breadcrumbs .toolbar .breadcrumb {
+        font-size: 24px;
+    }
+}
+
+
+/* insights */
+.show-insights-title {
+    display: var(--show-insights-title-display);
+}
+
+.insights-upper-item {
+    display: var(--upper-container-display);
+}
+
+.insights-lower-item {
+    display: var(--lower-container-display);
+}
+
+
+.insights {
+    min-height: 484px;
+    background: config.$primary10;
+    padding: 48px 0 65px;
+
+    .insight-row, .data-hub-stats .row {
+        --bs-gutter-x: 0;
+    }
+
+        H2 {
+            margin-bottom: 32px;
+            margin-top: 0;
+            @include apply-font-style(400, 36px, 48px);
+            color: config.$primary;
+        }
+        H3 {
+            margin-bottom: 12px;
+            @include apply-font-style(400, 28px, 36px, config.$primary);
+        }
+        .insight-square {
+            background-color: config.$light;
+            padding: 16px;
+            border-radius: 8px;
+            min-height: 297px;
+            margin-bottom: 48px;
+        }
+        .insight-square p, .insight-rect p span:first-child {
+            @include apply-font-style(700, 18px, 24px, config.$secondary);
+        }
+        .insight-rect p span:nth-child(2) {
+            @include apply-font-style(700, 14px, inherit, config.$primary);
+        }
+        .insight-square p a span, .insight-rect p a span {
+            float: right;
+            color: config.$secondary;
+        }
+        .insight-rect p a {
+            @include apply-font-style(700, 18px, 24px, config.$primary);
+        }
+        .insight-img-container {
+            padding: 18px;
+
+            .insight-img-container img {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .insight-rect {
+            background-color: white;
+            padding: 16px;
+            border-radius: 8px;
+            height: 374px;
+
+            img {
+                object-fit: cover;
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 991px) {
+    .insights {
+        padding: 48px 0 90px;
+    }
+
+}
+
+/* data hub stats */
+$data-hub-stats-margin-left: 24px;
+$data-hub-stats-margin-right: 24px;
+$data-hub-stats-height: 374px;
+.data-hub-stats {
+    margin-top: 48px;
+    height: 374px;
+    .insight-small-rect {
+        background-color: config.$light;
+        padding: 19px;
+        border-radius: 8px;
+        min-height: 101px;
+
+        p:first-child {
+            @include apply-font-style(700, 18px, 24px, config.$primary);
+        }
+    }
+
+    .row {
+        margin-bottom:  24px;
+    }
+
+    .number span {
+        @include apply-font-style(400, 36px, inherit, config.$primary);
+    }
+}
+
+
+.insight-square {
+    margin-right: $data-hub-stats-margin-right;
+    width: calc(#{$square-insights-width} - $data-hub-stats-margin-right);
+}
+
+.insight-square:last-child {
+    margin-right: 0;
+    width: #{$square-insights-width} ;
+}
+
+@media only screen and (min-width: map-get(map-get($breakpoints, lg), min)) {
+    .data-hub-stats {
+        margin-top: 0;
+        margin-left: $data-hub-stats-margin-left;
+        width: calc(#{$half-window-width} - #{$data-hub-stats-margin-left});
+        height: $data-hub-stats-height;
+    }
+}
+
+@media only screen and (min-width: map-get(map-get($breakpoints, sm), min)) {
+    .insight-small-rect:last-child {
+        margin-left: $data-hub-stats-margin-left;
+        width: calc(#{$half-window-width} - #{$data-hub-stats-margin-left});
+    }
+    .insight-small-rect:first-child {
+        margin-left: 0;
+        width: #{$half-window-width};
+    }
+}
+
+
+@media only screen and (max-width: map-get(map-get($breakpoints, xs), max)) {
+    .data-hub-stats H3 {
+        margin-top: 0;
+    }
+    .data-hub-stats {
+        margin-top: 32px;
+    }
+    .recently-updated .container {
+        margin-top: 32px;
+    }
+    .insights {
+        padding-bottom: 0;
+        padding-top: 32px;
+    }
+    .insight-small-rect:last-child {
+        margin-top: 24px;
+    }
+    .insight-small-rect:first-child {
+        margin-top: 0;
+    }
+    .insights-upper-item {
+        display: var(--upper-container-display-mobile);
+    }
+    .insight-square, .insight-square:last-child {
+        margin-right: 0;
+        margin-bottom: 32px;
+        width: 100%;
+        height: 100%;
+    }
+    .after-insights {
+        padding-top: 85%;
+        background: config.$primary10;
+        min-height: config.$after-insights-min-height;
+    }
+}
+
+/* group box (group page?) template update might be needed as well TODO */
+.group-box {
+    background: config.$light;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    margin-bottom: 24px;
+    padding:  20px;
+    height:  110px;
+}
+
+.group-box .group-thumbnail {
+    float:  left;
+    display: inline-block;
+    vertical-align: middle;
+    max-height: 70px;
+    margin-right: 20px;
+}
+
+.group-box .group-text {
+    vertical-align: middle;
+    width:  100%;
+}
+.group-box .group-text .title {
+    @include apply-font-style(700, 16px, 24px, config.$secondary);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #008dc9;
+}
+
+.group-box .group-text .desc{
+    @include apply-font-style(400, 14px, 20px, config.$primary);
+    overflow:  hidden;
+    height:  50px;
+}
+
+.group-box .btn-delete {
+    @include apply-font-style(inherit, 20px, inherit, config.$secondary);
+    background: transparent;
+    padding: 20px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+
+
+/* recently updated */
+.recently-updated .container > H2:first-child {
+    @include apply-font-style(400, 36px, 48px, config.$primary, -0.04em);
+    margin-top: 64px;
+    display: var(--recently-updated-title-visibility);
+}
+
+H2.dataset-heading a {
+    @include apply-font-style(700, 18px, 24px, config.$primary);
+    margin-bottom: 48px;
+    margin-left: 0;
+    margin-top: 64px;
+}
+
+.recently-updated H3 {
+    @include apply-font-style(400, 28px, 36px, config.$secondary);
+}
+
+.recently-updated-title {
+    margin-top: 48px;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+@media only screen and (max-width: map-get(map-get($breakpoints, recenly_updated_sm), max)) {
+    .recently-updated-title {
+        margin-top: 32px;
+    }
+}
+
+
+@media only screen and (max-width: map-get(map-get($breakpoints, recenly_updated_sm), max)) {
+    .recently-updated {
+        margin-top: 32px;
+        margin-bottom: 24px;
+    }
+}
+
+@media only screen and (min-width: map-get(map-get($breakpoints, md), min)) {
+    .recently-updated {
+        padding-bottom: 64px;
+    }
+}
+
+
+.dataset-content {
+    margin-right: 24px;
+    margin-bottom: 20px;
+}
+
+.dataset-item {
+    list-style:  none;
+}
+
+.homepage-package-list {
+
+    .dataset-item {
+        list-style:  none;
+        border: config.$primary10 solid 1px;
+        border-radius: 8px;
+        padding: 24px;
+        height: 100%;
+
+        .dataset-content .dataset-heading {
+            color: config.$primary;
+        }
+    }
+    .dataset-content div {
+        @include apply-font-style(400, 14px, 20px);
+        margin: 0;
+    }
+
+}
+
+.dataset-content .dataset-heading {
+    @include apply-font-style(700, 18px, 24px);
+    margin:  10px 0;
+}
+
+.dataset-content .author {
+    @include apply-font-style(700, 14px, 20px, config.$primary);
+    margin-bottom: 0;
+}
+
+.dataset-content .modified {
+    @include apply-font-style(400, 12px, 20px, config.$primary);
+    padding-bottom: 12px;
+}
+
+.dataset-content div:last-child {
+    @include apply-font-style(400, 14px, 20px, config.$primary, inherit, left);
+}
+
+.dataset-content div {
+    @include apply-font-style(400, 14px, 20px);
+    margin: 0;
+}
+
+.recently-updated .view-all-btn {
+    display: inline-block;
+    padding: 6px 16px;
+    height: 36px;
+    @include apply-font-style(700, 16px, 24px, config.$secondary);
+    background: config.$primary10;
+    border: config.$secondary solid 1px;
+    border-radius: 4px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.recently-updated .view-all-btn:hover {
+    text-decoration: none;
+}
+
+.recently-updated-datasets {
+    display: none;
+}
+
+@media only screen and (max-width: map-get(map-get($breakpoints, recenly_updated_xs), max)) {
+    .recently-updated .view-all-btn {
+        margin-top: 10px;
+        position: static;
+    }
+    .no-row {
+        display: none;
+    }
+    .recently-updated-datasets {
+        display: flex;
+        --bs-gutter-x: 0;
+    }
+    .recently-updated-datasets a {
+        margin-top: 6px;
+        width: 90px;
+    }
+    .dataset-content div:last-child {
+        @include apply-font-style(400, 12px, 20px, config.$primary, inherit, left);
+    }
+    .homepage-package-list .dataset-content div {
+        @include apply-font-style(400, 12px, 20px, config.$primary, inherit, left);
+    }
+    H2.dataset-heading a {
+        @include apply-font-style(700, 16px, 24px, config.$primary);
+    }
+}
+
+@media only screen and (max-width: map-get(map-get($breakpoints, recenly_updated_sm), max)) {
+    .recently-updated .view-all-btn {
+        position: static;
+    }
+}
+
+
+@media only screen and (max-width: map-get(map-get($breakpoints, sm), max)) {
+    .homepage-package-list > .dataset-item {
+        border: none;
+        border-radius: 0;
+    }
+    .homepage-package-list  {
+        border-bottom: config.$primary25 solid 1px;
+    }
+
+    .homepage-package-list:last-child  {
+        border-bottom: none;
+    }
+
+    .container {
+        width: 100%;
+        padding-right: var(--bs-gutter-x, 1.5rem);
+        padding-left: var(--bs-gutter-x, 1.5rem);
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .homepage-package-list .dataset-item {
+        padding: 12px 0;
+    }
+
+}
+
+
+/* tags margin (recently updated / datasets) */
+.dataset-resources {
+    list-style-type: none;
+    padding-left: 0;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.dataset-resources li {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 6px;
+    background: config.$tag-background;
+    border-radius: 4px;
+    margin-left: 0;
+    margin-right: 8px;
+    margin-bottom: 24px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: none;
+}
+
+.dataset-resources li a.badge,
+.dataset-resources li a.badge:hover {
+    display: inline-block;
+    background-color: transparent;
+    color: config.$tag-light;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: config.$badge-font-size;
+}
+/* end tags margin */
+
+/* subscribe to updates */
+.subscribe {
+    background-color: config.$primary;
+
+    .container {
+        padding-top: 64px;
+    }
+    .highlight-box {
+        background-color: config.$highlight-box-bgcolor;
+        border-radius: 4px;
+        padding: 36px;
+
+        * {
+            --bs-gutter-x: 0;
+        }
+    }
+    h2 {
+        color: config.$light;
+        margin-top: 0;
+    }
+    .subtext {
+        color: config.$light;
+        margin-bottom: 24px;
+    }
+    .register {
+        @include apply-font-style(700, 16px, 24px, config.$primary, inherit, center);
+        height: 48px;
+        background: config.$light;
+        border-radius: 4px;
+        display: inline-block;
+        padding: 12px 16px;
+    }
+    .login {
+        @include apply-font-style(700, inherit, inherit, config.$light, inherit, center);
+        height: 48px;
+        display: inline-block;
+        padding: 12px 16px;
+
+        a, a:hover {
+            margin-left: 10px;
+            color: config.$light;
+            text-decoration: underline;
+        }
+    }
+
+}
+
+@media only screen and (max-width: map-get(map-get($breakpoints, xs), max)){
+    .subscribe .subtext {
+        @include apply-font-style(400, 14px, 20px, config.$light);
+    }
+    .subscribe .register {
+        @include apply-font-style(700, 16px, 24px, config.$primary, inherit, center);
+    }
+}
+
+.highlight-box h2 {
+    font-weight: 400;
+}
+
+.spacer {
+    height:  64px;
+}
+
+@media only screen and (min-width: 375px) and (max-width: 990px){
+    .highlight-box .row div:first-child {
+    }
+    .subscribe .register {
+        width: 100%;
+    }
+    .highlight-box .row div:nth-child(2) {
+        margin-left: 0;
+    }
+    .subscribe .login {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 991px) {
+    .highlight-box .row div:first-child {
+        max-width: 215px !important;
+    }
+    .highlight-box .row div:nth-child(2) {
+        margin-left: -40px;
+        padding-left: 0;
+    }
+}
+
+@media only screen and (min-width: 767px) {
+    .subscribe .login{
+        text-align: left;
+        padding-left: 20px;
+    }
+}
+
+/* footer */
+.big-footer {
+    background: config.$primary;
+}
+
+.site-footer {
+    background: config.$primary;
+    width: 100%;
+    padding: 0;
+    margin-bottom: -25px;
+
+    .list-unstyled {
+        width: 100%;
+        display: block;
+        position: relative;
+        box-sizing: border-box;
+
+         li {
+            display: inline-block;
+            vertical-align: top;
+             @include apply-font-style(400, 14px, 20px);
+            margin-right: 24px;
+            height: 24px;
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+
+            a {
+                color: config.$light;
+            }
+        }
+        li:last-child {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    }
+    .container {
+        padding-bottom: 32px;
+
+        .desc {
+            @include apply-font-style(400, 14px, 20px);
+        }
+
+        .footer-links {
+            @include apply-font-style(400, 14px, 20px);
+
+            img {
+                width:  100%;
+                margin-bottom: 30px;
+            }
+            .desc {
+                color: config.$light;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.desc-mobile {
+    display: none;
+}
+
+.desc-tablet {
+    margin-top: 0;
+    display: none;
+}
+
+@media only screen and (max-width: map-get(map-get($breakpoints, xs), max)) {
+    .desc-mobile {
+        display: block;
+        margin-top: 24px;
+    }
+    .desc-large {
+        display: none;
+    }
+    .desc-tablet {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: map-get(map-get($breakpoints, md), max)) {
+    .desc-wide {
+        display: none;
+    }
+    .desc-tablet {
+        display: block;
+        margin-top: 5px;
+    }
+}
+
+a.footer-link:hover,
+.site-footer .desc a,
+.site-footer .desc a:hover {
+    color: config.$light;
+    text-decoration: underline;
+}
+
+@media only screen and (min-width: 769px) {
+    .site-footer .list-unstyled li {
+        display: inline-block;
+    }
+}
+
+.footer-logo {
+    max-width: 156px;
+    height: auto;
+}
+
+.footer-search-section {
+    padding-top: config.$footer-search-section-padding-top;
+    padding-bottom: config.$footer-search-section-padding-bottom;
+    margin-bottom: 0;
+}
+
+.footer-search-section div h2 {
+    @include apply-font-style(700, 18px, 24px, config.$light);
+}
+
+.footer-search-section  .lens-btn {
+    background-color: config.$primary10;
+    border: 0;
+    border-radius: 0 4px 4px 0;
+    padding-left: 36px;
+    padding-right: 36px;
+}
+
+.footer-search-section #field-giant-search, .footer-search-section #field-giant-search:focus {
+    outline: none;
+    border: none;
+}
+
+.footer-search-section  .lens-btn .search-label{
+    display: block;
+}
+
+.footer-search-section .search-label {
+    @include apply-font-style(700, 18px, 24px, config.$primary);
+}
+
+.footer-search-section .lens-btn {
+    border-left-color: config.$primary;
+    color: config.$primary;
+}
+
+@media only screen and (max-width: map-get(map-get($breakpoints, xs), max)) {
+    .desc-mobile {
+        display: block;
+    }
+    .desc-large {
+        display: none;
+    }
+    .desc-tablet {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: map-get(map-get($breakpoints, md), max)) {
+    .desc-wide {
+        display: none;
+    }
+    .desc-tablet {
+        display: block;
+    }
+}
+
+/* misc */
+#background-video {
+    display: none;
+}
+
+.navbar-toggle {
+    color: config.$primary;
+}
+
+a {
+  color: config.$secondary;
+}
+
+a:hover {
+  color: config.$secondary;
+  text-decoration: underline;
+}
+
+.text-primary {
+  color: config.$secondary;
+}
+
+.bg-primary {
+  background-color: config.$secondary;
+}
+
+.btn {
+    padding: 10px 40px;
+}
+
+.btn-primary {
+  background-color: config.$secondary;
+  border-color: config.$secondary;
+}
+
+.btn-primary:hover {
+    color: config.$light;
+    background-color: config.$primary;
+    border-color: config.$primary;
+}
+
+.btn-primary,
+.btn-success,
+.btn-default {
+  background-color: config.$primary;
+  border: config.$primary solid 1px;
+  color: config.$light;
+}
+
+.btn-danger {
+  background-color: config.$tag-light;
+  border-color: config.$tag-light;
+}
+
+.btn-danger:hover {
+    color: config.$light;
+    background-color: config.$tag-dark;
+    border-color: config.$tag-dark;
+}
+
+.btn-light:hover,
+.btn-default:hover,
+.btn-primary:hover,
+.btn-danger:hover,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active:hover,
+.btn-primary.active:hover,
+.open > .dropdown-toggle.btn-primary:hover,
+.btn-primary:active:focus,
+.btn-primary.active:focus,
+.open > .dropdown-toggle.btn-primary:focus,
+.btn-primary:active.focus,
+.btn-primary.active.focus,
+.open > .dropdown-toggle.btn-primary.focus  {
+  color: config.$primary;
+  background-color: config.$primary10 !important;  /* to overwrite default */
+  border-color: config.$primary10;
+}
+
+fieldset[disabled] .btn-primary.focus {
+  background-color: config.$secondary;
+}
+
+.btn-primary .badge {
+  color: config.$secondary;
+}
+
+.btn-link {
+  color: config.$secondary;
+}
+
+.dropdown-menu > .active > a:focus {
+  background-color: config.$secondary;
+}
+
+.nav .open > a:focus {
+  border-color: config.$secondary;
+}
+
+.nav-pills > li.active > a:focus {
+  background-color: config.$secondary;
+}
+
+.pagination > li > span {
+  color: config.$secondary;
+}
+
+.pagination > .active > span:focus {
+  background-color: config.$secondary;
+  border-color: config.$secondary;
+}
+
+.label-primary {
+  background-color: config.$secondary;
+}
+
+.nav-pills > .active > a > .badge {
+  color: config.$secondary;
+}
+
+a.thumbnail.active {
+  border-color: config.$secondary;
+}
+
+.progress-bar {
+  background-color: config.$secondary;
+}
+
+.list-group-item.active,
+.list-group-item.active:hover,
+.list-group-item.active:focus {
+  background-color: config.$secondary;
+  border-color: config.$secondary;
+}
+
+.panel-primary {
+  border-color: config.$secondary;
+}
+
+.panel-primary > .panel-heading {
+  background-color: config.$secondary;
+  border-color: config.$secondary;
+}
+
+.panel-primary > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: config.$secondary;
+}
+.panel-primary > .panel-heading .badge {
+  color: config.$secondary;
+}
+.panel-primary > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: config.$secondary;
+}
+
+.banner {
+  background-color: config.$secondary;
+}
+
+.media-view:hover,
+.media-view.hovered {
+  border-color: config.$secondary;
+}
+
+.media-view:hover .banner,
+.media-view.hovered .banner {
+  background-color: config.$secondary;
+}
+
+.editor .editor-info-block a {
+  color: config.$secondary;
+}
+
+.resource-list.reordering .resource-item.ui-sortable-helper {
+  border: 1px solid config.$secondary;
+}
+.resource-list.reordering .resource-item.ui-sortable-helper .handle {
+  border-color: config.$secondary;
+}
+
+.view-list li a.active,
+.view-list li a:hover {
+  border-color: config.$secondary;
+}
+
+.view-list li a.active .icon,
+.view-list li a:hover .icon {
+  background-color: config.$secondary;
+}
+
+.view-list li .arrow {
+  border-top-color: config.$secondary;
+}
+
+.view-list li.active a {
+  border-color: config.$secondary;
+}
+.view-list li.active a .icon {
+  background-color: config.$secondary;
+}
+
+.view-list.stacked::-webkit-scrollbar-thumb:hover {
+  background-color: config.$secondary;
+}
+
+.homepage .module-search .module-content {
+  background-color: config.$secondary;
+}
+
+.popover-followee .nav li a i {
+  background-color: config.$secondary;
+}
+
+.popover-followee .nav li.active a i {
+  color: config.$secondary;
+}
+
+.resource-view-list.reordering li.ui-sortable-helper {
+  border: 1px solid config.$secondary;
+}
+
+.resource-view-list.reordering li.ui-sortable-helper .handle {
+  border-color: config.$secondary;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: config.$light;
+    background-color: config.$secondary;
+    border-color: config.$secondary;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    color: config.$secondary;
+    background-color: config.$light;
+    border: 1px solid #dee2e6;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.resource-editor .btn {
+    width: 100%;
+    margin: 0;
+    background-color: var(--primary);
+    font-size: inherit;
+}
+
+/* pills , badges */
+.pill, .module-narrow .nav-item.active a, .module-narrow .nav-item.active a:hover {
+    background-color: config.$secondary;
+    color: config.$light;
+}
+
+.module-narrow .nav-item.active a:before {
+    border-left-color: config.$secondary;
+}
+
+.module-narrow .nav-item > a .badge {
+    background-color: config.$primary;
+}
+
+/* dataset page */
+.dataset-heading a {
+    font-style: normal;
+    @include apply-font-style(700, 18px, 24px, config.$primary);
+}
+
+.add-to-group button {
+    margin:  20px 0;
+}
+
+.resource-item .resource-detail {
+    @include apply-font-style(400, 11px, 20px, config.$primary);
+    margin-bottom: 0;
+}
+
+/* dev banner */
+.dev-banner {
+    display: var(--development-banner-visibility);
+}
+
+.account-masthead .account ul li:not(.dev-banner) {
+    display: var(--locales-visibility);
+}
+
+.dev-banner-container {
+    display: none;
+    width: 100%;
+}
+
+.nav-for-large-screen {
+    display: block;
+}
+
+.account-masthead .account ul li.dev-banner {
+    display: none;
+}
+
+.dev-banner-mobile {
+    display: none;
+}
+
+
+@media only screen and (max-width: 627px) {
+    .dev-banner-container .row {
+        --bs-gutter-x: 0;
+    }
+    .account-masthead {
+        height: 100%;
+    }
+    .dev-banner-container {
+        display: block;
+    }
+    .nav-for-large-screen {
+        display: none;
+    }
+    .account-masthead .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+    }
+    .dev-banner-container .list-unstyled {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .dev-banner-container .list-unstyled li {
+        width: 100%;
+    }
+    .account-masthead .account ul li a {
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+    .dev-banner-mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+        pointer-events: none;
+        background-color: config.$primary;
+        margin: 0;
+        width: 100%;
+    }
+    .dev-banner-mobile a {
+        @include apply-font-style(400, 12px, 16px, config.$light);
+        text-decoration: none;
+    }
+    .dev-banner-mobile a .clickable {
+        margin-left: 6px;
+        pointer-events: auto;
+        font-weight: 700;
+        text-decoration: underline;
+
+    }
+    .dev-banner-mobile a i {
+        margin-right: 6px;
+        margin-top: -2px;
+    }
+
+}
+
+@media only screen and (min-width: 628px) {
+    .account-masthead .account ul li.dev-banner  {
+        display: block;
+    }
+    .account-masthead .account {
+        float: left;
+    }
+    nav.account {
+        width: 100%;
+    }
+    nav.account ul.list-unstyled {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+    }
+    .dev-banner {
+        margin-right: auto;
+        background-color: config.$tag;
+        pointer-events: none;
+    }
+    ul li.dev-banner a {
+        margin-left: 0 !important;
+        background-color: config.$tag !important;
+    }
+    .dev-banner a .clickable {
+        margin-left: 6px;
+        pointer-events: auto;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+}
+
+.ckan-circle-exclamation {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    @include apply-font-style(inherit, 16px, 16px, config.$light, inherit, center);
+    margin-right: 7px;
+    vertical-align: middle;
+    margin-top: -1px;
+}
+
+.ckan-circle-exclamation::before {
+    content: '!';
+    position: absolute;
+    top: 50%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    @include apply-font-style(900, 10px, 1px, config.$light);
+
+}
+
+.ckan-circle-exclamation.white {
+    color: config.$light;
+    border: 2px solid white;
+}
+
+.ckan-circle-exclamation.secondary {
+    color: config.$light;
+    border: 2px solid config.$secondary;
+}
+
+/* dashboard */
+.nav-link, .page-header .nav-tabs li a {
+    color: config.$primary;
+}
+
+/*packages page */
+#dataset-search-form .input-group-btn:last-child > .btn {
+    border-radius: 0 4px 4px 0;
+}
+
+.dataset-resources li a.badge, .dataset-resources li a.badge:hover {
+    color: config.$light;
+}
+
+/* forms */
+
+.form-select {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+    -moz-padding-start: calc(0.75rem - 3px);
+    @include apply-font-style(400, 0.875rem, 1.5, config.$dark);
+    background-color: config.$light;
+    border: 1px solid config.$secondary;
+    border-radius: 0.25rem;
+    box-shadow: inset 0 1px 2px config.$primary10;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    appearance: none;
+}
+
+.promoted .big-search-form input, .form-control {
+    border: config.$primary25 solid 1px;
+    border-radius: 4px;
+    outline: none;
+    height: auto;
+}
+
+
+/* Authentication & user UI */
+.logout-page,
+.logout-page .wrapper,
+.logout-page .primary {
+    all: unset;
+    display: contents;
+}
+
+.logout-page #content {
+    padding-left: 12px;
+    min-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 64px;
+    margin-bottom: 64px;
+}
+
+.logout-page .module .module-content {
+    padding: 0;
+}
+
+.logout-page .module-content p {
+    display: none;
+}
+
+.logout-page .container .wrapper::before {
+    content: none;
+}
+
+.logout-options h1 {
+    @include apply-font-style(400, 36px, 48px, config.$primary, -0.02em, left);
+    margin-bottom: 24px;
+}
+
+.logout-options a.btn-primary,
+.logout-options a.btn-outline-dark {
+    padding: 12px 16px;
+
+}
+
+.logout-options a.btn-outline-dark,
+.logout-options a.btn-outline-dark:hover {
+    margin-left: 16px;
+    border-color: config.$primary;
+    color: config.$primary;
+    background-color: config.$light;
+}
+
+@media only screen and (max-width: 327px) {
+    .logout-options a.btn-primary,
+    .logout-options a.btn-outline-dark {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 12px;
+
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .logout-page #content {
+        padding-left: 30px;
+    }
+    .logout-options a.btn-primary,
+    .logout-options a.btn-outline-dark {
+        margin-left: 12px;
+    }
+}
+
+.masthead {
+    border-bottom: config.$primary65 thin solid;
+}
+
+/* breadcrumbs */
+
+@media only screen and (min-width: 282px) {
+    /* Breadcrumb update */
+    .promoted-breadcrumbs .toolbar .breadcrumb {
+        position: absolute;
+        bottom: 85px;
+    }
+
+    .toolbar .breadcrumb li:last-child::before {
+        content: var(--bs-breadcrumb-divider, "/") "\A";
+        white-space: pre;
+        display: inline-block;
+        min-width: 200px;
+    }
+
+    .toolbar .breadcrumb li:last-child a {
+        display: block;
+        position: absolute;
+        left: 7px;
+        top: 40px;
+        @include apply-font-style(config.$breadcrumbs-font-weight, 36px, 48px, config.$light, -0.02em, left);
+    }
+}
+
+.breadcrumb li:not(:last-child) a {
+    @include apply-font-style(config.$breadcrumbs-font-weight, 16px, 24px, config.$breadcrumbs-color);
+    text-decoration: config.$breadcrumbs-text-decoration;
+}
+
+.admin_page {
+    padding-top: 49px;
+}
+
+
+.dashboard-add-team-btn, .dashboard-add-dataset-btn {
+    float: right !important;
+}
+
+@media only screen and (max-width: 583px) {
+.dashboard-add-team-btn, .dashboard-add-dataset-btn {
+    margin-bottom: 32px;
+    margin-top: 16px;
+    width: 100%;
+    }
+}
+
+/* team list  in ckan/organization */
+.media-grid, .module-grid {
+    width: 100%;
+    display: grid !important;
+    row-gap: 24px;
+    column-gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 0;
+    margin: 0;
+    border: none;
+    list-style-type: none;
+    background: none;
+    height: calc(100% + 250px) !important;
+}
+
+.media-grid .media-image {
+    width: auto;
+    aspect-ratio: 9/ 4;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    object-fit: contain;
+    background-color: config.$light;
+}
+
+.media-item {
+    position: initial !important;
+    float: none;
+    background-color: config.$light;
+    margin: 0;
+    width: 100%;
+    padding: 12px;
+    border: config.$primary65 thin solid;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.media-item:hover {
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.media-item a,
+.media-item a:active, .media-item a:hover {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    }
+
+.media-item h2 {
+    @include apply-font-style(700, 16px, 24px);
+}
+
+.media-item .media-description {
+    @include apply-font-style(400, 14px, 20px);
+    margin-bottom: 8px;
+}
+
+.media-grid .media-item {
+    margin: auto 0 0;
+    padding-top: 10px;
+}
+
+.media-grid .package-count {
+    border-radius: 4px;
+    background-color: config.$primary10;
+    padding: 2px 6px 2px 6px;
+    @include apply-font-style(400, 12px, 16px, config.$secondary, 0.1em);
+    text-transform: uppercase;
+    margin-right: 4px;
+
+}
+
+.media-grid .org-owner {
+    border-radius: 4px;
+    background-color: config.$neutral-light-grey;
+    padding: 2px 6px 2px 6px;
+    @include apply-font-style(400, 12px, 16px, 0.1em);
+    text-transform: uppercase;
+}
+
+/** tab active **/
+.user-dashboard-main .page-header .nav-tabs li:last-child.active a {
+    background-color: config.$primary10;
+    border: 1px solid transparent;
+    border-bottom-color: config.$primary65;
+}
+
+.user-dashboard-activity .page-header .nav-tabs li:first-child.active a {
+    background-color: config.$primary10;
+    border: 1px solid transparent;
+    border-bottom-color: config.$primary65;
+}
+
+/* user profile styles */
+.user-profile-page .module-content {
+    padding: 38px 32px;
+}
+
+.user-profile-page .page-heading {
+      margin-top: 32px;
+      margin-bottom: 32px !important;
+      color: config.$primary;
+}
+
+/** activity section heading **/
+.user-profile-page .page-heading small.text-muted.fs-5 {
+    @include apply-font-style(400, 28px, 36px, config.$primary, 0.01em, left);
+    color: config.$primary !important;
+    font-size: 28px !important;
+}
+
+.user-profile-page #followee-popover {
+    @include apply-font-style(inherit, 16px, 24px, config.$primary, 0.01em, center);
+    padding: 12px 16px;
+    border-radius: 4px;
+    border: config.$primary thin solid;
+    color: config.$primary;
+    background: config.$light;
+}
+
+.user-profile-page #followee-popover span:first-child {
+    font-weight: 700;
+}
+
+.user-profile-page #followee-popover strong {
+    font-weight: 400;
+}
+
+/* top content */
+.user-profile-page .upper-content {
+    margin-top: 64px;
+    margin-bottom: 48px;
+    padding: 32px;
+    background-color: config.$primary10;
+    border-radius: 4px 0 0 0;
+}
+
+.user-profile-page .no-padding {
+    padding: 0;
+}
+
+.user-profile-page .user-basic-info {
+    padding: 0;
+    width: 100%;
+}
+
+.user-profile-page .profile-left-info {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    width: 100%;
+}
+
+.user-profile-page .profile-info {
+    padding-left: 20px;
+}
+
+.user-profile-page .profile-info p:first-child {
+    @include apply-font-style(400, 28px, 36px, config.$primary, 0.01em, left);
+}
+
+.user-profile-page .profile-pic img {
+  width: 64px;
+  height: 64px;
+  border-radius: 2px;
+  border: config.$light 2px solid;
+}
+
+.user-profile-page .profile-info {
+  height: 64px;
+}
+
+.user-profile-page .profile-info div p,
+.user-profile-page .profile-info div ul {
+  margin: 4px;
+}
+
+.user-profile-page .right-content {
+    padding-right: 12px;
+    padding-left: 0;
+}
+
+.user-profile-page .upper-content ul {
+    list-style-type: none;
+}
+
+@media only screen and (max-width: 767px) {
+    .user-profile-page .right-content .logout-btn {
+        max-width: 40%;
+    }
+    .user-profile-page .right-content {
+       margin-top: 48px;
+    }
+    .user-profile-page .right-content ul {
+        padding-left: 87px;
+    }
+    .user-profile-page .profile-left-info-details {
+      justify-content: flex-start;
+    }
+    .user-profile-page .left-content {
+        padding-left: 0;
+    }
+
+    .user-profile-page .profile-left-info-details {
+      justify-content: flex-end;
+    }
+    .user-profile-page .profile-left-info {
+      list-style-type: none;
+    }
+    .user-dashboard-main h2.page-heading.mb-4,
+    .dashboard-organisation-main h2.page-heading.mb-4{
+        text-align: left;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .user-profile-page .profile-left-info-details {
+      justify-content: flex-end;
+    }
+    .user-profile-page .profile-left-info-details li:not(:first-child)::before {
+      content: '|';
+      color: config.$primary65;
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+    .user-profile-page .upper-content ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      @include apply-font-style(400, 16px, 24px, config.$primary);
+      margin-bottom: 0;
+    }
+
+    .user-profile-page .right-content ul {
+        justify-content: flex-end;
+    }
+}
+
+.user-profile-page .right-content .sysadmin-item a {
+    padding-right: 0;
+    text-decoration: underline;
+}
+
+.user-profile-page .right-content ul li:nth-child(1) {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-right: 19px;
+}
+.user-profile-page .right-content ul li a {
+  font-weight: 700;
+}
+.user-profile-page .right-content ul li:nth-child(2) {
+  border: config.$primary thin solid;
+  border-radius: 4px;
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+.user-profile-page .right-content .logout-btn {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.user-profile-page .right-content .logout-btn:hover {
+    text-decoration: none;
+    background: config.$primary65;
+}
+
+.user-profile-page .right-content .logout-btn a {
+    text-decoration: none;
+}
+
+.user-profile-page .profile-left-info-details li a {
+    text-decoration: underline;
+}
+
+/* tabs */
+.user-profile-page .secondary {
+    content: none;
+    display: none;
+}
+
+.user-profile-page .wrapper .primary {
+    width: 100%;
+    border: 0;
+}
+
+.user-profile-page .wrapper:before {
+    border-right: 0;
+}
+
+.user-profile-page .wrapper {
+    box-shadow: none;
+    border: 0;
+}
+
+.user-profile-page .page-header {
+    background-color: config.$light;
+}
+
+.user-profile-page div.module-content {
+    border: config.$primary65 thin solid;
+    border-top: none;
+}
+
+.user-profile-page header,
+.user-profile-page header ul.nav.nav-tabs {
+    width: calc(100% + 1px);
+}
+
+.user-profile-page header ul.nav.nav-tabs li:first-child {
+    width: 25%;
+}
+
+.user-profile-page header ul.nav.nav-tabs li:not(:first-child) {
+    width: 24.3%;
+    margin-left: 0.7%;
+}
+
+.user-profile-page header ul.nav.nav-tabs li:last-child {
+    width: 24.3%;
+    margin-left: 0.7%;
+}
+
+.user-profile-page .page-header .nav-tabs li.active a {
+    border: config.$primary65 thin solid;
+    background-color: config.$light;
+    border-bottom-color: transparent;
+}
+
+.user-profile-page .nav-tabs .nav-link, .user-profile-page .page-header .nav-tabs li a,
+.user-profile-page .nav-tabs .nav-link, .user-profile-page .page-header .nav-tabs li a:hover {
+    background-color: config.$primary10;
+}
+
+.user-profile-page .nav-tabs,
+.user-profile-page .nav-tabs .nav-link,
+.user-profile-page .page-header .nav-tabs li a {
+    border-bottom-color: config.$primary65;
+}
+
+.user-profile-page .nav.nav-tabs li a {
+    color: config.$primary;
+    @include apply-font-style(700, 16px, 20px, inherit, inherit, center);
+}
+
+@media only screen and (max-width: 510px) {
+    .user-profile-page header ul.nav.nav-tabs li {
+        width: 100% !important;
+    }
+    .user-profile-page header ul.nav.nav-tabs li:first-child {
+        margin-left: 4px;
+    }
+    .user-profile-page .nav.nav-tabs li a {
+        text-align: left;
+    }
+    .user-profile-page .dashboard-add-team-btn {
+        width: 100% !important;
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+
+}
+
+@media only screen and (max-width: 545px) {
+    .user-dashboard-main .pull-right {
+        float: none;
+        width: 100%;
+    }
+    .user-dashboard-main #followee-popover {
+        width: 100%;
+    }
+    .user-dashboard-main small.text-muted.fs-5 {
+        text-align: center;
+    }
+}
+
+.user-profile-page .page-header.module-content {
+    padding: 0;
+    width: 100%;
+}
+
+.dashboard-organisation-main article.module,
+.user-dashboard-main article.module {
+    padding: 0;
+    margin-bottom: 115px;
+}
+
+.user-profile-page .media-grid .media-heading {
+    margin: 8px 0 0;
+}
+
+.dashboard-organisation-main .media-grid {
+    margin-bottom: 32px;
+}
+
+
+.user-profile-page .show-all-org,
+.user-profile-page .show-all-org:hover,
+.user-profile-page .show-all-pkg,
+.user-profile-page .show-all-pkg:hover {
+    @include apply-font-style(700, 16px, 24px);
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 462px) {
+  .user-profile-page #activity_page_buttons,
+  #activity_page_buttons a.btn {
+    margin-top: 16px;
+    width: 100%;
+    }
+}
+
+/* header navbar */
+@media only screen and (min-width: 992px) {
+    .masthead .main-navbar ul li.active a {
+        color: config.$primary !important;
+    }
+
+    .masthead .main-navbar ul li.active.my_account {
+        pointer-events: auto;
+    }
+
+    .masthead .main-navbar ul li.active a {
+        padding-bottom: 37px !important;
+        border-bottom: config.$secondary 4px solid;
+        border-radius: 0;
+        z-index: 0;
+    }
+
+}
+
+ol.breadcrumb {
+    width: 100%;
+}
+/* User profile*/
+
+/* package edit base */
+.update-dataset-page .primary {
+    width: 100%;
+    padding: 0;
+}
+
+.update-dataset-page .control-required-message {
+    text-align: left;
+    float: none;
+    margin-left: 0;
+}
+/* package edit base */
