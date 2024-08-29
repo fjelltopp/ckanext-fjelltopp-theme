@@ -1,26 +1,22 @@
 fjelltopp-theme:
-  filters: cssrewrite
   output: fjelltopp-theme/%(version)s-fjelltopp-theme.css
   contents:
     - css/fjelltopp-theme.css
 
 
 fjelltopp-theme-fonts:
-  filters: cssrewrite
   output: fjelltopp-theme/%(version)s-fjelltopp-theme.css
   contents:
     - css/inter.css
 
 
 fjelltopp-theme-palette:
-  filters: cssrewrite
   output: fjelltopp-theme/%(version)s-fjelltopp-theme.css
   contents:
     - css/palette.css
 
 
 fjelltopp-theme-extended:
-  filters: cssrewrite
   output: fjelltopp-theme/%(version)s-fjelltopp-theme-extended.css
   contents:
     - css/fjelltopp-theme-extended.css
