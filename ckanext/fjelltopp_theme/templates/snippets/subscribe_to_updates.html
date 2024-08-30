@@ -1,30 +1,3 @@
-{% set stats =  h.get_datahub_stats() %}
-
-<div class="footer-stats">
-    <div class="container">
-        <div class="data-hub-stats col-lg-6 col-sm-12 col-xs-12">
-                <div class="stat-item">
-                    {% for i in range(0, stats|length, 2) %}
-                        <div class="row">
-                            {% for j in range(i, i+2) %}
-                                {% if j < stats|length %}
-                                    <div class="insight-small-rect col-lg-6 col-sm-6 col-xs-12">
-                                        <p>{{ stats[j]['label'] }}</p>
-                                        <div class="number">
-                                            <span>{{ stats[j]['value'] }}</span>
-                                        </div>
-                                    </div>
-                                {% endif %}
-                            {% endfor %}
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-</div>
-
-<div class="after-insights"></div>
-
 {% if not g.userobj %}
 <div class="subscribe">
     <div class="container">
@@ -32,14 +5,10 @@
             {% block contents %}
             <h2>{{ _('Subscribe to updates') }}</h2>
             <div class="subtext">{% block subtext %}{{ _('Create an account to receive notifications by email whenever new documents are posted.') }}{% endblock %}</div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="col-xs-12 col-sm-12 col-md-12">
                     <a class="register" href="{{ h.url_for("/user/register") }}">{{ _('Create an account') }}</a>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-9">
                     <span class="login">or <a href="{{ h.url_for("/user/login") }}">{{ _('log in') }}</a></span>
                 </div>
-            </div>
             {% endblock %}
         </div>
     </div>

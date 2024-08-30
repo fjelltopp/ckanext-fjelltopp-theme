@@ -477,6 +477,44 @@ $data-hub-stats-height: 374px;
     }
 }
 
+
+.data-hub-stats {
+    .row {
+        --bs-gutter-x: 0 !important;
+    }
+    padding-top: 64px;
+    padding-bottom: 64px;
+    height: 400px;
+    background-color: config.$primary;
+    .insight-small-rect {
+        background-color: config.$primary;
+        border: config.$light 1px solid;
+        color: config.$primary25;
+        p:first-child {
+            @include apply-font-style(700, 18px, 24px, config.$primary25);
+        }
+        .number span {
+            @include apply-font-style(400, 36px, inherit, config.$light);
+        }
+    }
+}
+
+
+.subscribe .container {
+    padding: 64px 0 0
+}
+
+footer.site-footer .subscribe > .container > .highlight-box > .row > div:first-child {
+    max-width: 100% !important;
+}
+
+footer.site-footer .data-hub-stats {
+    margin-left: 0;
+    height: auto;
+    width: auto;
+    padding: 64px 0 0;
+}
+
 /* group box (group page?) template update might be needed as well TODO */
 .group-box {
     background: config.$light;
@@ -833,6 +871,8 @@ H2.dataset-heading a {
         padding-left: 20px;
     }
 }
+
+
 
 /* footer */
 .big-footer {
