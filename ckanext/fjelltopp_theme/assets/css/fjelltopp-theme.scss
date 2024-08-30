@@ -767,6 +767,10 @@ H2.dataset-heading a {
 
 }
 
+.dataset-resources h2 {
+    margin-bottom: 20px;
+}
+
 .dataset-resources li {
     display: inline-flex;
     justify-content: center;
@@ -1492,7 +1496,7 @@ a.thumbnail.active {
 
 .ckan-circle-exclamation.white {
     color: config.$light;
-    border: 2px solid white;
+    border: 2px solid config.$secondary;
 }
 
 .ckan-circle-exclamation.secondary {
