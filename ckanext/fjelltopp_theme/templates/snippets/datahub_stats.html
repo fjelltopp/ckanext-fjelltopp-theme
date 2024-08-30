@@ -1,4 +1,4 @@
-{% set stats = h.get_datahub_stats() %}
+{% set stats =  h.get_datahub_stats(config_data = [{'label': 'Something else', 'value': 0}]) %}
 
 <div class="data-hub-stats col-lg-6 col-sm-12 col-xs-12">
     {% for i in range(0, stats|length, 2) %}
