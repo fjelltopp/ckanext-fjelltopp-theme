@@ -261,12 +261,6 @@ p.learn-more a {
     color: config.$light;
 }
 
-@media (max-width: map-get(map-get($breakpoints, md), max)) {
-    .big-search-form #field-giant-search {
-        max-width: 279px;
-    }
-}
-
 .promoted-breadcrumbs .toolbar {
     height: 170px;
 }
@@ -387,8 +381,6 @@ $data-hub-stats-margin-left: 24px;
 $data-hub-stats-margin-right: 24px;
 $data-hub-stats-height: 374px;
 .data-hub-stats {
-    margin-top: 48px;
-    height: 374px;
     .insight-small-rect {
         background-color: config.$light;
         padding: 19px;
@@ -428,6 +420,7 @@ $data-hub-stats-height: 374px;
         height: $data-hub-stats-height;
     }
 }
+
 
 @media only screen and (min-width: map-get(map-get($breakpoints, sm), min)) {
     .insight-small-rect:last-child {
@@ -532,6 +525,10 @@ footer.site-footer .data-hub-stats {
 
 .big-search-form .lens-btn {
     background-color: config.$secondary;
+}
+
+.site-footer .footer-subscribe-section {
+    margin-bottom: 64px;
 }
 
 /* group box (group page?) template update might be needed as well TODO */
