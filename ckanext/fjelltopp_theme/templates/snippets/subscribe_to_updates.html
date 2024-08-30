@@ -1,3 +1,30 @@
+{% set stats =  h.get_datahub_stats() %}
+
+<div class="footer-stats">
+    <div class="container">
+        <div class="data-hub-stats col-lg-6 col-sm-12 col-xs-12">
+                <div class="stat-item">
+                    {% for i in range(0, stats|length, 2) %}
+                        <div class="row">
+                            {% for j in range(i, i+2) %}
+                                {% if j < stats|length %}
+                                    <div class="insight-small-rect col-lg-6 col-sm-6 col-xs-12">
+                                        <p>{{ stats[j]['label'] }}</p>
+                                        <div class="number">
+                                            <span>{{ stats[j]['value'] }}</span>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+</div>
+
+<div class="after-insights"></div>
+
 {% if not g.userobj %}
 <div class="subscribe">
     <div class="container">
