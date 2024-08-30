@@ -479,14 +479,14 @@ $data-hub-stats-height: 374px;
 
 
 .data-hub-stats {
-    .row {
-        --bs-gutter-x: 0 !important;
-    }
     padding-top: 64px;
     padding-bottom: 64px;
     height: 400px;
-    background-color: config.$primary;
-    .insight-small-rect {
+
+    .row {
+        --bs-gutter-x: 0 !important;
+    }
+        .insight-small-rect {
         background-color: config.$primary;
         border: config.$light 1px solid;
         color: config.$primary25;
@@ -513,6 +513,21 @@ footer.site-footer .data-hub-stats {
     height: auto;
     width: auto;
     padding: 64px 0 0;
+}
+
+.big-search-form .search-form {
+    margin-bottom: 0;
+    .input-group {
+        width: 100%;
+    }
+}
+.search-form {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.big-search-form .lens-btn {
+    background-color: config.$secondary;
 }
 
 /* group box (group page?) template update might be needed as well TODO */
@@ -994,7 +1009,7 @@ a.footer-link:hover,
 }
 
 .footer-search-section  .lens-btn {
-    background-color: config.$primary10;
+    background-color: config.$primary65;
     border: 0;
     border-radius: 0 4px 4px 0;
     padding-left: 36px;
