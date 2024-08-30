@@ -4,7 +4,7 @@
     {'label': 'Insight 3', 'image': 'insight_img_3.png'},
 ] %}
 
-{% set default_stats =  h.get_datahub_stats(more = {'label': 'Something else', 'value': 0}) %}
+{% set default_stats =  h.get_datahub_stats(config_data = [{'label': 'Something else', 'value': 0}]) %}
 
 {% set labels = labels | default(default_labels) %}
 {% set stats = stats | default(default_stats) %}
