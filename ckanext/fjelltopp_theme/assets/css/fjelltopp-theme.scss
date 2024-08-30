@@ -1086,6 +1086,13 @@ a:hover {
     padding: 10px 40px;
 }
 
+
+@media only screen and (max-width: map-get(map-get($breakpoints, xs), max)) {
+    :not(.input-group-btn) > .btn {
+        margin-bottom: 10px;
+    }
+}
+
 .btn-primary {
   background-color: config.$secondary;
   border-color: config.$secondary;
