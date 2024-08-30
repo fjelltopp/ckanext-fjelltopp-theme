@@ -39,11 +39,11 @@ def get_featured_datasets():
     return datasets[:3]
 
 
-def get_datahub_stats(**kwargs):
+def get_datahub_stats(config_data):
     stats = toolkit.h.get_site_statistics()
 
     total_datasets = {'label': 'Total datasets', 'value': stats['dataset_count']}
-    org = {'label': 'Teams', 'value': stats['organization_count']}
+    org = {'label': 'Organization', 'value': stats['organization_count']}
     group = {'label': 'Categories', 'value': stats['group_count']}
 
     now = datetime.now()
@@ -63,20 +63,25 @@ def get_datahub_stats(**kwargs):
     active_users = len([user for user in users_list if user['state'] == 'active'])
     active_users = {'label': 'Users', 'value': active_users}
 
-    valid_values = []
-    for key, value in kwargs.items():
-        if isinstance(value, dict) and \
-                'label' in value and isinstance(value['label'], str) and \
-                'value' in value and isinstance(value['value'], float):
-            valid_values.append(value)
-
-    return [
+    datahub_stats =  [
         total_datasets,
         datasets_updated_this_week,
         active_users,
         org,
         group,
-    ] + valid_values
+    ]
+
+    valid_values = []
+    for value in config_data:
+        if isinstance(value, dict) and \
+                'label' in value and isinstance(value['label'], str) and \
+                'value' in value and isinstance(value['value'], (float, int)):
+            if value['label'][0] == '-' and any(d['label'] == value['label'][1:] for d in datahub_stats):  # if there is a '-' before the label we'll remove it from list
+                datahub_stats = [d for d in datahub_stats if d['label'] != value['label'][1:]]
+            else:
+                valid_values.append(value)
+
+    return datahub_stats + valid_values
 
 
 def get_activity_stream_limit():
