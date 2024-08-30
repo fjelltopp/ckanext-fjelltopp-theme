@@ -501,11 +501,15 @@ $data-hub-stats-height: 374px;
 
 
 .subscribe .container {
-    padding: 64px 0 0
+    padding: 64px 0 0;
 }
 
 footer.site-footer .subscribe > .container > .highlight-box > .row > div:first-child {
     max-width: 100% !important;
+}
+
+footer.site-footer .data-hub-stats > .row:last-child {
+    margin-bottom: 0;
 }
 
 footer.site-footer .data-hub-stats {
