@@ -2,19 +2,8 @@ fjelltopp-theme:
   output: fjelltopp-theme/%(version)s-fjelltopp-theme.css
   contents:
     - css/fjelltopp-theme.css
-
-
-fjelltopp-theme-fonts:
-  output: fjelltopp-theme/%(version)s-fjelltopp-theme.css
-  contents:
     - css/inter.css
-
-
-fjelltopp-theme-palette:
-  output: fjelltopp-theme/%(version)s-fjelltopp-theme.css
-  contents:
     - css/palette.css
-
 
 fjelltopp-theme-extended:
   output: fjelltopp-theme/%(version)s-fjelltopp-theme-extended.css
