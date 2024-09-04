@@ -5,13 +5,13 @@ fjelltopp-theme:
 
 
 fjelltopp-theme-fonts:
-  output: fjelltopp-theme/%(version)s-fjelltopp-theme.css
+  output: fjelltopp-theme/%(version)s-fjelltopp-theme-fonts.css
   contents:
     - css/inter.css
 
 
 fjelltopp-theme-palette:
-  output: fjelltopp-theme/%(version)s-fjelltopp-theme.css
+  output: fjelltopp-theme/%(version)s-fjelltopp-theme-palette.css
   contents:
     - css/palette.css
 

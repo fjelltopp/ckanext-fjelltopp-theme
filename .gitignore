@@ -44,8 +44,8 @@ docs/_build/
 # virtualenv
 .venv/
 
-# Compiled CSS
-ckanext/fjelltopp_theme/assets/css/fjelltopp-theme.css
-ckanext/fjelltopp_theme/assets/css/fjelltopp-theme.css.map
-ckanext/fjelltopp_theme/assets/css/fjelltopp-theme-extended.css
-ckanext/fjelltopp_theme/assets/css/fjelltopp-theme-extended.css.map
+# compiled CSS
+fjelltopp-theme.css
+fjelltopp-theme.css.map
+fjelltopp-theme-extended.css
+fjelltopp-theme-extended.css.map
