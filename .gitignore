@@ -43,3 +43,9 @@ docs/_build/
 
 # virtualenv
 .venv/
+
+# compiled CSS
+fjelltopp-theme.css
+fjelltopp-theme.css.map
+fjelltopp-theme-extended.css
+fjelltopp-theme-extended.css.map
