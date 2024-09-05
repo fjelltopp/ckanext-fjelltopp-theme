@@ -2,6 +2,11 @@
 
 {% block header_debug %} {% endblock %}
 
+{% if not user_dict %}
+    {% set user_dict = h.get_user_obj() %}
+{% endif %}
+
+
 {% block header_logo %}
     {% snippet 'snippets/header_logo.html', site_title = 'Fjelltopp theme for CKAN', logo='/images/fjelltopp-logo.png', header_title='' %}
 {% endblock %}
@@ -14,17 +19,28 @@
     </div>
     {% block nav_items %}
         {% if c.userobj %}
-            {{ h.build_nav_main(
-                ('home.about', _('About')),
-                ('dataset.search', _('Find data')),
-                ('activity.dashboard', _('My account'))
-                 ) }}
+            {%  block nav_items_signed %}
+                {{ h.build_nav_main(
+                    ('home.about', _('About')),
+                    ('dataset.search', _('Find data')),
+                     ) }}
+            {% endblock %}
+
+            {%  block my_account %}
+                {% set path_is_activity = request.path == '/dashboard/' %}
+                <li class="{% if user_dict.name == g.userobj.name %}{% if path_is_activity %}active{% endif %} my_account{% endif %}">
+                    <a href="{{ h.url_for('activity.dashboard') }}">{{ _('My account') }}</a>
+                </li>
+            {% endblock %}
+
         {% else %}
-            {{ h.build_nav_main(
-                ('home.about', _('About')),
-                ('dataset.search', _('Find data')),
-                ('user.login', _('Log in'))
-                 ) }}
+            {%  block nav_items_unsigned %}
+                {{ h.build_nav_main(
+                    ('home.about', _('About')),
+                    ('dataset.search', _('Find data')),
+                    ('user.login', _('Log in'))
+                     ) }}
+            {% endblock %}
         {% endif %}
     {% endblock %}
 
