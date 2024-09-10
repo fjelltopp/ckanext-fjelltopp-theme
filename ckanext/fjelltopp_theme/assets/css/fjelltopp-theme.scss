@@ -1317,6 +1317,15 @@ a.thumbnail.active {
     font-size: inherit;
 }
 
+/* this adjust the add resource page for existing dataset */
+@media (min-width: 768px) {
+  .wrapper::before {
+      content: none;
+      display: none;
+    }
+}
+
+
 /* pills , badges */
 .pill, .module-narrow .nav-item.active a, .module-narrow .nav-item.active a:hover {
     background-color: config.$secondary;
