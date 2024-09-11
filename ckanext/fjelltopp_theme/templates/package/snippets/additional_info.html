@@ -89,10 +89,10 @@
     {% endif %}
     {% endfor %}
     {% if h.check_access('package_update',{'id':pkg_dict.id}) %}
-      <h4 class="schema-group">{{ _("Dataset Status") }}</h4>
-      <table class="table table-condensed">
+      <h4 class="scheming-group-title">{{ _("Dataset Status") }}</h4>
+      <table class="table table-striped table-bordered table-condensed">
         <tbody>
-          <tr>
+          <tr class="metadata-element">
             <th scope="row" class="dataset-label">{{ _("State") }}</th>
             <td class="dataset-details">{{ _(pkg_dict.state) }}</td>
           </tr>
