@@ -2268,8 +2268,8 @@ ol.breadcrumb {
     );
   background-size: 20px 20px;
   background-position: 0 0, 10px 10px;
-  mask-image: linear-gradient(to bottom, config.$secondary, config.$primary);
-  -webkit-mask-image: linear-gradient(to bottom right, config.$secondary, config.$primary);
+  mask-image: linear-gradient(to bottom, config.$secondary, config.$primary65);
+  -webkit-mask-image: linear-gradient(to bottom right, config.$secondary, config.$primary65);
 }
 .gradient-line {
   position: absolute;
