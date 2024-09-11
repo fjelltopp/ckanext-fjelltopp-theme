@@ -2215,40 +2215,40 @@ ol.breadcrumb {
 .gradient-line {
   position: absolute;
   width: 1px;
-  height: 300%;
-  background: linear-gradient(to bottom right, config.$secondary, config.$primary65, config.$primary);
-  opacity: 0.5;
+  height: 400%;
+  background: linear-gradient(to bottom right, #4CBB17, #1E90FF);
+  opacity: 0.7;
   transform-origin: top right;
-  transform: rotate(-45deg);
+
 }
-.gradient-line:nth-child(1) { right: 5%; top: -50%; }
-.gradient-line:nth-child(2) { right: 6%; top: -50%; }
-.gradient-line:nth-child(3) { right: 7%; top: -50%; }
-.gradient-line:nth-child(4) { right: 8%; top: -50%; }
-.gradient-line:nth-child(5) { right: 9%; top: -50%; }
-.gradient-line:nth-child(6) { right: 10%; top: -50%; }
-.gradient-line:nth-child(7) { right: 11%; top: -50%; }
-.gradient-line:nth-child(8) { right: 12%; top: -50%; }
-.gradient-line:nth-child(9) { right: 13%; top: -50%; }
-.gradient-line:nth-child(10) { right: 14%; top: -50%; }
-.gradient-line:nth-child(11) { right: 15%; top: -50%; }
-.gradient-line:nth-child(12) { right: 16%; top: -50%; }
-.gradient-line:nth-child(13) { right: 17%; top: -50%; }
-.gradient-line:nth-child(14) { right: 18%; top: -50%; }
-.gradient-line:nth-child(15) { right: 19%; top: -50%; }
-.gradient-line:nth-child(16) { right: 20%; top: -50%; }
-.gradient-line:nth-child(17) { right: 21%; top: -50%; }
-.gradient-line:nth-child(18) { right: 22%; top: -50%; }
-.gradient-line:nth-child(19) { right: 23%; top: -50%; }
-.gradient-line:nth-child(20) { right: 24%; top: -50%; }
-.gradient-line:nth-child(21) { right: 25%; top: -50%; }
-.gradient-line:nth-child(22) { right: 26%; top: -50%; }
-.gradient-line:nth-child(23) { right: 27%; top: -50%; }
-.gradient-line:nth-child(24) { right: 28%; top: -50%; }
-.gradient-line:nth-child(25) { right: 29%; top: -50%; }
-.gradient-line:nth-child(26) { right: 30%; top: -50%; }
-.gradient-line:nth-child(27) { right: 31%; top: -50%; }
-.gradient-line:nth-child(28) { right: 32%; top: -50%; }
-.gradient-line:nth-child(29) { right: 33%; top: -50%; }
-.gradient-line:nth-child(30) { right: 34%; top: -50%; }
+.gradient-line:nth-child(1) { left: 15%; top: -100%; transform: rotate(20deg); }
+.gradient-line:nth-child(2) { left: 17%; top: -100%; transform: rotate(23deg); }
+.gradient-line:nth-child(3) { left: 19%; top: -100%; transform: rotate(26deg); }
+.gradient-line:nth-child(4) { left: 21%; top: -100%; transform: rotate(29deg); }
+.gradient-line:nth-child(5) { left: 23%; top: -100%; transform: rotate(32deg); }
+.gradient-line:nth-child(6) { left: 25%; top: -100%; transform: rotate(35deg); }
+.gradient-line:nth-child(7) { left: 27%; top: -100%; transform: rotate(38deg); }
+.gradient-line:nth-child(8) { left: 29%; top: -100%; transform: rotate(41deg); }
+.gradient-line:nth-child(9) { left: 31%; top: -100%; transform: rotate(44deg); }
+.gradient-line:nth-child(10) { left: 33%; top: -100%; transform: rotate(47deg); }
+.gradient-line:nth-child(11) { left: 35%; top: -100%; transform: rotate(50deg); }
+.gradient-line:nth-child(12) { left: 37%; top: -100%; transform: rotate(53deg); }
+.gradient-line:nth-child(13) { left: 39%; top: -100%; transform: rotate(56deg); }
+.gradient-line:nth-child(14) { left: 41%; top: -100%; transform: rotate(59deg); }
+.gradient-line:nth-child(15) { left: 43%; top: -100%; transform: rotate(62deg); }
+.gradient-line:nth-child(16) { left: 45%; top: -100%; transform: rotate(65deg); }
+.gradient-line:nth-child(17) { left: 47%; top: -100%; transform: rotate(68deg); }
+.gradient-line:nth-child(18) { left: 49%; top: -100%; transform: rotate(71deg); }
+.gradient-line:nth-child(19) { left: 51%; top: -100%; transform: rotate(74deg); }
+.gradient-line:nth-child(20) { left: 53%; top: -100%; transform: rotate(77deg); }
+.gradient-line:nth-child(21) { left: 55%; top: -100%; transform: rotate(80deg); }
+.gradient-line:nth-child(22) { left: 57%; top: -100%; transform: rotate(83deg); }
+.gradient-line:nth-child(23) { left: 59%; top: -100%; transform: rotate(86deg); }
+.gradient-line:nth-child(24) { left: 61%; top: -100%; transform: rotate(89deg); }
+.gradient-line:nth-child(25) { left: 63%; top: -100%; transform: rotate(92deg); }
+.gradient-line:nth-child(26) { left: 65%; top: -100%; transform: rotate(95deg); }
+.gradient-line:nth-child(27) { left: 67%; top: -100%; transform: rotate(98deg); }
+.gradient-line:nth-child(28) { left: 69%; top: -100%; transform: rotate(101deg); }
+.gradient-line:nth-child(29) { left: 71%; top: -100%; transform: rotate(104deg); }
+.gradient-line:nth-child(30) { left: 73%; top: -100%; transform: rotate(107deg); }
 /* magic ends*/
