@@ -2311,3 +2311,37 @@ ol.breadcrumb {
 .gradient-line:nth-child(29) { left: 98%; top: -50%; transform: rotate(104deg); }
 .gradient-line:nth-child(30) { left: 99%; top: -50%; transform: rotate(107deg); }
 /* magic ends*/
+
+/* package read base */
+.resources h2, .additional-info h2 {
+    border-bottom: 1px solid config.$neutral-light-grey;
+}
+
+.resources .resource-list {
+    margin: 20px 0 20px;
+}
+
+@media only screen and (min-width: 992px) {
+    H2 {
+        @include apply-font-style(inherit, 28px, 36px, inherit, -0.01em, inherit);
+    }
+}
+
+.dataset.wrapper {
+    border: none;
+    box-shadow: none;
+}
+
+.dataset .secondary {
+    padding-left: 38px;
+    padding-right: 38px;
+}
+
+.dataset .secondary .small-heading {
+    border-bottom: 1px solid config.$neutral-light-grey;
+    display: inline-block;
+    @include apply-font-style(300, 15px, inherit, inherit, inherit, inherit);
+    padding-right: 25px;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+}

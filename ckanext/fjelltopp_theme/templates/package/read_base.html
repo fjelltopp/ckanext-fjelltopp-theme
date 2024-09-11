@@ -1,0 +1,27 @@
+{% ckan_extends %}
+
+{% block content_primary_nav %}
+    {{ h.build_nav(dataset_type ~ '.read', _('Dataset'),  id=pkg.name) }}
+    {{ h.build_nav(dataset_type ~ '.groups', h.humanize_entity_type('group', default_group_type, 'content tab') or _('Groups'), id=pkg.name) }}
+    {{ h.build_nav('activity.package_activity', _('Activity'), id=pkg.id if is_activity_archive else pkg.name) }}
+{% endblock %}
+
+{% block secondary_content %}
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <div class="small-heading"> {{_('Published by')}} </div>
+      {% block package_organization %}
+        {% if pkg.organization %}
+          {% set org = h.get_organization(pkg.organization.id) %}
+          {% snippet "snippets/organization.html", organization=org %}
+        {% endif %}
+      {% endblock %}
+    </div>
+    <div class="col-xs-12 col-md-3">
+      <div class="small-heading"> {{_('Followers')}} </div>
+        {% block package_info %}
+          {% snippet 'package/snippets/info.html', pkg=pkg %}
+        {% endblock %}
+    </div>
+  </div>
+{% endblock %}

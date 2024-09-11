@@ -4,6 +4,9 @@
     --theme: 'fjelltopp';
     /* palette */
     --primary: #002920;
+    --primary-rgb-red: 0;
+    --primary-rgb-green: 41;
+    --primary-rgb-blue: 32;
     --secondary: #02A67F;
     --background: #F2F2FC;
     --tag: #7D3667;
