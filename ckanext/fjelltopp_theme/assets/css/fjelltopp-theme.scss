@@ -185,6 +185,38 @@ body {
     color: config.$light;
 }
 
+/* updates for tabs in promoted */
+.promoted-background .nav-tabs {
+    position: relative;
+    display: flex;
+    border-bottom: none;
+    padding: 0 20px;
+}
+
+.promoted-background .nav-tabs li.active {
+    background: #fff;
+    border-top: config.$secondary 4px solid;
+    border-bottom: 1px solid config.$light;
+}
+
+.dataset.promoted-background .nav-tabs li {
+    width: 25%;
+}
+
+.promoted-background .nav-tabs li {
+    display: inline-flex;
+    padding: 10px 40px;
+    background: config.$primary10;
+    border-radius: 4px 4px 0 0;
+    margin-right: 2px;
+    border-bottom: 1px solid config.$primary;
+    text-align: center;
+    border-top: 4px solid config.$primary65;
+    justify-content: center;
+    align-items: flex-end;
+}
+/* end updates */
+
 .promoted, .promoted-home {
     font-style: normal;
     font-size:  18px;
@@ -2228,7 +2260,16 @@ ol.breadcrumb {
   position: relative;
   width: 100%;
   overflow: hidden;
-  background: linear-gradient(to bottom right, config.$primary, config.$primary , config.$secondary);
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.8) 1px,
+      transparent 1px
+    );
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  mask-image: linear-gradient(to bottom, config.$secondary, config.$primary);
+  -webkit-mask-image: linear-gradient(to bottom right, config.$secondary, config.$primary);
 }
 .gradient-line {
   position: absolute;
