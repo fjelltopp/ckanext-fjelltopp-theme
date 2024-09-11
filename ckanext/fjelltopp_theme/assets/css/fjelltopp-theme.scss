@@ -2323,7 +2323,7 @@ ol.breadcrumb {
 
 @media only screen and (min-width: 992px) {
     H2 {
-        @include apply-font-style(inherit, 28px, 36px, inherit, -0.01em, inherit);
+        @include apply-font-style(700, 28px, 36px, inherit, -0.01em, inherit);
     }
 }
 
@@ -2333,8 +2333,8 @@ ol.breadcrumb {
 }
 
 .dataset .secondary {
-    padding-left: 38px;
-    padding-right: 38px;
+    padding-left: 39px;
+    padding-right: 39px;
 }
 
 .dataset .secondary .small-heading {
@@ -2344,4 +2344,40 @@ ol.breadcrumb {
     padding-right: 25px;
     margin-bottom: 20px;
     padding-bottom: 5px;
+}
+
+.dataset .additional-info h3 {
+    @include apply-font-style(700, 28px, 36px, inherit, -0.01em, inherit);
+    border-bottom: 1px solid config.$neutral-light-grey;
+}
+
+.dataset .additional-info h3 {
+    @include apply-font-style(700, 28px, 36px, inherit, -0.01em, inherit);
+    border-bottom: 1px solid config.$neutral-light-grey;
+}
+
+.dataset .additional-info h4 {
+    font-weight: 700;
+}
+
+.additional-info .scheming-group-title {
+    margin-top: 30px;
+}
+
+.dataset .additional-info .table > :not(caption) > * > * {
+    padding: 1.5rem 1.5rem;
+    border: 0;
+}
+
+.dataset .additional-info .table {
+    margin: 20px 0 40px;
+}
+
+.dataset .dataset-label {
+    width: 25%;
+}
+
+.dataset .metadata-element {
+    border-top-color: config.$primary65;
+    border-bottom-color: config.$primary65;
 }
