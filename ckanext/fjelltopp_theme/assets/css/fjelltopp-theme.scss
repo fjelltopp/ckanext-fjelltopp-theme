@@ -2357,6 +2357,10 @@ ol.breadcrumb {
   text-transform: uppercase;
 }
 
+.dataset .mini-breadcrumb .subtitle {
+    font-weight: 700;
+}
+
 .dataset .manage-button .btn-default {
     background-color: config.$light;
     color: config.$primary;
