@@ -22,11 +22,13 @@
                                     <p class="subtitle"> {{_('Home')}} / {{_(dataset_type_title)}} </p>
                                 {% endif %}
                             </div>
-                            <div class="manage-button">
-                                <div class="content_action">
-                                {% block content_action %}{% endblock %}
+                            {%- if pkg -%}
+                                <div class="manage-button">
+                                    <div class="content_action">
+                                    {% block content_action %}{% endblock %}
+                                    </div>
                                 </div>
-                            </div>
+                            {% endif %}
                         </div>
 
                         {%- if not pkg -%}
