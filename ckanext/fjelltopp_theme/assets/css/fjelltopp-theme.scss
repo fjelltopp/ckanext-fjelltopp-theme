@@ -2356,3 +2356,8 @@ ol.breadcrumb {
 .dataset-details:first-letter {
   text-transform: uppercase;
 }
+
+.dataset .manage-button .btn-default {
+    background-color: config.$light;
+    color: config.$primary;
+}
