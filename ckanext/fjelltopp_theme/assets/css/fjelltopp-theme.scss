@@ -2309,7 +2309,8 @@ ol.breadcrumb {
     margin-top: 30px;
 }
 
-.dataset .additional-info .table > :not(caption) > * > * {
+.dataset .additional-info .table > :not(caption) > * > *,
+.dataset .table > :not(caption) > * > * {
     padding: 1.5rem 1.5rem;
     border: 0;
 }
@@ -2325,6 +2326,10 @@ ol.breadcrumb {
 .dataset .metadata-element {
     border-top-color: config.$primary10;
     border-bottom-color: config.$primary10;
+}
+
+.dataset .table-striped > tbody > tr:nth-of-type(odd) > * {
+    --bs-table-accent-bg: var(--primary10); /* sass variable cannot be found so using regular var() */
 }
 
 .package-subtitle-and-action {
