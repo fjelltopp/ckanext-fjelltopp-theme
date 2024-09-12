@@ -2358,6 +2358,7 @@ ol.breadcrumb {
 
 .dataset .additional-info h4 {
     font-weight: 700;
+    font-size: 18px;
 }
 
 .additional-info .scheming-group-title {
@@ -2380,4 +2381,30 @@ ol.breadcrumb {
 .dataset .metadata-element {
     border-top-color: config.$primary65;
     border-bottom-color: config.$primary65;
+}
+
+.package-subtitle-and-action {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+}
+
+.package-subtitle-and-action:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.package-subtitle-and-action .mini-breadcrumb {
+    flex-grow: 1;
+}
+
+.package-subtitle-and-action .manage-button {
+    flex-shrink: 0;
+}
+
+.package-subtitle-and-action .subtitle {
+    margin: 0;
 }

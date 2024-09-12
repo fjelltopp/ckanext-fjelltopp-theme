@@ -42,12 +42,25 @@
             <div class="container">
                 <div class="promoted">
                     <div class="promoted-container container">
+                        <div class="package-subtitle-and-action">
+                            <div class="mini-breadcrumb">
+                                {%- if not pkg -%}
+                                    <p class="subtitle"> {{_('Home')}} / {{_(dataset_type)}} </p>
+                                {%- else -%}
+                                    {%- set dataset_type_title = h.scheming_get_dataset_schema(pkg.type).get('name', pkg.type) -%}
+                                    <p class="subtitle"> {{_('Home')}} / {{_(dataset_type_title)}} </p>
+                                {% endif %}
+                            </div>
+                            <div class="manage-button">
+                                <div class="content_action">
+                                {% block content_action %}{% endblock %}
+                                </div>
+                            </div>
+                        </div>
+
                         {%- if not pkg -%}
-                            <p class="subtitle"> {{_('Home')}} / {{_(dataset_type)}} </p>
                             <h1 class="headline">{{_('New {dataset_type}').format(dataset_type=dataset_type)}}</h1>
                         {%- else -%}
-                            {%- set dataset_type_title = h.scheming_get_dataset_schema(pkg.type).get('name', pkg.type) -%}
-                            <p class="subtitle"> {{_('Home')}} / {{_(dataset_type_title)}} </p>
                             <h1 class="headline">{% link_for pkg.title, named_route=pkg.type ~ '.read', id=pkg.name, title=pkg.title %}</h1>
                             {% if pkg.private %}
                               <span class="dataset-private badge badge-inverse">
@@ -64,15 +77,11 @@
                                 {%- endif -%}
                             </div>
                         {%- endif -%}
-
                     </div>
                 </div>
             </div>
         </div>
         {%- if pkg -%}
-        <div class="content_action">
-            {% block content_action %}{% endblock %}
-        </div>
         <ul class="nav nav-tabs">
             {% block content_primary_nav %}{% endblock %}
         </ul>
