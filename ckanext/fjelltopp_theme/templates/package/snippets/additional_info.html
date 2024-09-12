@@ -113,5 +113,12 @@
       </table>
     {% endif %}
 
+    {# metadata as json #}
+    <div class="api-link pull-right small">
+        <a target="_blank"
+        href="{{h.url_for('api.action', ver=3, logic_function='package_show', id=pkg_dict['id'])}}">
+        {{_('View metadata as JSON')}}
+        </a>
+    </div>
   {% endblock %}
 </section>
