@@ -74,13 +74,26 @@
           {% endfor %}
           {% if group == 'Overview' %}
             <tr class="metadata-element">
+              <th scope="row" class="dataset-label">{{ _("License") }}</th>
+              <td class="dataset-details">
+              {% if pkg_dict.license_id %}
+                  {%- set license = h.get_license(pkg_dict.get('license_id', "no_license")) -%}
+                  {% if license.url %}
+                    <a href="{{ license.url }}" target="_blank">{{ license.title }}</a>
+                  {% else %}
+                    {{ license.title | replace('License', '') | capitalize }}
+                  {% endif %}
+              {% endif %}
+              </td>
+            </tr>
+            <tr class="metadata-element">
               <th scope="row" class="dataset-label">{{ _("Visibility") }}</th>
               <td class="dataset-details">
-                {% if pkg_dict.private %}
-                  {{ _("Private") }}
-                {% else %}
-                  {{ _("Public") }}
-                {% endif %}
+            {% if pkg_dict.private %}
+              {{ _("Private") }}
+            {% else %}
+              {{ _("Public") }}
+            {% endif %}
               </td>
             </tr>
           {% endif %}

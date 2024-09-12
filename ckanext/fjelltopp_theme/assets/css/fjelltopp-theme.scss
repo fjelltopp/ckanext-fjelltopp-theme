@@ -2323,8 +2323,8 @@ ol.breadcrumb {
 }
 
 .dataset .metadata-element {
-    border-top-color: config.$primary65;
-    border-bottom-color: config.$primary65;
+    border-top-color: config.$primary10;
+    border-bottom-color: config.$primary10;
 }
 
 .package-subtitle-and-action {
@@ -2351,4 +2351,8 @@ ol.breadcrumb {
 
 .package-subtitle-and-action .subtitle {
     margin: 0;
+}
+
+.dataset-details:first-letter {
+  text-transform: uppercase;
 }
