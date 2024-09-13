@@ -25,3 +25,10 @@
     {% endblock %}
 
 {% endblock %}
+
+
+{% block footer %}
+    <div class="big-footer {% if c.userobj %}connected{% endif %}">
+    {{ super() }}
+    </div>
+{% endblock %}
