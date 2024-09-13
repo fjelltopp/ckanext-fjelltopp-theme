@@ -2125,3 +2125,53 @@ ol.breadcrumb {
     margin-left: 0;
 }
 /* package edit base */
+
+/* search page */
+div.main.search .wrapper {
+    border: 0;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+#content {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+div.main.search {
+    background-color: config.$primary10;
+
+    .row > .big-search-form {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 40px;
+    }
+    .row > .big-search-form > h2 {
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 36px;
+    }
+    .big-search-form .search-form {
+        margin-bottom: 0;
+    }
+
+    .big-search-form .lens-btn .search-label {
+        display: block;
+        color: config.$primary;
+    }
+
+    .big-search-form .lens-btn, .big-search-form .lens-btn:hover, .btn-default:hover {
+        background-color: config.$primary65 !important; /* important otherwise default behaviour for all other buttons */
+        border: none;
+    }
+
+    .big-search-form .lens-btn .fa-search {
+        color: config.$primary;
+    }
+
+    #field-giant-search {
+        max-width: none;
+    }
+}
+
+
