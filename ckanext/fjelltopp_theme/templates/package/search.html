@@ -6,8 +6,11 @@
 
 {% block subtitle %}{{ _(dataset_type.title()) }}{% endblock %}
 
+{% block maintag %}<div class="main search">{% endblock %}
+
 {% block promoted_toolbar %}
 {% endblock %}
+
 
 {% block page_primary_action %}
 {% if h.check_access('package_create') %}
@@ -17,10 +20,33 @@
 {% endif %}
 {% endblock %}
 
+{% block pre_primary %}
+  <div class="big-search-form">
+    {% set placeholder = placeholder if placeholder else _('Search datasets...') %}
+    {% set no_bottom_border = no_bottom_border if no_bottom_border else false %}
+    {% set form_id = form_id if form_id else false %}
+
+    <h2> {{ _('Search data') }}</h2>
+
+    <form {% if form_id %}id="{{ form_id }}" {% endif %}class="search-form{% if no_bottom_border %} no-bottom-border{% endif %}"  method="get" action="{% url_for 'dataset.search' %}">
+        <div class="input-group">
+          <input aria-label="{% block header_site_search_label %}{{ placeholder }}{% endblock %}" id="field-giant-search" type="text" class="form-control input-lg" name="q" value="{{ query }}" autocomplete="off" placeholder="{{ placeholder }}">
+
+          <span class="input-group-btn">
+            <button class="btn btn-default btn-lg lens-btn" type="submit" value="search" aria-label="{{_('Submit')}}">
+                <i class="fa fa-search"></i><span class="search-label">{{ _('Search') }}</span>
+            </button>
+          </span>
+        </div>
+    </form>
+  </div>
+{% endblock %}
+
 
 {%- block content %}
     <div role="main">
-        <div class="promoted-background ">
+        <div class="promoted-background gradient-background">
+            {% snippet "snippets/ui/linear_gradient.html" %}
             <div class="container">
                 <div class="promoted">
                     <div class="promoted-container container">
