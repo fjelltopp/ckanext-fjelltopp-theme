@@ -2332,6 +2332,15 @@ ol.breadcrumb {
     --bs-table-accent-bg: var(--primary10); /* sass variable cannot be found so using regular var() */
 }
 
+
+#dropdownDownloadFormat {
+    padding-left: 10px;
+    padding-right: 20px;
+    background-color: config.$primary65;
+    border: config.$primary65 1px solid;
+}
+
+
 .dataset .module-resource {
     border-bottom: none;
 }
