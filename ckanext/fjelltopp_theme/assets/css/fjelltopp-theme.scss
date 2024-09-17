@@ -1324,6 +1324,27 @@ a.thumbnail.active {
     box-shadow: inset 1px 1px 1px rgba(0, 32, 92, 1), 1px 1px 1px rgba(0, 32, 92, 1);
 }
 
+/* item count badge */
+.active span.item-count.badge {
+    display: none;
+}
+
+.module-narrow .nav-item.active > a span.facet-close,
+.module-narrow .nav-item.active > a:hover span.facet-close {
+    margin-left: auto;
+    padding: 0.45em 0.65em;
+    background-color: transparent;
+    float: right;
+    border-radius: 10px;
+    display: inline-block;
+    font-size: 0.75em;
+    font-weight: 700;
+    line-height: 1;
+    color: config.$primary;
+    text-align: center;
+    white-space: nowrap;
+}
+
 /* this adjust the add resource page for existing dataset */
 @media (min-width: 768px) {
   .wrapper::before {
@@ -2505,6 +2526,9 @@ div.main.search {
         margin-bottom: 0;
     }
 
+    .pill, .module-narrow .nav-item.active a, .module-narrow .nav-item.active a:hover {
+        background-color: config.$primary10;
+    }
 
 }
 
