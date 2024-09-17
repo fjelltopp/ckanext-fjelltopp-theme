@@ -9,14 +9,23 @@
 {% block maintag %}<div class="main search">{% endblock %}
 
 {% block promoted_toolbar %}
+<div class="promoted-background search">
+    <div class="container">
+        <div class="promoted">
+            <div class="promoted-container container">
+                <p class="subtitle">{{ _('Home') }} / </p>
+                <h1 class="headline">{{ _('Data') }}</h1>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
-
 
 {% block page_primary_action %}
 {% if h.check_access('package_create') %}
-  <div class="page_primary_action">
-    {{ h.snippet ('snippets/add_dataset.html', dataset_type=dataset_type) }}
-  </div>
+<div class="page_primary_action">
+{#    {% snippet 'snippets/dataset_selector.html'%}#}
+</div>
 {% endif %}
 {% endblock %}
 
@@ -43,34 +52,53 @@
 {% endblock %}
 
 
-{%- block content %}
-    <div role="main">
-        <div class="promoted-background gradient-background">
-            {% snippet "snippets/ui/linear_gradient.html" %}
-            <div class="container">
-                <div class="promoted">
-                    <div class="promoted-container container">
-                        <p class="subtitle">Home / </p>
-                        <h1 class="headline">Datasets</h1>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    {{super() }}
-</div>
-{%  endblock %}
-
-
 {% block secondary_content %}
+  {% set sorting = [
+    (_('Relevance'), 'score desc, metadata_modified desc'),
+    (_('Name Ascending'), 'title_string asc'),
+    (_('Name Descending'), 'title_string desc'),
+    (_('Last Modified'), 'metadata_modified desc'),
+    (_('Popular'), 'views_recent desc') if g.tracking_enabled else (false, false) ]
+  %}
+  {% set sorting_selected = request.args.get('sort') %}
   <div class="filters">
     <div>
-      {% for facet in facet_titles %}
-        {% set scheming_choices=h.scheming_field_by_name(h.scheming_get_dataset_schema(dataset_type).dataset_fields, facet).choices %}
-        {{ h.snippet('snippets/facet_list.html', title=facet_titles[facet], name=facet, search_facets=search_facets, scheming_choices=scheming_choices) }}
-      {% endfor %}
+      <h3>{{ _('Really by:') }}</h3>
+      <div class="form-group control-order-by">
+        <select id="field-order-by" name="sort" class="form-control form-select" onchange="setSort(this.value);">
+          {% for label, value in sorting %}
+            {% if label and value %}
+              <option value="{{ value }}"{% if sorting_selected == value %} selected="selected"{% endif %}>{{ label }}</option>
+            {% endif %}
+          {% endfor %}
+        </select>
+        {% block search_sortby_button %}
+        <button class="btn btn-default js-hide" type="submit">{{ _('Go') }}</button>
+        {% endblock %}
+      </div>
+
+      <h3>{{ _('Filter by:') }}</h3>
+      <div class="accordion" id="filters">
+        {% for facet in facet_titles %}
+          {% set scheming_choices=h.scheming_field_by_name(h.scheming_get_dataset_schema(dataset_type).dataset_fields, facet).choices %}
+          {{ h.snippet('snippets/facet_list.html', title=facet_titles[facet], name=facet, search_facets=search_facets, scheming_choices=scheming_choices) }}
+        {% endfor %}
+      </div>
     </div>
     <a class="close no-text hide-filters"><i class="fa fa-times-circle"></i><span class="text">close</span></a>
   </div>
+  <script>
+    const url = new URL(window.location.href);
+    function setSort(sort_value) {
+      url.searchParams.set('sort', sort_value);
+      window.location.href = url;
+    }
+  </script>
+{% endblock %}
+
+{% block form %}
+  {% snippet 'snippets/search_form.html', type=dataset_type, query=q, count=page.item_count, error=query_error %}
+{% endblock %}
+
+{% block package_search_results_api %}
 {% endblock %}

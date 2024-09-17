@@ -1,0 +1,80 @@
+{% ckan_extends %}
+
+{% block facet_list %}
+    {% set hide_empty = hide_empty or false %}
+    {% with items = items or h.get_facet_items_dict(name, search_facets) %}
+	{% if items or not hide_empty %}
+	    {% block facet_list_item %}
+		<section class="module module-narrow module-shallow accordion-item {{ name }}">
+		    {% block facet_list_heading %}
+			<h2 class="module-heading accordion-header" id="{{ title }}-heading">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#{{ title }}-collapse" aria-expanded="true" aria-controls="{{ title }}-collapse">
+                    <span>{{ title }}</span>
+                </button>
+			</h2>
+		    {% endblock %}
+		    {% block facet_list_items %}
+			{% with items = items or h.get_facet_items_dict(name, search_facets) %}
+			    {% if items %}
+                    {% for item in items %}
+                        {% do item.update({'display_name': h.scheming_choices_label(scheming_choices, item.name)
+                        if scheming_choices else item.display_name}) %}
+                    {% endfor %}
+                    <div id="{{ title }}-collapse" class="accordion-collapse collapse show" aria-labelledby="{{ title }}-heading" data-bs-parent="#filters">
+                    <nav aria-label="{{ title }}">
+                        <input type="text" class="form-control facets-search" id="{{ title }}-search" onkeyup="filterFacets('{{ title }}', this.value);" placeholder="Search {{ title | lower }}">
+                        <button class="btn-search" type="submit" aria-label="Submit"><i class="fa fa-search"></i></button>
+                        <ul class="list-unstyled nav nav-simple nav-facet" id="{{ title }}-list">
+                        {% for item in items %}
+                            {% do item.update({'display_name': h.scheming_choices_label(scheming_choices, item.name)
+                            if scheming_choices else item.display_name}) %}
+                        {% endfor %}
+                        <div id="{{ title }}-collapse" class="accordion-collapse collapse show" aria-labelledby="{{ title }}-heading" data-bs-parent="#filters">
+                        <nav aria-label="{{ title }}">
+                            <ul class="list-unstyled nav nav-simple nav-facet">
+                            {% for item in items %}
+                                {% set href = h.remove_url_param(name, item.name, extras=extras, alternative_url=alternative_url) if item.active else h.add_url_param(new_params={name: item.name}, extras=extras, alternative_url=alternative_url) %}
+                                {% set label = label_function(item) if label_function else item.display_name %}
+                                {% set label_truncated = label|truncate(22) if not label_function else label %}
+                                {% set count = count_label(item['count']) if count_label else ('%d' % item['count']) %}
+                                <li class="nav-item {% if item.active %} active{% endif %}">
+                                    <a href="{{ href }}" title="{{ label if label != label_truncated else '' }}">
+                                        <span class="item-label">{{ label_truncated }}</span>
+                                        <span class="item-count badge">{{ count }}</span>
+                                        {% if item.active %}<span class="facet-close">x</span>{% endif %}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                            </ul>
+                        </nav>
+                        </div>
+                    {% else %}
+                        <p class="module-content empty">{{ _('There are no {facet_type} that match this search').format(facet_type=title) }}</p>
+                    {% endif %}
+                {% endwith %}
+		    {% endblock %}
+		</section>
+        <script>
+            function filterFacets(facetTitle, searchTerm) {
+              const input = document.getElementById(`${facetTitle}-search`);
+              const filter = searchTerm.toUpperCase();
+              const ul = document.getElementById(`${facetTitle}-list`);
+              const li = ul.getElementsByTagName('li');
+            
+              // Loop through all list items, and hide those who don't match the search query
+              for (i = 0; i < li.length; i++) {
+                const a = li[i].getElementsByTagName('a')[0];
+                const span = li[i].getElementsByClassName("item-label")[0];
+                const txtValue = a.getAttribute('title') || span.textContent || span.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                  li[i].style.display = "";
+                } else {
+                  li[i].style.display = "none";
+                }
+              }
+            }
+        </script>
+	    {% endblock %}
+	{% endif %}
+    {% endwith %}
+{% endblock %}
