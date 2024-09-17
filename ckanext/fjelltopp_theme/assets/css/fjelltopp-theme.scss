@@ -2462,25 +2462,11 @@ div.main.search {
      .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item > .dataset-content > h2.dataset-heading > span.badge {
         margin-left: auto;
         align-self: start;
-        background-color: config.$neutral-light-grey;
+        background-color: config.$primary;
         text-transform: uppercase;
-        @include apply-font-style(400, 12px, inherit, config.$primary, 0.1em);
+        @include apply-font-style(400, 12px, 1, config.$light, 0.1em);
     }
 
-     .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item > .dataset-content > h2.dataset-heading > span.badge.source {
-        background-color: config.$secondary;
-        color: config.$primary;
-    }
-
-     .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item > .dataset-content > h2.dataset-heading > span.badge.indicator {
-        background-color: config.$secondary;
-        color: config.$light;
-    }
-
-     .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item > .dataset-content > h2.dataset-heading > span.badge.publication {
-        background-color: config.$tag;
-        color: config.$primary;
-    }
 
      .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item > ul.dataset-resources > li {
         margin-bottom: 0;
@@ -2489,8 +2475,8 @@ div.main.search {
      .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item > ul.dataset-resources > li > a.badge {
         font-weight: 400;
         font-size: 12px;
-        color: var(--primary-navy);
-        @include apply-font-style(400, 12px, inherit, config.$primary);
+        color: config.$primary;
+        @include apply-font-style(400, 12px, 1, config.$primary);
     }
 
      .wrapper > div.primary > .module > .pagination-wrapper > ul.pagination > li.page-item {
@@ -2509,6 +2495,14 @@ div.main.search {
         background-color: config.$light;
         border: 0;
         box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.04);
+    }
+
+    H2.dataset-heading a {
+        margin: 0;
+    }
+
+    .page_primary_action {
+        margin-bottom: 0;
     }
 
 
