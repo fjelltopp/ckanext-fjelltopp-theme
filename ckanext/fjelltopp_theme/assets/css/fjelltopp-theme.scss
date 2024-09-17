@@ -2483,9 +2483,9 @@ div.main.search {
      .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item > .dataset-content > h2.dataset-heading > span.badge {
         margin-left: auto;
         align-self: start;
-        background-color: config.$primary;
+        background-color: config.$primary25;
         text-transform: uppercase;
-        @include apply-font-style(400, 12px, 1, config.$light, 0.1em);
+        @include apply-font-style(400, 12px, 1, config.$primary, 0.1em);
     }
 
 
