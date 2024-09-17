@@ -1145,9 +1145,9 @@ a:hover {
 .btn-primary:active.focus,
 .btn-primary.active.focus,
 .open > .dropdown-toggle.btn-primary.focus  {
-  color: config.$light;
-  background-color: config.$secondary !important;  /* to overwrite default */
-  border-color: config.$secondary;
+  color: config.$primary;
+  background-color: config.$primary25 !important;  /* to overwrite default */
+  border-color: config.$primary;
 }
 
 fieldset[disabled] .btn-primary.focus {
@@ -2522,7 +2522,7 @@ div.main.search {
         margin: 0;
     }
 
-    .pill, .module-narrow .nav-item.active a, .module-narrow .nav-item.active a:hover {
+    .pill, .module-narrow .nav-item.active a, .module-narrow .nav-item.active a:hover, .module-narrow .nav-item a:hover {
         background-color: config.$primary10;
     }
 
