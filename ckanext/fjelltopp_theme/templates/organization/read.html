@@ -1,0 +1,26 @@
+{% ckan_extends %}
+
+{% block page_primary_action %}
+
+{% block maintag %}<div class="main organization-read">{% endblock %}
+
+{% if h.check_access('package_create', {'owner_org': group_dict.id}) %}
+<div class="page_primary_action">
+    {% snippet 'snippets/dataset_selector.html'%}
+</div>
+{% endif %}
+
+{% endblock %}
+
+{% block secondary_content %}
+  {% snippet 'snippets/organization.html', organization=group_dict, show_nums=true, group_type=group_type %}
+  <div class="filters">
+    <div>
+      {% for facet in facet_titles %}
+        {% set scheming_choices=h.scheming_field_by_name(h.scheming_get_dataset_schema(dataset_type).dataset_fields, facet).choices %}
+        {{ h.snippet('snippets/facet_list.html', title=facet_titles[facet], name=facet, search_facets=search_facets, scheming_choices=scheming_choices) }}
+      {% endfor %}
+    </div>
+    <a class="close no-text hide-filters"><i class="fa fa-times-circle"></i><span class="text">close</span></a>
+  </div>
+{% endblock %}

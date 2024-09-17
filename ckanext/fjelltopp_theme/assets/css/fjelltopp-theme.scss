@@ -2165,7 +2165,7 @@ div.main.search .wrapper {
     padding-right: 30px;
 }
 
-div.main.search {
+div.main.search, div.main.organization-read {
     background-color: config.$primary10;
 
     .row > .big-search-form {
