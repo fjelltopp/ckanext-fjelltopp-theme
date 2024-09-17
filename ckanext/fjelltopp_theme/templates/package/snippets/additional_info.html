@@ -1,0 +1,124 @@
+{% macro get_pkg_value(pkg_dict, field_name) %}
+    {% if field_name in pkg_dict %}
+      {{ pkg_dict[field_name] }}
+    {% else %}
+      {% for extra in pkg_dict.extras %}
+        {% if extra.key == field_name %}
+          {{ extra.value }}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+{% endmacro %}
+
+
+<section class="additional-info">
+  <h3>{{ _('Metadata') }}</h3>
+
+  {% if pkg_dict.notes %}
+    <div id="dataset-description">
+      <h4 class="scheming-group-title">
+        {{ _('Description') }}
+      </h4>
+      <div class="notes embedded-content">
+        {{ h.render_markdown(h.get_translated(pkg_dict, 'notes')) }}
+      </div>
+    </div>
+  {% endif %}
+
+  {% if pkg_dict.tags %}
+    <h4 class="scheming-group-title">
+      {{ _('Tags') }}
+    </h4>
+    <div class="tags">
+      {% snippet "package/snippets/tags.html", tags=pkg_dict.tags %}
+    </div>
+  {% endif %}
+  {% block package_additional_info_ext %}
+
+    {% set groups = {} %}
+    {% for field in schema.dataset_fields %}
+      {% if field.display_group %}
+        {% if field.display_group not in groups %}
+          {% do groups.update({field.display_group: []}) %}
+        {% endif %}
+        {% do groups[field.display_group].append(field) %}
+      {% endif %}
+    {% endfor %}
+
+    {% for group, fields in groups.items() %}
+      {% set ns = namespace(show_group=false, value='') %}
+      {% for field in fields %}
+        {% set value = get_pkg_value(pkg_dict, field.field_name) | trim %}
+        {% if value != '' and value != '[]' %}
+          {% set ns.show_group = true %}
+        {% endif %}
+      {% endfor %}
+
+      {% if ns.show_group %}
+      <h4 class="scheming-group-title">
+        {{ _(group) }}
+      </h4>
+      <table class="table table-striped table-bordered table-condensed">
+        <tbody>
+          {% for field in fields %}
+            {% set ns.value = get_pkg_value(pkg_dict, field.field_name) | trim %}
+            {% if ns.value != '' and ns.value != '[]' %}
+            {% if field.field_name not in exclude_fields and field.display_snippet is not none %}
+              <tr class="metadata-element">
+                <th scope="row" class="dataset-label">{{ h.scheming_language_text(field.label) }}</th>
+                <td class="dataset-details"{% if field.display_property %} property="{{ field.display_property }}"{% endif %}>{%- snippet 'scheming/snippets/display_field.html', field=field, data=pkg_dict, schema=schema -%}
+                </td>
+              </tr>
+            {% endif %}
+          {% endif %}
+          {% endfor %}
+          {% if group == 'Overview' %}
+            <tr class="metadata-element">
+              <th scope="row" class="dataset-label">{{ _("License") }}</th>
+              <td class="dataset-details">
+              {% if pkg_dict.license_id %}
+                  {%- set license = h.get_license(pkg_dict.get('license_id', "no_license")) -%}
+                  {% if license.url %}
+                    <a href="{{ license.url }}" target="_blank">{{ license.title }}</a>
+                  {% else %}
+                    {{ license.title | replace('License', '') | capitalize }}
+                  {% endif %}
+              {% endif %}
+              </td>
+            </tr>
+            <tr class="metadata-element">
+              <th scope="row" class="dataset-label">{{ _("Visibility") }}</th>
+              <td class="dataset-details">
+            {% if pkg_dict.private %}
+              {{ _("Private") }}
+            {% else %}
+              {{ _("Public") }}
+            {% endif %}
+              </td>
+            </tr>
+          {% endif %}
+        </tbody>
+      </table>
+    {% endif %}
+    {% endfor %}
+    {% if h.check_access('package_update',{'id':pkg_dict.id}) %}
+      <h4 class="scheming-group-title">{{ _("Dataset Status") }}</h4>
+      <table class="table table-striped table-bordered table-condensed">
+        <tbody>
+          <tr class="metadata-element">
+            <th scope="row" class="dataset-label">{{ _("State") }}</th>
+            <td class="dataset-details">{{ _(pkg_dict.state) }}</td>
+          </tr>
+        </tbody>
+      </table>
+    {% endif %}
+
+    {# metadata as json #}
+    <div class="api-link pull-right small">
+        <a target="_blank"
+        href="{{h.url_for('api.action', ver=3, logic_function='package_show', id=pkg_dict['id'])}}">
+        {{_('View metadata as JSON')}}
+        </a>
+    </div>
+  {% endblock %}
+</section>

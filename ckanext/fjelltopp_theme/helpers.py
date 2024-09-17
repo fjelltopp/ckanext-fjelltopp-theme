@@ -95,3 +95,12 @@ def get_user_obj(field=""):
     Returns an attribute of the user object, or returns the whole user object.
     """
     return getattr(g.userobj, field, g.userobj)
+
+
+def get_license(license_id):
+    license_list = toolkit.get_action('license_list')({}, {})
+    for license in license_list:
+        if license["id"] == license_id:
+            return license
+    else:
+        return {}
