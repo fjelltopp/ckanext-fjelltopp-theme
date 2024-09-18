@@ -26,6 +26,7 @@ class FjelltoppThemePlugin(plugins.SingletonPlugin):
             'get_datahub_stats': theme_helpers.get_datahub_stats,
             'get_activity_stream_limit': theme_helpers.get_activity_stream_limit,
             'get_user_obj': theme_helpers.get_user_obj,
+            'get_license': theme_helpers.get_license
         }
 
     def update_config(self, config: CKANConfig):

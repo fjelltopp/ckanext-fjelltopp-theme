@@ -178,12 +178,45 @@ body {
     width: 100%;
     position: relative;
     overflow: hidden;
+    color: config.$light;
 }
 
 .homepage .promoted-background {
     background-color: config.$background-color;
     color: config.$light;
 }
+
+/* updates for tabs in promoted */
+.promoted-background .nav-tabs {
+    position: relative;
+    display: flex;
+    border-bottom: none;
+    padding: 0 20px;
+}
+
+.promoted-background .nav-tabs li.active {
+    background: #fff;
+    border-top: config.$secondary 4px solid;
+    border-bottom: 1px solid config.$light;
+}
+
+.dataset.promoted-background .nav-tabs li {
+    width: 25%;
+}
+
+.promoted-background .nav-tabs li {
+    display: inline-flex;
+    padding: 10px 40px;
+    background: config.$primary10;
+    border-radius: 4px 4px 0 0;
+    margin-right: 2px;
+    border-bottom: 1px solid config.$primary;
+    text-align: center;
+    border-top: 4px solid config.$primary65;
+    justify-content: center;
+    align-items: flex-end;
+}
+/* end updates */
 
 .promoted, .promoted-home {
     font-style: normal;
@@ -194,15 +227,92 @@ body {
     margin: 64px 0;
 }
 
-.promoted .subtitle {
-    @include apply-font-style(700, 16px, 24px, config.$light);
+
+ /* promoted breadcrumbs for datasets */
+.promoted .subtitle,
+.promoted .subtitle a,
+.promoted .subtitle a:hover {
+    @include apply-font-style(400, 16px, 24px, config.$light);
     margin-bottom:  15px;
     letter-spacing: 0;
 }
 
+.promoted .subtitle a:hover {
+    text-decoration: underline;
+}
+
+.promoted .headline a {
+    @include apply-font-style(400, inherit, 40px, config.$light);
+    height: 36px;
+}
+
+.promoted .badge {
+    background: config.$secondary;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.promoted-breadcrumbs .toolbar {
+    min-height:  280px;
+}
+
+.promoted-breadcrumbs .breadcrumb li {
+    margin: 5px 0;
+}
+
+.promoted-breadcrumbs .toolbar .breadcrumb a {
+    color: config.$light;
+
+}
+
+.promoted-breadcrumbs .toolbar .breadcrumb {
+    position: absolute;
+    bottom: 32px;
+    font-size: 16px;
+}
+
+@media only screen and (min-width: 992px) {
+    .promoted-breadcrumbs .toolbar .breadcrumb {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (min-width: 282px) {
+    /* Breadcrumb update */
+    .promoted-breadcrumbs .toolbar .profile-page.breadcrumb {
+        position: absolute;
+        bottom: 85px;
+    }
+
+    .toolbar .profile-page.breadcrumb li:last-child::before {
+        content: var(--bs-breadcrumb-divider, "/") "\A";
+        white-space: pre;
+        display: inline-block;
+        min-width: 200px;
+    }
+
+    .toolbar .profile-page.breadcrumb li:last-child a {
+        display: block;
+        position: absolute;
+        left: 7px;
+        top: 40px;
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 48px;
+        letter-spacing: -0.02em;
+        text-align: left;
+    }
+}
+
 h1.headline,
 .promoted-left .headline {
-    @include apply-font-style(400, 48px, 56px, config.$light, -0.03em, left);
+    @include apply-font-style(400, 40px, 56px, config.$light, -0.03em, left);
+}
+
+@media only screen and (min-width: 992px) {
+    H1.headline {
+        @include apply-font-style(inherit, 40px, 56px, inherit,-0.03em);
+    }
 }
 
 p.learn-more a {
@@ -220,6 +330,35 @@ p.learn-more a {
         margin-bottom: 4px;
     }
 
+}
+
+.homepage .promoted-background > .container,
+.search.promoted-background > .container
+ {
+    background: transparent;
+    position: relative;
+    z-index: 2;
+}
+
+.promoted-home .promoted-container {
+    position: relative;
+    margin: 64px 0;
+    z-index: 2;
+}
+
+@media only screen and (max-width: 991px) {
+    .promoted-home .promoted-container {
+        padding: 2rem 0;
+    }
+}
+
+.promoted .container {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+.promoted .container > .description > p > a {
+    color: white;
 }
 
 .big-search-form {
@@ -260,15 +399,6 @@ p.learn-more a {
 
 .toolbar .breadcrumb a {
     color: config.$light;
-}
-
-.promoted-breadcrumbs .toolbar {
-    height: 170px;
-}
-
-
-.promoted-breadcrumbs .toolbar{
-    height:  170px;
 }
 
 .promoted-breadcrumbs .breadcrumb li{
@@ -2153,6 +2283,135 @@ ol.breadcrumb {
 }
 /* package edit base */
 
+/* package read base */
+.resources h2, .additional-info h2 {
+    border-bottom: 1px solid config.$neutral-light-grey;
+}
+
+.resources .resource-list {
+    margin: 20px 0 20px;
+}
+
+@media only screen and (min-width: 992px) {
+    H2 {
+        @include apply-font-style(700, 28px, 36px, inherit, -0.01em, inherit);
+    }
+}
+
+.dataset.wrapper {
+    border: none;
+    box-shadow: none;
+}
+
+.dataset .secondary {
+    padding-left: 39px;
+    padding-right: 39px;
+}
+
+.dataset .secondary .small-heading {
+    border-bottom: 1px solid config.$neutral-light-grey;
+    display: inline-block;
+    @include apply-font-style(300, 15px, inherit, inherit, inherit, inherit);
+    padding-right: 25px;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+}
+
+.dataset .additional-info h3 {
+    @include apply-font-style(700, 28px, 36px, inherit, -0.01em, inherit);
+    border-bottom: 1px solid config.$neutral-light-grey;
+}
+
+.dataset .additional-info h3 {
+    @include apply-font-style(700, 28px, 36px, inherit, -0.01em, inherit);
+    border-bottom: 1px solid config.$neutral-light-grey;
+}
+
+.dataset .additional-info h4 {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.additional-info .scheming-group-title {
+    margin-top: 30px;
+}
+
+.dataset .additional-info .table > :not(caption) > * > *,
+.dataset .table > :not(caption) > * > * {
+    padding: 1.5rem 1.5rem;
+    border: 0;
+}
+
+.dataset .additional-info .table {
+    margin: 20px 0 40px;
+}
+
+.dataset .dataset-label {
+    width: 25%;
+}
+
+.dataset .metadata-element {
+    border-top-color: config.$primary25;
+    border-bottom-color: config.$primary25;
+}
+
+.dataset .table-striped > tbody > tr:nth-of-type(odd) > * {
+    --bs-table-accent-bg: var(--primary10); /* sass variable cannot be found so using regular var() */
+}
+
+
+#dropdownDownloadFormat {
+    padding-left: 10px;
+    padding-right: 20px;
+    background-color: config.$primary;
+    border: config.$primary 1px solid;
+}
+
+
+.dataset .module-resource {
+    border-bottom: none;
+}
+
+.package-subtitle-and-action {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+}
+
+.package-subtitle-and-action:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.package-subtitle-and-action .mini-breadcrumb {
+    flex-grow: 1;
+}
+
+.package-subtitle-and-action .manage-button {
+    flex-shrink: 0;
+}
+
+.package-subtitle-and-action .subtitle {
+    margin: 0;
+}
+
+.dataset-details:first-letter {
+  text-transform: uppercase;
+}
+
+.dataset .mini-breadcrumb .subtitle {
+    font-weight: 700;
+}
+
+.dataset .manage-button .btn-default {
+    background-color: config.$light;
+    color: config.$primary;
+}
+
+
 /* search page */
 div.main.search .wrapper {
     border: 0;
@@ -2527,6 +2786,4 @@ div.main.search, div.main.organization-read {
     }
 
 }
-
-
 
