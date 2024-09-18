@@ -14,17 +14,17 @@
                     <div class="promoted-container container">
                         <div class="package-subtitle-and-action">
                             <div class="mini-breadcrumb">
-                                        {% block breadcrumb %}
-                                            {% if self.breadcrumb_content() | trim %}
-                                              <ol class="profile-page breadcrumb">
-                                                {% snippet 'snippets/home_breadcrumb_item.html' %}
-                                                {% block breadcrumb_content %}
-                                                      {{ h.build_nav('user.index', _('Users')) }}
-                                                      {{ h.build_nav('user.read', user.display_name|truncate(35), id=user.name) }}
-                                                {% endblock %}
-                                              </ol>
-                                            {% endif %}
+                                {% block breadcrumb %}
+                                    {% if self.breadcrumb_content() | trim %}
+                                      <ol class="profile-page breadcrumb">
+                                        {% snippet 'snippets/home_breadcrumb_item.html' %}
+                                        {% block breadcrumb_content %}
+                                              {{ h.build_nav('user.index', _('Users')) }}
+                                              {{ h.build_nav('user.read', user.display_name|truncate(35), id=user.name) }}
                                         {% endblock %}
+                                      </ol>
+                                    {% endif %}
+                                {% endblock %}
                             </div>
                                     {% if self.content_action() | trim %}
                                       <div class="content_action">
@@ -38,12 +38,14 @@
                 </div>
             </div>
         </div>
+        {% if not 'dashboard' in request.path %}
         <ul class="nav nav-tabs">
             {% block content_primary_nav %}
               {{ h.build_nav_icon('user.read', h.humanize_entity_type('package', dataset_type, 'content tab') or _('Datasets'), id=user.name, icon='sitemap') }}
               {{ h.build_nav_icon('activity.user_activity', _('Activity Stream'), id=user.name, icon='clock') }}
             {% endblock %}
         </ul>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
