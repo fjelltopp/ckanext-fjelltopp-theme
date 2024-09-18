@@ -2849,3 +2849,16 @@ div.main.group-read .group-read-packages {
         z-index: 1;
     }
 }
+
+@media only screen and (min-width: 282px) {
+    .promoted-breadcrumbs .toolbar .breadcrumb,
+    .promoted-breadcrumbs .toolbar .profile-page.breadcrumb{
+        position: absolute;
+        bottom: 150px;
+    }
+}
+
+
+ol.breadcrumb .fa-home {
+    color: config.$light;
+}

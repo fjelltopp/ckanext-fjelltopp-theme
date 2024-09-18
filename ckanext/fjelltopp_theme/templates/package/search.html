@@ -8,18 +8,9 @@
 
 {% block maintag %}<div class="main search">{% endblock %}
 
-{% block promoted_toolbar %}
-<div class="promoted-background search">
-    <div class="container">
-        <div class="promoted">
-            <div class="promoted-container container gradient-background">
-                {% snippet "snippets/ui/linear_gradient.html" %}
-                <p class="subtitle">{{ _('Home') }} / </p>
-                <h1 class="headline">{{ _('Data') }}</h1>
-            </div>
-        </div>
-    </div>
-</div>
+
+{% block breadcrumb_content %}
+<li class="active"><a href="#">{{ _('Data') }}</a></li>
 {% endblock %}
 
 {% block page_primary_action %}
