@@ -2424,7 +2424,9 @@ div.main.search .wrapper {
     padding-right: 30px;
 }
 
-div.main.search, div.main.organization-read {
+div.main.search, div.main.organization-read, div.main.organization-read .organization-read-packages {
+    min-height: 0;
+    padding-bottom: 0;
     background-color: config.$primary10;
 
     .row > .big-search-form {
@@ -2710,7 +2712,9 @@ div.main.search, div.main.organization-read {
          @include apply-font-style(700, 18px, 24px);
     }
 
-     .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item {
+     .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item,
+     li.dataset-item
+     {
         border: 0;
         background-color: config.$light;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
@@ -2719,27 +2723,31 @@ div.main.search, div.main.organization-read {
     }
 
     @media (max-width: 992px) {
-         .wrapper > div.primary > .module > .module-content > .dataset-list {
+         .wrapper > div.primary > .module > .module-content > .dataset-list, .dataset-list  {
             margin-bottom: 32px;
         }
     }
 
-     .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item > .dataset-content {
+     .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item > .dataset-content,
+     .dataset-list li.dataset-item > .dataset-content {
         margin-right: 0;
     }
 
-     .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item > .dataset-content > h2.dataset-heading {
+     .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item > .dataset-content > h2.dataset-heading,
+     .dataset-list li.dataset-item > .dataset-content > h2.dataset-heading {
         display: inline-flex;
         width: 100%;
         margin-top: 0;
     }
 
-     .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item > .dataset-content > h2.dataset-heading > a {
+     .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item > .dataset-content > h2.dataset-heading > a,
+     .dataset-list li.dataset-item > .dataset-content > h2.dataset-heading > a {
         width: 75%;
         line-height: 22px;
     }
 
-     .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item > .dataset-content > h2.dataset-heading > span.badge {
+     .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item > .dataset-content > h2.dataset-heading > span.badge,
+     .dataset-list li.dataset-item > .dataset-content > h2.dataset-heading > span.badge {
         margin-left: auto;
         align-self: start;
         background-color: config.$primary25;
@@ -2748,11 +2756,13 @@ div.main.search, div.main.organization-read {
     }
 
 
-     .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item > ul.dataset-resources > li {
+     .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item > ul.dataset-resources > li,
+     .dataset-list li.dataset-item > ul.dataset-resources > li {
         margin-bottom: 0;
     }
 
-     .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item > ul.dataset-resources > li > a.badge {
+     .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item > ul.dataset-resources > li > a.badge,
+     .dataset-list li.dataset-item > ul.dataset-resources > li > a.badge {
         font-weight: 400;
         font-size: 12px;
         color: config.$primary;
@@ -2783,6 +2793,13 @@ div.main.search, div.main.organization-read {
 
     .pill, .module-narrow .nav-item.active a, .module-narrow .nav-item.active a:hover, .module-narrow .nav-item a:hover {
         background-color: config.$primary10;
+    }
+
+    .module-narrow.module-shallow.context-info .module-content {
+        background: config.$light;
+        border-radius: 4px;
+        margin-bottom: 12px;
+        border: 1px solid rgba(0,0,0,0.125);
     }
 
 }
