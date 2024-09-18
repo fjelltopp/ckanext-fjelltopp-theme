@@ -2,9 +2,8 @@
 
 {% block content %}
     {% block promoted_toolbar %}
-    <div class="promoted-background promoted-breadcrumbs">
+    <div class="promoted-background promoted-breadcrumbs dynamic-wave-background">
         <div class="container">
-
             <div class="toolbar" role="navigation" aria-label="{{ _('Breadcrumb') }}">
               {% block breadcrumb %}
                 {% if self.breadcrumb_content() | trim %}

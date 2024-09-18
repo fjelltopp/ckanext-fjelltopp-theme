@@ -56,3 +56,53 @@
 .gradient-line:nth-child(29) { left: 98%; top: -50%; transform: rotate(104deg); }
 .gradient-line:nth-child(30) { left: 99%; top: -50%; transform: rotate(107deg); }
 /* magic ends*/
+
+.dynamic-wave-background {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: config.$primary;
+  background-image:
+    radial-gradient(circle, config.$primary65 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: waveMotion 10s infinite linear;
+  z-index: 999;
+}
+
+// animations (uncomment to use)
+//@keyframes waveMotion {
+//  0% {
+//    background-position: 0 0;
+//  }
+//  100% {
+//    background-position: 40px 40px;
+//  }
+//}
+
+.dynamic-wave-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, transparent 0%, config.$primary65 100%);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.dynamic-wave-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center, transparent 0%, config.$primary 70%);
+  pointer-events: none;
+}
+
+.dynamic-wave-background * {
+  z-index: 1;
+  color: config.$light;
+}
