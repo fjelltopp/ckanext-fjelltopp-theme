@@ -2848,6 +2848,13 @@ div.main.group-read .group-read-packages {
         border-right: 1px solid config.$neutral-light-grey;
         z-index: 1;
     }
+    .group-activity-stream .wrapper:before,
+    .organization-activity-stream .wrapper:before,
+    {
+        content: none;
+    }
+
+
 }
 
 @media only screen and (min-width: 282px) {
