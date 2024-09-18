@@ -2433,7 +2433,8 @@ div.main.search,
 div.main.organization-read,
 div.main.organization-read .organization-read-packages,
 div.main.group-read,
-div.main.group-read .group-read-packages {
+div.main.group-read .group-read-packages,
+{
     min-height: 0;
     padding-bottom: 0;
     background-color: config.$primary10;
@@ -2821,6 +2822,7 @@ div.main.group-read .group-read-packages {
 .organization-activity-stream .wrapper,
 .group-about .wrapper,
 .group-activity-stream .wrapper,
+.organization-update .wrapper,
 {
     border: none;
     border-radius: 0;
@@ -2884,4 +2886,9 @@ div.main.group-read .group-read-packages {
         position: absolute;
         bottom: 1px;
     }
+}
+
+/* bulk process */
+.table-bulk-edit {
+    background: config.$light;
 }
