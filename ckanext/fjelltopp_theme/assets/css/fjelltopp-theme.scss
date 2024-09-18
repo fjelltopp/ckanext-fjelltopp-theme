@@ -202,7 +202,8 @@ body {
 
 .dataset.promoted-background .nav-tabs li,
 .organization.promoted-background .nav-tabs li,
-.group.promoted-background .nav-tabs li
+.group.promoted-background .nav-tabs li,
+.any-other.promoted-background .nav-tabs li
 {
     width: 25%;
 }
@@ -2827,7 +2828,8 @@ div.main.group-read .group-read-packages,
 .organization-update .wrapper,
 .group-update .wrapper,
 .user-read .wrapper,
-.user-update .wrapper
+.user-update .wrapper,
+.any-other .wrapper,
 {
     border: none;
     border-radius: 0;
