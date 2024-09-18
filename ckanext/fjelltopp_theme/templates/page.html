@@ -1,22 +1,48 @@
 {% ckan_extends %}
 
 {% block content %}
-    {% block promoted_toolbar %}
-    <div class="promoted-background promoted-breadcrumbs dynamic-wave-background">
-        <div class="container">
-            <div class="toolbar" role="navigation" aria-label="{{ _('Breadcrumb') }}">
-              {% block breadcrumb %}
-                {% if self.breadcrumb_content() | trim %}
-                  <ol class="breadcrumb">
-                    {% snippet 'snippets/home_breadcrumb_item.html' %}
-                    {% block breadcrumb_content %}{% endblock %}
-                  </ol>
-                {% endif %}
-              {% endblock %}
+{% block promoted_toolbar %}
+
+<div class="any-other promoted-background promoted-breadcrumbs dynamic-wave-background">
+
+    <div class="container">
+        <div class="toolbar" role="navigation" aria-label="{{ _('Breadcrumb') }}">
+            <div class="container">
+                <div class="promoted">
+                    <div class="promoted-container container">
+                        <div class="package-subtitle-and-action">
+                            <div class="mini-breadcrumb">
+                                {% block breadcrumb %}
+                                    {% if self.breadcrumb_content() | trim %}
+                                      <ol class="profile-page breadcrumb">
+                                        {% snippet 'snippets/home_breadcrumb_item.html' %}
+                                        {% block breadcrumb_content %}
+                                        {% endblock %}
+                                      </ol>
+                                    {% endif %}
+                                {% endblock %}
+                            </div>
+                                    {% if self.content_action() | trim %}
+                                      <div class="content_action">
+                                        {% block content_action %}
+                                            {{ super() }}
+                                        {% endblock %}
+                                      </div>
+                                    {% endif %}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        {% if not 'dashboard' in request.path %}
+        <ul class="nav nav-tabs">
+            {% block content_primary_nav %}
+            {% endblock %}
+        </ul>
+        {% endif %}
     </div>
-    {% endblock %}
+</div>
+{% endblock %}
 
     {{ super() }}
 

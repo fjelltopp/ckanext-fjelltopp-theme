@@ -2869,24 +2869,6 @@ div.main.group-read .group-read-packages,
     }
 }
 
-@media only screen and (min-width: 282px) {
-    .promoted-breadcrumbs .toolbar .breadcrumb,
-    .promoted-breadcrumbs .toolbar .profile-page.breadcrumb {
-        position: absolute;
-        bottom: 150px;
-    }
-
-    .group.promoted-breadcrumbs .toolbar .breadcrumb,
-    .group.promoted-breadcrumbs .toolbar .profile-page.breadcrumb,
-    .organization.promoted-breadcrumbs .toolbar .breadcrumb,
-    .organization.promoted-breadcrumbs .toolbar .profile-page.breadcrumb,
-    .any-other.promoted-breadcrumbs .toolbar .breadcrumb,
-    .any-other.promoted-breadcrumbs .toolbar .profile-page.breadcrumb,
-    {
-        position: absolute;
-        bottom: 85px;
-    }
-}
 
 /* organization breadcrumb responsiveness */
 @media only screen and (max-width: 471px) {
