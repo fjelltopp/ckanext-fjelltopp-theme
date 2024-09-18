@@ -2411,7 +2411,9 @@ ol.breadcrumb {
 
 .dataset .manage-button .btn-default,
 .organization .package-subtitle-and-action .content_action .btn-default,
-.group .package-subtitle-and-action .content_action .btn-default {
+.group .package-subtitle-and-action .content_action .btn-default,
+.any-other .package-subtitle-and-action .content_action .btn-default,
+{
     background-color: config.$light;
     color: config.$primary;
 }
@@ -2824,6 +2826,8 @@ div.main.group-read .group-read-packages,
 .group-activity-stream .wrapper,
 .organization-update .wrapper,
 .group-update .wrapper,
+.user-read .wrapper,
+.user-update .wrapper
 {
     border: none;
     border-radius: 0;
@@ -2868,7 +2872,9 @@ div.main.group-read .group-read-packages,
     .group.promoted-breadcrumbs .toolbar .breadcrumb,
     .group.promoted-breadcrumbs .toolbar .profile-page.breadcrumb,
     .organization.promoted-breadcrumbs .toolbar .breadcrumb,
-    .organization.promoted-breadcrumbs .toolbar .profile-page.breadcrumb
+    .organization.promoted-breadcrumbs .toolbar .profile-page.breadcrumb,
+    .any-other.promoted-breadcrumbs .toolbar .breadcrumb,
+    .any-other.promoted-breadcrumbs .toolbar .profile-page.breadcrumb,
     {
         position: absolute;
         bottom: 85px;
@@ -2878,12 +2884,14 @@ div.main.group-read .group-read-packages,
 /* organization breadcrumb responsiveness */
 @media only screen and (max-width: 471px) {
     .organization .package-subtitle-and-action,
-    .group .package-subtitle-and-action {
+    .group .package-subtitle-and-action,
+    .any-other .package-subtitle-and-action {
         flex-direction: column;
         align-items: flex-start;
     }
     .organization .content_action .btn-default ,
-    .group .content_action .btn-default {
+    .group .content_action .btn-default,
+    .any-other .content_action .btn-default,{
         position: absolute;
         bottom: 1px;
     }
