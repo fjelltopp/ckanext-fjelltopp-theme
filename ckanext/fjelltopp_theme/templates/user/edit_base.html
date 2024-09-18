@@ -29,6 +29,7 @@
                                     {% if self.content_action() | trim %}
                                       <div class="content_action">
                                         {% block content_action %}
+                                            {{ super() }}
                                         {% endblock %}
                                       </div>
                                     {% endif %}
@@ -37,6 +38,12 @@
                 </div>
             </div>
         </div>
+        <ul class="nav nav-tabs">
+            {% block content_primary_nav %}
+              {{ h.build_nav_icon('user.read', h.humanize_entity_type('package', dataset_type, 'content tab') or _('Datasets'), id=user.name, icon='sitemap') }}
+              {{ h.build_nav_icon('activity.user_activity', _('Activity Stream'), id=user.name, icon='clock') }}
+            {% endblock %}
+        </ul>
     </div>
 </div>
 {% endblock %}
