@@ -2853,8 +2853,6 @@ div.main.group-read .group-read-packages {
     {
         content: none;
     }
-
-
 }
 
 @media only screen and (min-width: 282px) {
@@ -2874,4 +2872,16 @@ div.main.group-read .group-read-packages {
     }
 }
 
-
+/* organization breadcrumb responsiveness */
+@media only screen and (max-width: 471px) {
+    .organization .package-subtitle-and-action,
+    .group .package-subtitle-and-action {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .organization .content_action .btn-default ,
+    .group .content_action .btn-default {
+        position: absolute;
+        bottom: 1px;
+    }
+}
