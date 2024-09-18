@@ -201,7 +201,8 @@ body {
 }
 
 .dataset.promoted-background .nav-tabs li,
-.organization.promoted-background .nav-tabs li
+.organization.promoted-background .nav-tabs li,
+.group.promoted-background .nav-tabs li
 {
     width: 25%;
 }
@@ -2409,7 +2410,8 @@ ol.breadcrumb {
 }
 
 .dataset .manage-button .btn-default,
-.organization .package-subtitle-and-action .content_action .btn-default {
+.organization .package-subtitle-and-action .content_action .btn-default,
+.group .package-subtitle-and-action .content_action .btn-default {
     background-color: config.$light;
     color: config.$primary;
 }
@@ -2427,7 +2429,9 @@ div.main.search .wrapper {
     padding-right: 30px;
 }
 
-div.main.search, div.main.organization-read, div.main.organization-read .organization-read-packages {
+div.main.search, div.main.organization-read,
+div.main.organization-read .organization-read-packages,
+div.main.group-read .group-read-packages {
     min-height: 0;
     padding-bottom: 0;
     background-color: config.$primary10;
@@ -2812,7 +2816,8 @@ div.main.search, div.main.organization-read, div.main.organization-read .organiz
 }
 
 .organization-about .wrapper,
-.organization-activity-stream .wrapper {
+.organization-activity-stream .wrapper,
+{
     border: none;
     border-radius: 0;
     box-shadow: none;
