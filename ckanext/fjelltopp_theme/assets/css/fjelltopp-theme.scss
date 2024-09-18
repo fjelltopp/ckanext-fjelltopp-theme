@@ -2429,8 +2429,10 @@ div.main.search .wrapper {
     padding-right: 30px;
 }
 
-div.main.search, div.main.organization-read,
+div.main.search,
+div.main.organization-read,
 div.main.organization-read .organization-read-packages,
+div.main.group-read,
 div.main.group-read .group-read-packages {
     min-height: 0;
     padding-bottom: 0;
@@ -2817,16 +2819,18 @@ div.main.group-read .group-read-packages {
 
 .organization-about .wrapper,
 .organization-activity-stream .wrapper,
+.group-about .wrapper,
+.group-activity-stream .wrapper,
 {
     border: none;
     border-radius: 0;
     box-shadow: none;
 }
 
-.organization-activity-stream .secondary {
+.organization-activity-stream .secondary, .group-activity-stream .secondary {
     display: none;
 }
 
-.organization-activity-stream .primary {
+.organization-activity-stream .primary, .group-activity-stream .primary {
     width: 100%;
 }

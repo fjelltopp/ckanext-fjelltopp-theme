@@ -1,0 +1,45 @@
+{% ckan_extends %}
+
+{% block promoted_toolbar %}
+
+<div class="group promoted-background promoted-breadcrumbs gradient-background">
+
+    {% snippet "snippets/ui/linear_gradient.html" %}
+
+    <div class="container">
+        <div class="toolbar" role="navigation" aria-label="{{ _('Breadcrumb') }}">
+            <div class="container">
+                <div class="promoted">
+                    <div class="promoted-container container">
+                        <div class="package-subtitle-and-action">
+                            <div class="mini-breadcrumb">
+                              {% block breadcrumb %}
+                                  <ol class="breadcrumb">
+                                    {% snippet 'snippets/home_breadcrumb_item.html' %}
+                                    {% block breadcrumb_content %}
+                                      <li>{% link_for h.humanize_entity_type('group', group_type, 'breadcrumb') or _('Groups'), named_route=group_type+'.index' %}</li>
+                                      <li class="active">{% link_for group_dict.display_name|truncate(35), named_route=group_type+'.read', id=group_dict.name, title=group_dict.display_name %}</li>                                    {% endblock %}
+                                  </ol>
+                                  {% endblock %}
+                            </div>
+                                    {% if self.content_action() | trim %}
+                                      <div class="content_action">
+                                        {% block content_action %}
+                                            {{ super() }}
+                                        {% endblock %}
+                                      </div>
+                                    {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="nav nav-tabs">
+            {% block content_primary_nav %}{{ super() }}{% endblock %}
+        </ul>
+    </div>
+</div>
+{% endblock %}
+
+{% block page_header %}
+{% endblock %}
