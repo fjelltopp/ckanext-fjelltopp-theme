@@ -2845,7 +2845,7 @@ div.main.group-read .group-read-packages {
         bottom: 0;
         left: 0;
         width: 25%;
-        border-right: 1px solid #ddd;
+        border-right: 1px solid config.$neutral-light-grey;
         z-index: 1;
     }
 }
