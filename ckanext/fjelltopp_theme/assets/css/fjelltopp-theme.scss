@@ -200,7 +200,9 @@ body {
     border-bottom: 1px solid config.$light;
 }
 
-.dataset.promoted-background .nav-tabs li {
+.dataset.promoted-background .nav-tabs li,
+.organization.promoted-background .nav-tabs li
+{
     width: 25%;
 }
 
@@ -2406,7 +2408,8 @@ ol.breadcrumb {
     font-weight: 700;
 }
 
-.dataset .manage-button .btn-default {
+.dataset .manage-button .btn-default,
+.organization .package-subtitle-and-action .content_action .btn-default {
     background-color: config.$light;
     color: config.$primary;
 }
@@ -2804,3 +2807,21 @@ div.main.search, div.main.organization-read, div.main.organization-read .organiz
 
 }
 
+.page_primary_action .organization-read {
+    padding-top: 0;
+}
+
+.organization-about .wrapper,
+.organization-activity-stream .wrapper {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.organization-activity-stream .secondary {
+    display: none;
+}
+
+.organization-activity-stream .primary {
+    width: 100%;
+}
