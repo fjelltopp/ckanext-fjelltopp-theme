@@ -2834,3 +2834,18 @@ div.main.group-read .group-read-packages {
 .organization-activity-stream .primary, .group-activity-stream .primary {
     width: 100%;
 }
+
+/* vertical bar for secondary block */
+@media (min-width: 768px) {
+    .wrapper:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 25%;
+        border-right: 1px solid #ddd;
+        z-index: 1;
+    }
+}
