@@ -2898,3 +2898,8 @@ div.main.group-read .group-read-packages,
 .table-bulk-edit {
     background: config.$light;
 }
+
+/* table header (collaborator) */
+.table-header thead th {
+    background-color: config.$primary10;
+}
