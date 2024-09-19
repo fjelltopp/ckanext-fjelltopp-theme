@@ -2841,7 +2841,8 @@ div.main.group-read .group-read-packages,
 
 .wrapper {
     border: config.$primary25 1px solid;
-    box-shadow: 0 0 0 2px config.$primary25;
+    box-shadow: 0 0 0 0.4px config.$primary25;
+
 }
 
 .organization-activity-stream .secondary, .group-activity-stream .secondary {
