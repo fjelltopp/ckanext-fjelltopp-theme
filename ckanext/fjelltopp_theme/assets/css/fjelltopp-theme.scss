@@ -1520,6 +1520,10 @@ a.thumbnail.active {
     margin-bottom: 0;
 }
 
+.resource-item:hover {
+    background-color: config.$primary10;
+}
+
 /* dev banner */
 .dev-banner {
     display: var(--development-banner-visibility);
