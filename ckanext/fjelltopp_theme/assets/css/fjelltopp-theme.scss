@@ -616,7 +616,8 @@ $data-hub-stats-height: 374px;
     }
         .insight-small-rect {
         background-color: config.$primary;
-        border: config.$light 1px solid;
+        //border: config.$light 1px solid;
+        box-shadow: 0 0 0 0.4px config.$light;
         color: config.$primary25;
         p:first-child {
             @include apply-font-style(700, 18px, 24px, config.$primary25);
@@ -934,13 +935,15 @@ H2.dataset-heading a {
 
 /* subscribe to updates */
 .subscribe {
-    background-color: config.$primary;
+    //background-color: config.$primary;
+
 
     .container {
         padding-top: 64px;
     }
     .highlight-box {
         background-color: config.$highlight-box-bgcolor;
+        box-shadow: 0 0 0 0.4px config.$light;
         border-radius: 4px;
         padding: 36px;
 
@@ -1038,7 +1041,7 @@ H2.dataset-heading a {
     background: config.$primary;
     width: 100%;
     padding: 0;
-    margin-bottom: -25px;
+    margin-bottom: -10px;
 
     .list-unstyled {
         width: 100%;
