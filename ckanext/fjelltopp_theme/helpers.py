@@ -43,7 +43,7 @@ def get_datahub_stats(config_data):
     stats = toolkit.h.get_site_statistics()
 
     total_datasets = {'label': 'Total datasets', 'value': stats['dataset_count']}
-    org = {'label': 'Organization', 'value': stats['organization_count']}
+    org = {'label': 'Organizations', 'value': stats['organization_count']}
     group = {'label': 'Categories', 'value': stats['group_count']}
 
     now = datetime.now()
