@@ -615,15 +615,15 @@ $data-hub-stats-height: 374px;
         --bs-gutter-x: 0 !important;
     }
         .insight-small-rect {
-        background-color: config.$primary;
+        background-color: config.$primary65;
         //border: config.$light 1px solid;
-        box-shadow: 0 0 0 0.4px config.$light;
-        color: config.$primary25;
+        box-shadow: 0 0 0 0.4px config.$secondary;
+        color: config.$primary;
         p:first-child {
-            @include apply-font-style(700, 18px, 24px, config.$primary25);
+            @include apply-font-style(700, 18px, 24px, config.$primary);
         }
         .number span {
-            @include apply-font-style(400, 36px, inherit, config.$light);
+            @include apply-font-style(400, 36px, inherit, config.$primary);
         }
     }
 }
