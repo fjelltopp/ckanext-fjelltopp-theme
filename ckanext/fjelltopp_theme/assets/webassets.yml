@@ -2,6 +2,7 @@ fjelltopp-theme:
   output: fjelltopp-theme/%(version)s-fjelltopp-theme.css
   contents:
     - css/fjelltopp-theme.css
+    - css/fontawesome.css
 
 
 fjelltopp-theme-fonts:
