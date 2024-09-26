@@ -9,7 +9,7 @@
     {% if not user_dict.datasets %}
         <small class="text-muted fs-5">{{ _("You haven’t created any datasets")}}</small>
         {% if h.check_access('package_create') %}
-            {% link_for _('Create new dataset'), named_route='dataset.new', class_="btn btn-primary dashboard-add-dataset-btn" %}
+            {% link_for _('Add Dataset'), named_route='dataset.new', class_="btn btn-primary dashboard-add-dataset-btn" %}
         {% endif %}
     {% endif %}
 
