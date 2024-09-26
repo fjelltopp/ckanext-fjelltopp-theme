@@ -29,7 +29,7 @@
             {%  block my_account %}
                 {% set path_is_activity = request.path == '/dashboard/' %}
                 <li class="{% if user_dict.name == g.userobj.name %}{% if path_is_activity %}active{% endif %} my_account{% endif %}">
-                    <a href="{{ h.url_for('activity.dashboard') }}">{{ _('My account') }}</a>
+                    <a href="{{ h.url_for('activity.dashboard') }}">{{ _('My Account') }}</a>
                 </li>
             {% endblock %}
 
