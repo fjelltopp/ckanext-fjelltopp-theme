@@ -1,0 +1,17 @@
+{%  ckan_extends %}
+
+{% block breadcrumb_content %}
+  <li class="active">{{ h.nav_link(_('Log in'), named_route='user.login') }}</li>
+{% endblock %}
+
+
+{% block primary_content %}
+  <section class="module">
+    <div class="module-content">
+      <h1 class="page-heading">{% block page_heading %}{{ _('Log in') }}{% endblock %}</h1>
+      {% block form %}
+        {% snippet "user/snippets/login_form.html", error_summary=error_summary %}
+      {% endblock %}
+    </div>
+  </section>
+{% endblock %}
