@@ -8,17 +8,54 @@
     {% include "user/account_header.html" %}
 {% endblock -%}
 
-{% block breadcrumb %}
-    {% if self.breadcrumb_content() | trim %}
-      <ol class="profile-page breadcrumb">
-        {% snippet 'snippets/home_breadcrumb_item.html' %}
-        {% block breadcrumb_content %}
-              <li><a href="{{ h.url_for('activity.dashboard') }}">{{ _('My account') }}</a></li>
-              <li class="active"><a>{{ _('System admin settings') }}</a></li>
-        {% endblock %}
-      </ol>
-    {% endif %}
+
+
+{% block maintag %}<div class="main any-other">{% endblock %}
+
+
+{% block promoted_toolbar %}
+
+<div class="any-other promoted-background promoted-breadcrumbs dynamic-wave-background">
+
+    <div class="container">
+        <div class="toolbar" role="navigation" aria-label="{{ _('Breadcrumb') }}">
+            <div class="container">
+                <div class="promoted">
+                    <div class="promoted-container container">
+                        <div class="package-subtitle-and-action">
+                            <div class="mini-breadcrumb">
+                                {% block breadcrumb %}
+                                    {% if self.breadcrumb_content() | trim %}
+                                      <ol class="profile-page breadcrumb">
+                                        {% snippet 'snippets/home_breadcrumb_item.html' %}
+                                        {% block breadcrumb_content %}
+                                              <li><a href="{{ h.url_for('activity.dashboard') }}">{{ _('My account') }}</a></li>
+                                              <li class="active"><a>{{ _('System admin settings') }}</a></li>
+                                        {% endblock %}
+                                      </ol>
+                                    {% endif %}
+                                {% endblock %}
+                            </div>
+                                    {% if self.content_action() | trim %}
+                                      <div class="content_action">
+                                        {% block content_action %}
+                                            {{ super() }}
+                                        {% endblock %}
+                                      </div>
+                                    {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="nav nav-tabs">
+            {% block content_primary_nav %}
+                {{ super() }}
+            {% endblock %}
+        </ul>
+    </div>
+</div>
 {% endblock %}
 
-
-{% block maintag %}<div class="main admin_page">{% endblock %}
+{% block page_header %}
+{% endblock %}

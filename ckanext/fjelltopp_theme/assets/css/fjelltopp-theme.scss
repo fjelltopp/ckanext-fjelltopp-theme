@@ -200,7 +200,11 @@ body {
     border-bottom: 1px solid config.$light;
 }
 
-.dataset.promoted-background .nav-tabs li {
+.dataset.promoted-background .nav-tabs li,
+.organization.promoted-background .nav-tabs li,
+.group.promoted-background .nav-tabs li,
+.any-other.promoted-background .nav-tabs li
+{
     width: 25%;
 }
 
@@ -297,7 +301,7 @@ body {
         left: 7px;
         top: 40px;
         font-size: 36px;
-        font-weight: 400;
+        //font-weight: 400;
         line-height: 48px;
         letter-spacing: -0.02em;
         text-align: left;
@@ -611,14 +615,15 @@ $data-hub-stats-height: 374px;
         --bs-gutter-x: 0 !important;
     }
         .insight-small-rect {
-        background-color: config.$primary;
-        border: config.$light 1px solid;
-        color: config.$primary25;
+        background-color: config.$primary65;
+        //border: config.$light 1px solid;
+        box-shadow: 0 0 0 0.4px config.$secondary;
+        color: config.$primary;
         p:first-child {
-            @include apply-font-style(700, 18px, 24px, config.$primary25);
+            @include apply-font-style(700, 18px, 24px, config.$primary);
         }
         .number span {
-            @include apply-font-style(400, 36px, inherit, config.$light);
+            @include apply-font-style(400, 36px, inherit, config.$primary);
         }
     }
 }
@@ -930,13 +935,15 @@ H2.dataset-heading a {
 
 /* subscribe to updates */
 .subscribe {
-    background-color: config.$primary;
+    //background-color: config.$primary;
+
 
     .container {
         padding-top: 64px;
     }
     .highlight-box {
         background-color: config.$highlight-box-bgcolor;
+        box-shadow: 0 0 0 0.4px config.$light;
         border-radius: 4px;
         padding: 36px;
 
@@ -1034,7 +1041,7 @@ H2.dataset-heading a {
     background: config.$primary;
     width: 100%;
     padding: 0;
-    margin-bottom: -25px;
+    margin-bottom: -10px;
 
     .list-unstyled {
         width: 100%;
@@ -1276,8 +1283,8 @@ a:hover {
 .btn-primary.active.focus,
 .open > .dropdown-toggle.btn-primary.focus  {
   color: config.$primary;
-  background-color: config.$primary10 !important;  /* to overwrite default */
-  border-color: config.$primary10;
+  background-color: config.$primary25 !important;  /* to overwrite default */
+  border-color: config.$primary;
 }
 
 fieldset[disabled] .btn-primary.focus {
@@ -1448,6 +1455,33 @@ a.thumbnail.active {
     font-size: inherit;
 }
 
+/* form control focus */
+.form-control:focus {
+    border: config.$primary solid 1px;
+    box-shadow: inset 1px 1px 1px rgba(0, 32, 92, 1), 1px 1px 1px rgba(0, 32, 92, 1);
+}
+
+/* item count badge */
+.active span.item-count.badge {
+    display: none;
+}
+
+.module-narrow .nav-item.active > a span.facet-close,
+.module-narrow .nav-item.active > a:hover span.facet-close {
+    margin-left: auto;
+    padding: 0.45em 0.65em;
+    background-color: transparent;
+    float: right;
+    border-radius: 10px;
+    display: inline-block;
+    font-size: 0.75em;
+    font-weight: 700;
+    line-height: 1;
+    color: config.$primary;
+    text-align: center;
+    white-space: nowrap;
+}
+
 /* this adjust the add resource page for existing dataset */
 @media (min-width: 768px) {
   .wrapper::before {
@@ -1484,6 +1518,10 @@ a.thumbnail.active {
 .resource-item .resource-detail {
     @include apply-font-style(400, 11px, 20px, config.$primary);
     margin-bottom: 0;
+}
+
+.resource-item:hover {
+    background-color: config.$primary10;
 }
 
 /* dev banner */
@@ -2379,7 +2417,493 @@ ol.breadcrumb {
     font-weight: 700;
 }
 
-.dataset .manage-button .btn-default {
+.dataset .manage-button .btn-default,
+.organization .package-subtitle-and-action .content_action .btn-default,
+.group .package-subtitle-and-action .content_action .btn-default,
+.any-other .package-subtitle-and-action .content_action .btn-default,
+{
     background-color: config.$light;
     color: config.$primary;
+}
+
+
+/* search page */
+div.main.search .wrapper {
+    border: 0;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+#content {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+div.main.search,
+div.main.organization-read,
+div.main.organization-read .organization-read-packages,
+div.main.group-read,
+div.main.group-read .group-read-packages,
+{
+    min-height: 0;
+    padding-bottom: 0;
+    background-color: config.$primary10;
+
+    .row > .big-search-form {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 40px;
+    }
+    .row > .big-search-form > h2 {
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 36px;
+    }
+    .big-search-form .search-form {
+        margin-bottom: 0;
+    }
+
+    .big-search-form .lens-btn .search-label {
+        display: block;
+        color: config.$primary;
+    }
+
+    .big-search-form .lens-btn, .big-search-form .lens-btn:hover, .btn-default:hover {
+        background-color: config.$primary65 !important; /* important otherwise default behaviour for all other buttons */
+        border: none;
+    }
+
+    .big-search-form .lens-btn .fa-search {
+        color: config.$primary;
+    }
+
+    #field-giant-search {
+        max-width: none;
+    }
+
+    .input-group-btn {
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    .row > .big-search-form button.btn, .row > .big-search-form button.btn:hover, .row > .big-search-form button.btn:focus {
+        border: 0;
+        background-color: config.$primary65;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        @include apply-font-style(700, 16px, inherit, config.$primary);
+        padding: 10px 40px;
+    }
+
+    .form-control, .big-search-form #field-giant-search {
+        border: config.$primary25 solid 1px;
+    }
+
+    .wrapper > aside.secondary > .filters h3:first-child {
+        margin-bottom: 0.45rem;
+    }
+
+    .wrapper > aside.secondary > .filters h3 {
+        @include apply-font-style(700, 18px, 24px);
+    }
+
+    .wrapper > aside.secondary > .filters #field-order-by {
+        width: 100%;
+        height: 48px;
+        padding: 10px 0 10px 22px;
+        background-position: right 1.25rem center;
+    }
+
+    /* ported */
+     .wrapper {
+        border: 0;
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+     .wrapper::before {
+        border: none;
+    }
+
+     .row > .big-search-form {
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+
+    @media (max-width: 992px) {
+         .row > .big-search-form {
+            padding-left: calc(var(--bs-gutter-x) * 0.5);
+            padding-right: calc(var(--bs-gutter-x) * 0.5);
+        }
+    }
+
+     .row > .big-search-form > h2 {
+        @include apply-font-style(400, 28px, 36px);
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+     .row > .big-search-form button.btn,
+     .row > .big-search-form button.btn:hover,
+     .row > .big-search-form button.btn:focus {
+        background-color: config.$primary65 !important;
+        border: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      @include apply-font-style(700, 16px, inherit, config.$primary);
+    }
+
+     .wrapper > aside.secondary > .filters h3 {
+         @include apply-font-style(700, 18px, 24px);
+    }
+
+     .wrapper > aside.secondary > .filters h3:first-child {
+        margin-bottom: 0.45rem;
+    }
+
+     .wrapper > aside.secondary > .filters #field-order-by {
+        width: 100%;
+        height: 48px;
+        padding: 10px 0 10px 22px;
+        background-position: right 1.25rem center;
+    }
+
+     .wrapper > aside.secondary section.module {
+        background-color: white;
+        border-radius: 4px;
+        margin-bottom: 12px;
+        padding: 8px;
+    }
+
+     .wrapper > aside.secondary section.module > h2.module-heading {
+        display: inline-flex;
+        background-color: transparent;
+        border: none;
+        width: 100%;
+    }
+
+     .wrapper > aside.secondary section.module > h2.module-heading > .accordion-button {
+        padding: 0;
+        box-shadow: none;
+    }
+
+     .wrapper > aside.secondary section.module > h2.module-heading > .accordion-button > span {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+     .wrapper > aside.secondary section.module > h2.module-heading > .accordion-button:not(.collapsed) {
+        color: config.$primary;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+     .wrapper > aside.secondary section.module > h2.module-heading > .accordion-button::after {
+        background-image: none;
+        font-family: "Font Awesome 6 Free";
+        font-weight: 700;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        width: auto;
+        height: auto;
+        content: "\f107";
+    }
+
+     .wrapper > aside.secondary section.module > h2.module-heading > .accordion-button:not(.collapsed)::after {
+        background-image: none;
+        font-family: "Font Awesome 6 Free";
+        font-weight: 700;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        transform: none;
+        content: "\f106";
+    }
+
+     .wrapper > aside.secondary section.module > h2.module-heading > .accordion-item {
+        border: 0;
+    }
+
+     .wrapper > aside.secondary section.module > h2.module-heading > .accordion-item:first-of-type .accordion-button {
+        border: 0;
+    }
+
+     .wrapper > aside.secondary section.module .nav-facet{
+        max-height: 500px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+     .wrapper > aside.secondary section.module > div > nav > input.facets-search {
+        display: inline-flex;
+        width: 89%;
+        height: 40px;
+        margin: 5px 10px 10px 15px;
+        padding: 0 10px;
+        border-radius: 4px;
+        border: 1px solid config.$primary65;
+    }
+
+    @media (max-width: 992px) {
+         .wrapper > aside.secondary section.module > div > nav > input.facets-search {
+            width: 85%;
+             margin: 5px 5px 5px 15px;
+         }
+    }
+
+     .wrapper > aside.secondary section.module > div > nav > button.btn-search {
+        display: inline-flex;
+        align-items: center;
+        height: 17px;
+        width: 17px;
+        padding: 0;
+        margin-left: -45px;
+        background-color: transparent;
+        border: none;
+        color: config.$primary;
+        transition: color 0.2s ease-in;
+    }
+
+    @media (max-width: 992px) {
+         .wrapper > aside.secondary section.module > div > nav > button.btn-search {
+            margin-left: -35px;
+        }
+    }
+
+     .wrapper > aside.secondary section.module > div > nav .nav-item {
+        padding: 0;
+        border-bottom: 0;
+    }
+
+     .wrapper > aside.secondary section.module > div > nav .nav-item > a {
+        display: inline-flex;
+        width: 100%;
+        margin: 0;
+    }
+
+     .wrapper > aside.secondary section.module > div > nav .nav-item > a:hover {
+        border-radius: 4px;
+    }
+
+     .wrapper > aside.secondary section.module > div > nav .nav-item > a > span.item-label {
+        align-self: center;
+        @include apply-font-style(700, 13px, 16px, config.$secondary);
+    }
+
+     .wrapper > aside.secondary section.module > div > nav .nav-item > a > span.badge {
+        margin-left: auto;
+        padding: 0.45em 0.65em;
+        background-color: config.$primary;
+        align-self: center;
+    }
+
+     .wrapper > aside.secondary section.module > div > h2.module-heading > i.fa-angle-down {
+        margin-left: auto;
+    }
+
+     .wrapper > aside.secondary section.module > div > p.module-footer {
+        padding: 0 15px;
+    }
+
+     .wrapper > div.primary {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+     .wrapper > div.primary > .module > .module-content {
+        padding-left: 2.5rem;
+        padding-right: 0;
+        padding-top: 0;
+    }
+
+    @media (max-width: 992px) {
+         .wrapper > div.primary > .module > .module-content {
+            padding-left: calc(var(--bs-gutter-x) * 0.5);
+            padding-right: calc(var(--bs-gutter-x) * 0.5);
+        }
+    }
+
+     .wrapper > div.primary > .module > .module-content h1 {
+        margin-bottom: 1rem;
+         @include apply-font-style(700, 18px, 24px);
+    }
+
+     .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item,
+     li.dataset-item
+     {
+        border: 0;
+        background-color: config.$light;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+        padding: 24px;
+        border-radius: 8px;
+    }
+
+    @media (max-width: 992px) {
+         .wrapper > div.primary > .module > .module-content > .dataset-list, .dataset-list  {
+            margin-bottom: 32px;
+        }
+    }
+
+     .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item > .dataset-content,
+     .dataset-list li.dataset-item > .dataset-content {
+        margin-right: 0;
+    }
+
+     .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item > .dataset-content > h2.dataset-heading,
+     .dataset-list li.dataset-item > .dataset-content > h2.dataset-heading {
+        display: inline-flex;
+        width: 100%;
+        margin-top: 0;
+    }
+
+     .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item > .dataset-content > h2.dataset-heading > a,
+     .dataset-list li.dataset-item > .dataset-content > h2.dataset-heading > a {
+        width: 75%;
+        line-height: 22px;
+    }
+
+     .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item > .dataset-content > h2.dataset-heading > span.badge,
+     .dataset-list li.dataset-item > .dataset-content > h2.dataset-heading > span.badge {
+        margin-left: auto;
+        align-self: start;
+        background-color: config.$primary25;
+        text-transform: uppercase;
+        @include apply-font-style(400, 12px, 1, config.$primary, 0.1em);
+    }
+
+
+     .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item > ul.dataset-resources > li,
+     .dataset-list li.dataset-item > ul.dataset-resources > li {
+        margin-bottom: 0;
+    }
+
+     .wrapper > div.primary > .module > .module-content > .dataset-list li.dataset-item > ul.dataset-resources > li > a.badge,
+     .dataset-list li.dataset-item > ul.dataset-resources > li > a.badge {
+        font-weight: 400;
+        font-size: 12px;
+        color: config.$primary;
+        @include apply-font-style(400, 12px, 1, config.$primary);
+    }
+
+     .wrapper > div.primary > .module > .pagination-wrapper > ul.pagination > li.page-item {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+     .wrapper > div.primary > .module > .pagination-wrapper > ul.pagination > li.page-item > a {
+        border-radius: 8px;
+        background-color: transparent;
+        border: 0;
+        color: config.$primary;
+    }
+
+     .wrapper > div.primary > .module > .pagination-wrapper > ul.pagination > li.page-item.active > a {
+        background-color: config.$light;
+        border: 0;
+        box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.04);
+    }
+
+    H2.dataset-heading a {
+        margin: 0;
+    }
+
+    .pill, .module-narrow .nav-item.active a, .module-narrow .nav-item.active a:hover, .module-narrow .nav-item a:hover {
+        background-color: config.$primary10;
+    }
+
+    .module-narrow.module-shallow.context-info .module-content {
+        background: config.$light;
+        border-radius: 4px;
+        margin-bottom: 12px;
+        border: 1px solid rgba(0,0,0,0.125);
+    }
+
+}
+
+.page_primary_action .organization-read {
+    padding-top: 0;
+}
+
+.organization-about .wrapper,
+.organization-activity-stream .wrapper,
+.group-about .wrapper,
+.group-activity-stream .wrapper,
+.organization-update .wrapper,
+.group-update .wrapper,
+.user-read .wrapper,
+.user-update .wrapper,
+.any-other .wrapper,
+{
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.wrapper {
+    border: config.$primary25 1px solid;
+    box-shadow: 0 0 0 0.4px config.$primary25;
+
+}
+
+.organization-activity-stream .secondary, .group-activity-stream .secondary {
+    display: none;
+}
+
+.organization-activity-stream .primary, .group-activity-stream .primary {
+    width: 100%;
+}
+
+/* vertical bar for secondary block */
+@media (min-width: 768px) {
+    .wrapper:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 25%;
+        border-right: 1px solid config.$primary25;
+        z-index: 1;
+    }
+    .group-activity-stream .wrapper:before,
+    .organization-activity-stream .wrapper:before,
+    {
+        content: none;
+    }
+}
+
+
+/* organization breadcrumb responsiveness */
+@media only screen and (max-width: 471px) {
+    .organization .package-subtitle-and-action,
+    .group .package-subtitle-and-action,
+    .any-other .package-subtitle-and-action {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .organization .content_action .btn-default ,
+    .group .content_action .btn-default,
+    .any-other .content_action .btn-default,{
+        position: absolute;
+        bottom: 1px;
+    }
+}
+
+/* bulk process */
+.table-bulk-edit {
+    background: config.$light;
+}
+
+/* table header (collaborator) */
+.table-header thead th {
+    background-color: config.$primary10;
+}
+
+.table {
+    border-color: config.$primary10;
 }
