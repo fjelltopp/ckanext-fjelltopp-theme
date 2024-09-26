@@ -2,6 +2,6 @@
 
 {%  block my_account %}
     <li class="{% if user_dict.name == g.userobj.name %}active my_account{% endif %}">
-        <a href="{{ h.url_for('activity.dashboard') }}">{{ _('My account') }}</a>
+        <a href="{{ h.url_for('activity.dashboard') }}">{{ _('My Account') }}</a>
     </li>
 {% endblock %}
