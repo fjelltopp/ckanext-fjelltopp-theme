@@ -16,6 +16,7 @@
                               {% block breadcrumb %}
                                   <ol class="breadcrumb">
                                     {% snippet 'snippets/home_breadcrumb_item.html' %}
+
                                     {% block breadcrumb_content %}
                                         {% if not group %}
                                             {% set group = group_dict %}
@@ -30,7 +31,9 @@
                                     {% if self.content_action() | trim %}
                                       <div class="content_action">
                                         {% block content_action %}
+                                            {%  if group_dict %}
                                             {{ super() }}
+                                            {% endif %}
                                         {% endblock %}
                                       </div>
                                     {% endif %}
@@ -40,7 +43,11 @@
             </div>
         </div>
         <ul class="nav nav-tabs">
-            {% block content_primary_nav %}{{ super() }}{% endblock %}
+            {% block content_primary_nav %}
+                {%  if group_dict %}
+                {{ super() }}
+                {% endif %}
+            {% endblock %}
         </ul>
     </div>
 </div>
