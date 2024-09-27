@@ -31,7 +31,7 @@
                                       <div class="content_action">
                                         {% block content_action %}
                                             {%  if group_dict %}
-                                            {{ super() }}
+                                                {{ super() }}
                                             {% endif %}
                                         {% endblock %}
                                       </div>
@@ -44,7 +44,7 @@
         <ul class="nav nav-tabs">
             {% block content_primary_nav %}
                 {%  if group_dict %}
-                {{ super() }}
+                    {{ super() }}
                 {% endif %}
             {% endblock %}
         </ul>
