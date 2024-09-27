@@ -30,7 +30,9 @@
                                     {% if self.content_action() | trim %}
                                       <div class="content_action">
                                         {% block content_action %}
-                                            {{ super() }}
+                                            {%  if group_dict %}
+                                                {{ super() }}
+                                            {% endif %}
                                         {% endblock %}
                                       </div>
                                     {% endif %}
@@ -40,7 +42,11 @@
             </div>
         </div>
         <ul class="nav nav-tabs">
-            {% block content_primary_nav %}{{ super() }}{% endblock %}
+            {% block content_primary_nav %}
+                {%  if group_dict %}
+                    {{ super() }}
+                {% endif %}
+            {% endblock %}
         </ul>
     </div>
 </div>
