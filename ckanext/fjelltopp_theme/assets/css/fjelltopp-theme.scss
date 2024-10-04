@@ -329,6 +329,7 @@ p.learn-more a {
 }
 
 .promoted-container {
+    z-index: 2;
     h2 {
         @include apply-font-style(700, 18px, 24px, config.$light);
         margin-bottom: 4px;

@@ -2,7 +2,9 @@
     {%  block hero %}
     <div class="main hero">
     {% block promoted %}
-        <div class="promoted-background">
+        <div class="promoted-background {% block fx_bg %}{% endblock %}">
+            {% block fx_container %}
+            {% endblock %}
             <div class="container">
                     {% snippet 'home/snippets/promoted.html' %}
             </div>
