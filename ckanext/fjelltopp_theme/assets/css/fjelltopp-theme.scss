@@ -27,12 +27,30 @@ body {
     border-bottom: none;
 }
 
-.main, .homepage .hero {
+.main {
     min-height: 80vh;
     padding-top: 32px;
     padding-bottom: 64px;
-    background: config.$light;
+    background-color: config.$primary10;
 }
+
+.homepage .hero, .main.user-profile-page {
+    min-height: 80vh;
+    padding-top: 32px;
+    padding-bottom: 64px;
+    background: none;
+    background-color: config.$light;
+}
+
+/* modules */
+aside.secondary .module {
+    background-color: config.$light;
+    margin: 0;
+    width: 100%;
+    padding: 12px;
+    border: config.$primary65 thin solid;
+}
+/* modules */
 
 .homepage .main,
 .homepage .hero,
@@ -666,6 +684,17 @@ footer.site-footer .data-hub-stats {
 
 .site-footer .footer-subscribe-section {
     margin-bottom: 64px;
+}
+
+/* wrapper used on all pages */
+.wrapper {
+    border: 0;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.wrapper::before {
+    border: none;
 }
 
 /* group box (group page?) template update might be needed as well TODO */
@@ -2136,11 +2165,6 @@ a.thumbnail.active {
     border-right: 0;
 }
 
-.user-profile-page .wrapper {
-    box-shadow: none;
-    border: 0;
-}
-
 .user-profile-page .page-header {
     background-color: config.$light;
 }
@@ -2310,11 +2334,6 @@ ol.breadcrumb {
     }
 }
 
-.dataset.wrapper {
-    border: none;
-    box-shadow: none;
-}
-
 .dataset .secondary {
     padding-left: 39px;
     padding-right: 39px;
@@ -2429,12 +2448,6 @@ ol.breadcrumb {
 
 
 /* search page */
-div.main.search .wrapper {
-    border: 0;
-    box-shadow: none;
-    background-color: transparent;
-}
-
 #content {
     padding-left: 30px;
     padding-right: 30px;
@@ -2448,7 +2461,6 @@ div.main.group-read .group-read-packages,
 {
     min-height: 0;
     padding-bottom: 0;
-    background-color: config.$primary10;
 
     .row > .big-search-form {
     padding-left: 0;
@@ -2516,16 +2528,6 @@ div.main.group-read .group-read-packages,
     }
 
     /* ported */
-     .wrapper {
-        border: 0;
-        box-shadow: none;
-        background-color: transparent;
-    }
-
-     .wrapper::before {
-        border: none;
-    }
-
      .row > .big-search-form {
         padding-left: 0;
         padding-right: 0;
@@ -2842,12 +2844,6 @@ div.main.group-read .group-read-packages,
     border: none;
     border-radius: 0;
     box-shadow: none;
-}
-
-.wrapper {
-    border: config.$primary25 1px solid;
-    box-shadow: 0 0 0 0.4px config.$primary25;
-
 }
 
 .organization-activity-stream .secondary, .group-activity-stream .secondary {
