@@ -54,7 +54,7 @@
 
 
 {% block footer %}
-    <div class="big-footer {% if c.userobj %}connected{% endif %} dynamic-wave-background">
+    <div class="big-footer {% if c.userobj %}connected{% endif %} {% block footer_fx_bg %}dynamic-wave-background{% endblock %}">
         {% snippet "snippets/fx/circle.html" %}
     {{ super() }}
     </div>
