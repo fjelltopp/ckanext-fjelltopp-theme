@@ -31,9 +31,6 @@
                                     {% if self.content_action() | trim %}
                                       <div class="content_action">
                                         {% block content_action %}
-                                            {%  if group_dict %}
-                                                {{ super() }}
-                                            {% endif %}
                                         {% endblock %}
                                       </div>
                                     {% endif %}
@@ -46,6 +43,11 @@
             {% block content_primary_nav %}
                 {%  if group_dict %}
                     {{ super() }}
+                      {% if organization and h.check_access('organization_update', {'id': organization.id}) %}
+                          <li>
+                            {% link_for _('View'), named_route=group_type+'.read', id=organization.name, icon='eye'%}
+                          </li>
+                      {% endif %}
                 {% endif %}
             {% endblock %}
         </ul>
