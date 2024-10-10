@@ -34,7 +34,6 @@
                                     {% if self.content_action() | trim %}
                                       <div class="content_action">
                                         {% block content_action %}
-                                            {{ super() }}
                                         {% endblock %}
                                       </div>
                                     {% endif %}
@@ -47,6 +46,11 @@
             {% block content_primary_nav %}
               {{ h.build_nav_icon('user.read', h.humanize_entity_type('package', dataset_type, 'content tab') or _('Datasets'), id=user.name, icon='sitemap') }}
               {{ h.build_nav_icon('activity.user_activity', _('Activity Stream'), id=user.name, icon='clock') }}
+              {% if h.check_access('user_update', user) %}
+                <li>
+                {% link_for _('Manage'), named_route='user.edit', id=user.name, icon='wrench' %}
+                </li>
+              {% endif %}
             {% endblock %}
         </ul>
     </div>

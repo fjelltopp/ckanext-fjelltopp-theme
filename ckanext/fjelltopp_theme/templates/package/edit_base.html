@@ -4,3 +4,13 @@
 
 {% block secondary %}
 {% endblock %}
+
+{% block content_action %}
+{% endblock %}
+
+{% block content_primary_nav %}
+    {{ super() }}
+    <li>
+    {% link_for h.humanize_entity_type('package', pkg.type, 'view label') or _('View dataset'), named_route=pkg.type ~ '.read', id=pkg.name, icon='eye' %}
+    </li>
+{% endblock %}
