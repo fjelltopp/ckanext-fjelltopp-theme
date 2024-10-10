@@ -4,6 +4,11 @@
     {{ h.build_nav(dataset_type ~ '.read', _('Dataset'),  id=pkg.name) }}
     {{ h.build_nav(dataset_type ~ '.groups', h.humanize_entity_type('group', default_group_type, 'content tab') or _('Groups'), id=pkg.name) }}
     {{ h.build_nav('activity.package_activity', _('Activity'), id=pkg.id if is_activity_archive else pkg.name) }}
+      {% if h.check_access('package_update', {'id':pkg.id }) %}
+          <li>
+          {% link_for _('Manage'), named_route=pkg.type ~ '.edit', id=pkg.name, icon='wrench' %}
+          </li>
+      {% endif %}
 {% endblock %}
 
 {% block secondary_content %}
@@ -24,4 +29,7 @@
         {% endblock %}
     </div>
   </div>
+{% endblock %}
+
+{% block content_action %}
 {% endblock %}

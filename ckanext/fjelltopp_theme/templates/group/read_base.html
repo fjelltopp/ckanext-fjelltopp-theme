@@ -24,7 +24,6 @@
                                     {% if self.content_action() | trim %}
                                       <div class="content_action">
                                         {% block content_action %}
-                                            {{ super() }}
                                         {% endblock %}
                                       </div>
                                     {% endif %}
@@ -34,7 +33,14 @@
             </div>
         </div>
         <ul class="nav nav-tabs">
-            {% block content_primary_nav %}{{ super() }}{% endblock %}
+            {% block content_primary_nav %}
+                {{ super() }}
+                {% if h.check_access('group_update', {'id': group_dict.id}) %}
+                    <li>
+                        {% link_for _('Manage'), named_route=group_type+'.edit', id=group_dict.name, icon='wrench' %}
+                    </li>
+                {% endif %}
+            {% endblock %}
         </ul>
     </div>
 </div>
