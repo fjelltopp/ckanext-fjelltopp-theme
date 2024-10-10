@@ -2,7 +2,7 @@
 
 {% set classes_ = classes_ | default('') %}
 {% set dataset_type = dataset_type if dataset_type else h.default_package_type() %}
-{% set link_label = h.humanize_entity_type('packages', dataset_type, 'add link') or _("Add Data")%}
+{% set link_label = h.humanize_entity_type('packages', dataset_type, 'add link') or _("Add Data") %}
 {% set route_name = dataset_type ~ '.new' %}
 
 {% if group %}
