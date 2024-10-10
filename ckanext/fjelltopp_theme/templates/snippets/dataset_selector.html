@@ -1,11 +1,18 @@
-<div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" id="addDatasetMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <i class="fa fa-plus-square"></i> {{_('Add Dataset')}}
-  </button>
-  <div class="dropdown-menu" aria-labelledby="addDatasetMenuButton">
+{% set classes_ = classes_ | default('') %}  {# for dashboard dataset #}
 
+{% set schema_count = h.scheming_dataset_schemas() | count  %}
+
+{% if schema_count > 1 %}
+<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle {{ style_ }}" type="button" id="addDatasetMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i class="fa fa-plus-square"></i> {{_('Add Data')}}
+  </button>
+  <div class="dropdown-menu {{ class_ }}" aria-labelledby="addDatasetMenuButton">
     {% for schema in h.scheming_dataset_schemas().keys() %}
       {% snippet 'snippets/add_dataset.html', dataset_type=schema %}
     {% endfor %}
   </div>
 </div>
+{% else %}
+    {% snippet 'snippets/add_dataset.html', classes_=classes_, dataset_type=schema %}
+{% endif %}
