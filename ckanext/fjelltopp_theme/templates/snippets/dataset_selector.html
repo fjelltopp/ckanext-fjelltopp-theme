@@ -5,7 +5,7 @@
 {% if schema_count > 1 %}
 <div class="dropdown">
   <button class="btn btn-primary dropdown-toggle {{ classes_ }}" type="button" id="addDatasetMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <i class="fa fa-plus-square"></i> {{_('Add Data')}}
+    <i class="fa fa-plus-square"></i> {{_('Add Dataset')}}
   </button>
   <div class="dropdown-menu {{ class_ }}" aria-labelledby="addDatasetMenuButton">
     {% for schema in h.scheming_dataset_schemas().keys() %}
