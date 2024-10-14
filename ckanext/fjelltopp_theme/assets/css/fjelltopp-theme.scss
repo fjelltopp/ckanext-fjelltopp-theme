@@ -2908,3 +2908,24 @@ div.main.group-read .group-read-packages,
 .table {
     border-color: config.$primary10;
 }
+
+/* dataset selector menu */
+.dropdown-menu[aria-labelledby="addDatasetMenuButton"] {
+    padding: 0;
+}
+
+.dropdown-menu[aria-labelledby="addDatasetMenuButton"] a {
+    display: list-item;
+    background: config.$light;
+    border: config.$light;
+    color: config.$primary;
+}
+
+.dropdown-menu[aria-labelledby="addDatasetMenuButton"] a:hover {
+    background: config.$primary25;
+}
+
+.dropdown-menu[aria-labelledby="addDatasetMenuButton"] a:not(:first-child) {
+    margin-top: 2px;
+}
+/* dataset selector menu */
