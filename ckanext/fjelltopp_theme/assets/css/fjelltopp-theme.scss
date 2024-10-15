@@ -2908,3 +2908,8 @@ div.main.group-read .group-read-packages,
 .table {
     border-color: config.$primary10;
 }
+
+/*data search input */
+div.main.search #field-giant-search {
+    z-index: 1;
+}
