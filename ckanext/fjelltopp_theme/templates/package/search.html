@@ -55,7 +55,7 @@
   {% set sorting_selected = request.args.get('sort') %}
   <div class="filters">
     <div>
-      <h3>{{ _('Really by:') }}</h3>
+      <h3>{{ _('Sort by:') }}</h3>
       <div class="form-group control-order-by">
         <select id="field-order-by" name="sort" class="form-control form-select" onchange="setSort(this.value);">
           {% for label, value in sorting %}

@@ -2904,3 +2904,27 @@ div.main.group-read .group-read-packages,
 .table {
     border-color: config.$primary10;
 }
+
+/*data search input */
+div.main.search #field-giant-search {
+    z-index: 1;
+}
+
+/* badge configuration */
+.dataset-content > h2.dataset-heading > span.badge:not(:first-of-type) {
+    margin-left: 5px;
+}
+
+.user-profile-page .dataset-content .dataset-heading span.badge {
+    margin-left: 5px;
+    align-self: start;
+    text-transform: uppercase;
+    float: right;
+    @include apply-font-style(400, 12px, 1, inherit, 0.1em, inherit);
+    background: config.$primary25;
+}
+
+.recently-updated .dataset-content .dataset-heading span.badge {
+    display: none;
+}
+
