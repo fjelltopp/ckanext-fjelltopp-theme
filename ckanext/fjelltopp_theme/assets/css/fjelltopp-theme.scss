@@ -31,7 +31,41 @@ body {
     min-height: 80vh;
     padding-top: 32px;
     padding-bottom: 64px;
-    background-color: config.$primary10;
+    background: config.$primary10;
+}
+
+.main.organization-about,
+.main.organization-activity-stream,
+.main.organization-update,
+.main.package-read,
+.main.update-dataset-page,
+.main.package-pages,
+.main.group-pages,
+.main.group-update,
+.main.group-about,
+.main.group-activity-stream,
+.main.user-read-tokens,
+.main.user-activity-stream,
+.main.user-update,
+.main.any-other,
+{
+    background: config.$light;
+}
+
+.main.user-read li.dataset-item {
+    border: 0;
+    background-color: config.$light;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    padding: 24px;
+    border-radius: 8px;
+}
+
+.topic-top-square {
+    border: config.$primary 1px solid;
+}
+
+.module-content {
+    padding-top: 0;
 }
 
 .homepage .hero, .main.user-profile-page {
@@ -2864,7 +2898,7 @@ div.main.group-read .group-read-packages,
         bottom: 0;
         left: 0;
         width: 25%;
-        border-right: 1px solid config.$primary25;
+        //border-right: 1px solid config.$primary25;
         z-index: 1;
     }
     .group-activity-stream .wrapper:before,
