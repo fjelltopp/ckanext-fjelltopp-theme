@@ -6,7 +6,7 @@
 {% set route_name = dataset_type ~ '.new' %}
 
 {% if group %}
-    {% link_for link_label, named_route=route_name, group=group, class_='dropdown-item' + classes_%}
+    {% link_for link_label, named_route=route_name, group=group, class_='btn btn-primary ' + classes_, icon='plus-square' %}
 {% else %}
-    {% link_for link_label, named_route=route_name, class_='dropdown-item ' + classes_ %}
+    {% link_for link_label, named_route=route_name, class_='btn btn-primary ' + classes_, icon='plus-square' %}
 {% endif %}
