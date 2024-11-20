@@ -1697,6 +1697,9 @@ a.thumbnail.active {
     .dev-banner-mobile.development .ckan-circle-exclamation::before {
         color: config.$light;
     }
+    .production {
+        display: none;
+    }
     /**/
 
 }
@@ -1734,8 +1737,8 @@ a.thumbnail.active {
     .dev-banner.development, .dev-banner.sandbox {
         background-color: config.$tag !important;
     }
-    .dev-banner.production {
-        display: none !important;
+    .production {
+        display: none;
     }
     .deployment-type.staging .account-masthead {
         background-color: config.$light;
