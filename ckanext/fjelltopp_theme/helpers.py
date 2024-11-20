@@ -107,6 +107,9 @@ def get_license(license_id):
 
 
 def get_deployment_info(default='development'):
+    """
+    possible values are development, staging and production, otherwise add more css classes
+    """
     return {
             "type": toolkit.config.get('ckan.deployment_env.type', default),
             "message": toolkit.config.get('ckan.deployment_env.banner_message', "BETA - Site under development")
