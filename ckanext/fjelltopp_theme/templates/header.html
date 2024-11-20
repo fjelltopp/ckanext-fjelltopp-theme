@@ -63,7 +63,7 @@
 
 
 {% block header_account %}
-    <div class="deployment-type {{ h.get_deployment_info()['type'] }}">
+    <div class="account-masthead-wrapper {{ h.get_deployment_info()['type'] }}">
         {{ super() }}
     </div>
 {% endblock %}

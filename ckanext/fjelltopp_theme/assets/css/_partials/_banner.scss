@@ -3,10 +3,10 @@
 
 @media only screen and (min-width: 628px) {
       /* hides / shows banner , change bgcolor based on type of deployment*/
-    .deployment-type.staging .account-masthead {
+    .account-masthead-wrapper.staging .account-masthead {
         background-color: config.$light;
     }
-    .deployment-type.production {
+    .account-masthead-wrapper.production {
         display: none !important;
     }
     .dev-banner.development, .dev-banner.sandbox {
@@ -15,31 +15,31 @@
     .production {
         display: none;
     }
-    .deployment-type.staging .account-masthead {
+    .account-masthead-wrapper.staging .account-masthead {
         background-color: config.$light;
     }
-    .deployment-type.development .account-masthead {
+    .account-masthead-wrapper.development .account-masthead {
         background-color: config.$primary;
     }
-    .deployment-type.development .ckan-circle-exclamation {
+    .account-masthead-wrapper.development .ckan-circle-exclamation {
         border: 2px solid config.$primary;
     }
-    .deployment-type.staging .ckan-circle-exclamation {
+    .account-masthead-wrapper.staging .ckan-circle-exclamation {
         border: 2px solid config.$secondary;
     }
-    .deployment-type.development .ckan-circle-exclamation::before {
+    .account-masthead-wrapper.development .ckan-circle-exclamation::before {
         color: config.$primary;
     }
-    .deployment-type.staging .ckan-circle-exclamation::before {
+    .account-masthead-wrapper.staging .ckan-circle-exclamation::before {
         color: config.$secondary;
     }
-    .deployment-type.staging .account-masthead .account ul li {
+    .account-masthead-wrapper.staging .account-masthead .account ul li {
         border-left: none;
     }
-    .deployment-type.staging .account-masthead .account ul li a {
+    .account-masthead-wrapper.staging .account-masthead .account ul li a {
         color: config.$secondary;
     }
-    .deployment-type .account-masthead .account ul li a:hover {
+    .account-masthead-wrapper .account-masthead .account ul li a:hover {
         color: config.$light;
         background-color: config.$secondary;
     }
