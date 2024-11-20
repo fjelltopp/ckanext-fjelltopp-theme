@@ -1676,6 +1676,29 @@ a.thumbnail.active {
         margin-top: -2px;
     }
 
+    /* hides / shows banner , change bgcolor based on type of deployment*/
+    .dev-banner-mobile.staging {
+        background-color: config.$light;
+    }
+    .dev-banner-mobile.staging a {
+        color: config.$secondary;
+    }
+    .dev-banner-mobile.staging .ckan-circle-exclamation {
+        color: config.$secondary;
+        border: 2px solid config.$secondary;
+    }
+    .dev-banner-mobile.staging .ckan-circle-exclamation::before {
+        color: config.$secondary;
+    }
+    .dev-banner-mobile.development .ckan-circle-exclamation {
+        color: config.$light;
+        border: 2px solid config.$light;
+    }
+    .dev-banner-mobile.development .ckan-circle-exclamation::before {
+        color: config.$light;
+    }
+    /**/
+
 }
 
 @media only screen and (min-width: 628px) {
@@ -1698,12 +1721,51 @@ a.thumbnail.active {
     }
     .dev-banner {
         margin-right: auto;
-        background-color: config.$tag;
         pointer-events: none;
     }
+
+    /* hides / shows banner , change bgcolor based on type of deployment*/
+    .deployment-type.production {
+        display: none !important;
+    }
+    .dev-banner.development, .dev-banner.sandbox {
+        background-color: config.$tag !important;
+    }
+    .dev-banner.production {
+        display: none !important;
+    }
+    .deployment-type.staging .account-masthead {
+        background-color: config.$light;
+    }
+    .deployment-type.development .account-masthead {
+        background-color: config.$primary;
+    }
+    .deployment-type.development .ckan-circle-exclamation {
+        border: 2px solid config.$primary;
+    }
+    .deployment-type.staging .ckan-circle-exclamation {
+        border: 2px solid config.$secondary;
+    }
+    .deployment-type.development .ckan-circle-exclamation::before {
+        color: config.$primary;
+    }
+    .deployment-type.staging .ckan-circle-exclamation::before {
+        color: config.$secondary;
+    }
+    .deployment-type.staging .account-masthead .account ul li {
+        border-left: none;
+    }
+    .deployment-type.staging .account-masthead .account ul li a {
+        color: config.$secondary;
+    }
+    .deployment-type .account-masthead .account ul li a:hover {
+        color: config.$light;
+        background-color: config.$secondary;
+    }
+    /**/
+
     ul li.dev-banner a {
         margin-left: 0 !important;
-        background-color: config.$tag !important;
     }
     .dev-banner a .clickable {
         margin-left: 6px;
