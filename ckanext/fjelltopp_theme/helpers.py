@@ -111,4 +111,3 @@ def get_deployment_info(default='development'):
             "type": toolkit.config.get('ckan.deployment_env.type', default),
             "message": toolkit.config.get('ckan.deployment_env.banner_message', "BETA - Site under development")
          }
-
