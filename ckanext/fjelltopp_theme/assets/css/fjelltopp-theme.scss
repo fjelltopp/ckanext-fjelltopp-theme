@@ -1,5 +1,6 @@
 @use '_partials/themes' as *;
 @use '_partials/magic' as *;
+@use '_partials/banner' as *;
 @use '_partials/config' as config;
 @use 'sass:math';
 
@@ -1676,6 +1677,8 @@ a.thumbnail.active {
         margin-top: -2px;
     }
 
+
+
 }
 
 @media only screen and (min-width: 628px) {
@@ -1698,12 +1701,12 @@ a.thumbnail.active {
     }
     .dev-banner {
         margin-right: auto;
-        background-color: config.$tag;
         pointer-events: none;
     }
+
+
     ul li.dev-banner a {
         margin-left: 0 !important;
-        background-color: config.$tag !important;
     }
     .dev-banner a .clickable {
         margin-left: 6px;

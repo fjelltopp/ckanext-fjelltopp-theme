@@ -1,0 +1,75 @@
+@use 'config' as config;
+
+
+@media only screen and (min-width: 628px) {
+      /* hides / shows banner , change bgcolor based on type of deployment*/
+    .account-masthead-wrapper.staging .account-masthead {
+        background-color: config.$light;
+    }
+    .account-masthead-wrapper.production {
+        display: none !important;
+    }
+    .dev-banner.development, .dev-banner.sandbox {
+        background-color: config.$tag !important;
+    }
+    .production {
+        display: none;
+    }
+    .account-masthead-wrapper.staging .account-masthead {
+        background-color: config.$light;
+    }
+    .account-masthead-wrapper.development .account-masthead {
+        background-color: config.$primary;
+    }
+    .account-masthead-wrapper.development .ckan-circle-exclamation {
+        border: 2px solid config.$primary;
+    }
+    .account-masthead-wrapper.staging .ckan-circle-exclamation {
+        border: 2px solid config.$secondary;
+    }
+    .account-masthead-wrapper.development .ckan-circle-exclamation::before {
+        color: config.$primary;
+    }
+    .account-masthead-wrapper.staging .ckan-circle-exclamation::before {
+        color: config.$secondary;
+    }
+    .account-masthead-wrapper.staging .account-masthead .account ul li {
+        border-left: none;
+    }
+    .account-masthead-wrapper.staging .account-masthead .account ul li a {
+        color: config.$secondary;
+    }
+    .account-masthead-wrapper .account-masthead .account ul li a:hover {
+        color: config.$primary;
+        background-color: config.$primary10;
+    }
+    /**/
+}
+
+@media only screen and (max-width: 627px) {
+    /* hides / shows banner , change bgcolor based on type of deployment*/
+    .dev-banner-mobile.staging {
+        background-color: config.$light;
+    }
+    .dev-banner-mobile.staging a {
+        color: config.$secondary;
+    }
+    .dev-banner-mobile.staging .ckan-circle-exclamation {
+        color: config.$secondary;
+        border: 2px solid config.$secondary;
+    }
+    .dev-banner-mobile.staging .ckan-circle-exclamation::before {
+        color: config.$secondary;
+    }
+    .dev-banner-mobile.development .ckan-circle-exclamation {
+        color: config.$light;
+        border: 2px solid config.$light;
+    }
+    .dev-banner-mobile.development .ckan-circle-exclamation::before {
+        color: config.$light;
+    }
+    .production {
+        display: none;
+    }
+    /**/
+}

@@ -62,9 +62,8 @@
 {% endblock %}
 
 
-{% block header_wrapper %}
-
-  {{ super() }}
-
-  <div class="fluid-white-bar"></div>
+{% block header_account %}
+    <div class="account-masthead-wrapper {{ h.get_deployment_info()['type'] }}">
+        {{ super() }}
+    </div>
 {% endblock %}

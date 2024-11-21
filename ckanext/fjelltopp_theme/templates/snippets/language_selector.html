@@ -1,29 +1,14 @@
 {% set current_lang = request.environ.CKAN_LANG %}
 
 <div class="dev-banner-container">
-    <div class="dev-banner-mobile row">
-        <a href="{% url_for 'home.about' %}"><span class="ckan-circle-exclamation secondary"></span>BETA - Site under development<span class="clickable">Learn more</span></a>
+    <div class="dev-banner-mobile {{ h.get_deployment_info()['type'] }} row">
+        <a href="{% url_for 'home.about' %}"><span class="ckan-circle-exclamation"></span>{{ _(h.get_deployment_info()['message']) }}<span class="clickable">Learn more</span></a>
     </div>
-    <div class="row">
-          <nav class="account not-authed">
-        <ul class="list-unstyled">
-            <li class="dev-banner"><a href="{% url_for 'home.about' %}"><span class="ckan-circle-exclamation secondary"></span>BETA - Site under development<span class="clickable">Learn more</span></a></li>
-          {% for locale in h.get_available_locales() %}
-            <li>
-              <a href="{% url_for h.current_url(), locale=locale.short_name %}" {% if locale.short_name == current_lang %}selected="selected"{% endif %}>
-              {{ h.format_locale(locale) }}
-            </a>
-            </li>
-          {% endfor %}
-        </ul>
-  </nav>
-    </div>
-
 </div>
 
-<nav class="account not-authed nav-for-large-screen">
+<nav class="account nav-for-large-screen">
     <ul class="list-unstyled">
-        <li class="dev-banner"><a href="{% url_for 'home.about' %}"><span class="ckan-circle-exclamation white"></span>BETA - Site under development<span class="clickable">Learn more</span></a></li>
+        <li class="dev-banner {{ h.get_deployment_info()['type'] }}"><a href="{% url_for 'home.about' %}"><span class="ckan-circle-exclamation"></span>{{ _(h.get_deployment_info()['message']) }}<span class="clickable">Learn more</span></a></li>
       {% for locale in h.get_available_locales() %}
         <li>
           <a href="{% url_for h.current_url(), locale=locale.short_name %}" {% if locale.short_name == current_lang %}selected="selected"{% endif %}>
