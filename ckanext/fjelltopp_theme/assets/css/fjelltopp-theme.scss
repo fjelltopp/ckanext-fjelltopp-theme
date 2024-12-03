@@ -2995,7 +2995,7 @@ div.main.search #field-giant-search {
 
 
 /* groups */
-.groups-page{
+.groups-page {
     .wrapper {
         border: none;
         box-shadow: none;
@@ -3013,16 +3013,19 @@ div.main.search #field-giant-search {
         margin-bottom: 24px;
     }
 }
+
 .groups-background {
     margin-top: 48px;
     margin-bottom: 64px;
     background-color: white;
-}
-.groups-background H1:first-child {
-    @include apply-font-style(400, 36px, 48px, inherit, -0.04em, left);
-}
-.groups-background .container {
-    width: 100%;
+
+    H1:first-child {
+        @include apply-font-style(400, 36px, 48px, inherit, -0.04em, left);
+    }
+
+    .container {
+        width: 100%;
+    }
 }
 
 .groups {
@@ -3041,38 +3044,45 @@ div.main.search #field-giant-search {
     margin-right: 0;
 }
 .groups li {
-    display: inline flex;
-    margin-right: 21px;
-    margin-top: 24px;
-    width: 124px;
-    height: 96px;
     border-radius: 4px;
-}
-.groups li a {
-    margin: 16px;
-    width: 92px;
-    height: 64px;
+
+    a {
+        margin: 16px;
+        width: 92px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .group-link {
+            @include apply-font-style(700, 12px, 16px, config.$dark, inherit, center);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            width: 100%;
+            max-width: 92px;
+        }
+
+        .group-top-square {
+            background-color: var(--primary25);
+            width: 70px;
+            height: 70px;
+            margin-left: 26px;
+            margin-right: 26px;
+            margin-bottom: 6px;
+            border-radius: 4px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 65px;
+                height: 65px;
+            }
+        }
+
+    }
+
 }
 
-.groups li a .group-top-square {
-    background-color: var(--primary25);
-    width: 40px;
-    height: 40px;
-    margin-left: 26px;
-    margin-right: 26px;
-    margin-bottom: 6px;
-    border-radius: 4px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.groups li a .group-top-square img {
-    max-width: 36px;
-    max-height: 36px;
-}
-.groups li a .group-link {
-    @include apply-font-style(700, 12px, 16px, config.$dark, inherit, center);
-}
 
