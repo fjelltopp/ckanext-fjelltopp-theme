@@ -4,5 +4,14 @@
 {% set url = h.url_for(type ~ '.read', id=group.name) %}
 
 {% block item %}
-    <li><a href="{{ url }}"><p class="group-top-square"><img src="{{ group.image_display_url }}" width="36px"/></p><p class="group-link">{{ _(group.title) }}</p></a></li>
+    <li>
+        <a href="{{ url }}">
+            <p class="group-top-square">
+                {% if group.image_display_url %}
+                <img src="{{ group.image_display_url }}" width="36px"/>
+                {% endif %}
+            </p>
+            <p class="group-link">{{ _(group.title) }}</p>
+        </a>
+    </li>
 {% endblock %}

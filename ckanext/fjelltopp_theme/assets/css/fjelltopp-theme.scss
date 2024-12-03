@@ -3029,15 +3029,15 @@ div.main.search #field-giant-search {
 }
 
 .groups {
-   display: flex;
-   flex-wrap: wrap;
-   gap: 24px;
-   list-style-type: none;
-   padding: 0;
-   width: 100%;
-   margin-top: 24px;
-   align-items: flex-start;
-    margin-left: -28px;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 12px;
+    column-gap: 18px;
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    margin-top: 24px;
+    align-items: flex-start;
 }
 
 .groups li:last-child {
@@ -3047,7 +3047,7 @@ div.main.search #field-giant-search {
     border-radius: 4px;
 
     a {
-        margin: 16px;
+        margin: 10px;
         width: 92px;
         height: auto;
         display: flex;
@@ -3064,6 +3064,7 @@ div.main.search #field-giant-search {
 
         .group-top-square {
             background-color: var(--primary25);
+            border: var(--primary) thin solid;
             width: 70px;
             height: 70px;
             margin-left: 26px;
@@ -3076,8 +3077,8 @@ div.main.search #field-giant-search {
             align-items: center;
 
             img {
-                width: 65px;
-                height: 65px;
+                width: 60px;
+                height: 60px;
             }
         }
 
