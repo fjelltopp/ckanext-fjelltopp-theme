@@ -16,6 +16,11 @@ def process(input_file, singular_term, plural_term):
             entry.msgstr = entry.msgid
 
         msgstr = entry.msgstr
+
+        template_pattern = re.compile(r'{\s*groups?\s*}', re.IGNORECASE)
+        if template_pattern.search(msgstr):
+            continue
+
         # Replace singular forms
         msgstr = re.sub(r'\bGroup\b', singular_term.capitalize(), msgstr)
         msgstr = re.sub(r'\bgroup\b', singular_term.lower(), msgstr)
