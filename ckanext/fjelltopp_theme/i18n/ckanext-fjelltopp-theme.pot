@@ -105,6 +105,11 @@ msgstr ""
 #: ckan/templates/package/group_list.html:7
 #: ckan/templates/package/read_base.html:22 ckan/views/dataset.py:295
 #: ckan/views/group.py:304 ckan/views/home.py:70
+#: ckanext/fjelltopp_theme/templates/group/edit_base.html:24
+#: ckanext/fjelltopp_theme/templates/group/new.html:12
+#: ckanext/fjelltopp_theme/templates/group/read_base.html:19
+#: ckanext/fjelltopp_theme/templates/package/group_list.html:5
+#: ckanext/fjelltopp_theme/templates/package/read_base.html:5
 msgid "Groups"
 msgstr ""
 
@@ -141,6 +146,7 @@ msgid "There are currently no groups for this site"
 msgstr ""
 
 #: ckan/templates/group/new.html:3
+#: ckanext/fjelltopp_theme/templates/group/new.html:3
 msgid "Create a Group"
 msgstr ""
 
@@ -165,10 +171,12 @@ msgid "A little information about my group..."
 msgstr ""
 
 #: ckan/templates/group/snippets/group_form.html:40
+#: ckanext/fjelltopp_theme/templates/group/snippets/group_form.html:36
 msgid "Are you sure you want to delete this Group?"
 msgstr ""
 
 #: ckan/templates/group/snippets/group_form.html:43
+#: ckanext/fjelltopp_theme/templates/group/snippets/group_form.html:39
 msgid "Save Group"
 msgstr ""
 
@@ -189,14 +197,17 @@ msgid "Datasets in organization: {group}"
 msgstr ""
 
 #: ckan/templates/package/group_list.html:17
+#: ckanext/fjelltopp_theme/templates/package/group_list.html:15
 msgid "Associate this group with this dataset"
 msgstr ""
 
 #: ckan/templates/package/group_list.html:17
+#: ckanext/fjelltopp_theme/templates/package/group_list.html:15
 msgid "Add to group"
 msgstr ""
 
 #: ckan/templates/package/group_list.html:27
+#: ckanext/fjelltopp_theme/templates/package/group_list.html:25
 msgid "There are no groups associated with this dataset"
 msgstr ""
 
@@ -295,4 +306,14 @@ msgstr ""
 msgid "No groups"
 msgstr ""
 
+#: ckanext/fjelltopp_theme/templates/group/snippets/group_form.html:12
+msgid "My group"
+msgstr ""
 
+#: ckanext/fjelltopp_theme/templates/group/snippets/group_form.html:22
+msgid "A little information about this group ..."
+msgstr ""
+
+#: ckanext/fjelltopp_theme/templates/home/layout1.html:19
+msgid "Dataset groups"
+msgstr ""
