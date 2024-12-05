@@ -12,11 +12,11 @@
     {% endblock %}
 
     {% block groups %}
-        {%  set categories = h.get_all_groups() %}
-        {% if categories != [] %}
+        {%  set groups = h.get_all_groups() %}
+        {% if groups != [] %}
         <div class="groups-background">
             <div class="container">
-            <h1>{{_('Dataset categories')}}</h1>
+            <h1>{{_('Dataset groups')}}</h1>
                 {% block document_categories %}
                     {% snippet "group/snippets/group_list.html", groups=h.get_all_groups(), origin='homepage' %}
                 {% endblock %}
