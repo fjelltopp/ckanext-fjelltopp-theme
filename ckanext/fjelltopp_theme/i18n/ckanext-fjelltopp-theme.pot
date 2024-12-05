@@ -2,16 +2,16 @@
 # Copyright (C) 2024 ORGANIZATION
 # This file is distributed under the same license as the ckanext-fjelltopp_theme
 # project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+# FIRST AUTHOR <toavina@fjelltopp.org>, 2024.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-fjelltopp_theme 0.0.1\n"
-"Report-Msgid-Bugs-To: toavina@fjelltopp.org\n"
+"Report-Msgid-Bugs-To: info@fjelltopp.org\n"
 "POT-Creation-Date: 2024-12-05 08:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Toavina A. toavina@fjelltopp.org\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
