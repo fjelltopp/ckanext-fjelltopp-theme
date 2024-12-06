@@ -142,6 +142,7 @@ msgid "Search groups..."
 msgstr ""
 
 #: ckan/templates/group/index.html:30
+#: ckanext/fjelltopp_theme/templates/group/index.html:15
 msgid "There are currently no groups for this site"
 msgstr ""
 
