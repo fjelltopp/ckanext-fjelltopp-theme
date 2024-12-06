@@ -1,14 +1,16 @@
 #!/bin/sh
 
-SINGULAR_TERM="$1"
-PLURAL_TERM="$2"
+SINGULAR_OLD_TERM="$1"
+PLURAL_OLD_TERM="$2"
+SINGULAR_TERM="$3"
+PLURAL_TERM="$4"
+LOCALE="$5"
 
 # build po/mo files
 
-LC_FILES_DIR="ckanext/fjelltopp_theme/i18n/en_GB/LC_MESSAGES"
+LC_FILES_DIR="ckanext/fjelltopp_theme/i18n/$LOCALE/LC_MESSAGES"
 PO_FILE="$LC_FILES_DIR/ckanext-fjelltopp-theme.po"
 MO_FILE="$LC_FILES_DIR/ckanext-fjelltopp-theme.mo"
-
 
 # Remove existing PO file if it exists
 if [ -f "$PO_FILE" ]; then
@@ -19,14 +21,12 @@ if [ -f "$PO_FILE" ]; then
     }
 fi
 
-
 # Initialize new catalog
 echo "Initializing translation catalog..."
-python setup.py init_catalog --locale en_GB || {
+python setup.py init_catalog --locale $LOCALE || {
     echo "Error: Failed to initialize catalog"
     exit 1
 }
-
 
 # Verify PO file was created
 if [ ! -f "$PO_FILE" ]; then
@@ -34,14 +34,12 @@ if [ ! -f "$PO_FILE" ]; then
     exit 1
 fi
 
-
 # Process the translations
 echo "Processing translations..."
-python "group_changer.py" "$PO_FILE" "$SINGULAR_TERM" "$PLURAL_TERM" || {
+python "term_changer.py" "$PO_FILE" "$SINGULAR_OLD_TERM" "$PLURAL_OLD_TERM" "$SINGULAR_TERM" "$PLURAL_TERM" || {
     echo "Error: Failed to process translations"
     exit 1
 }
-
 
 # Remove existing MO file if it exists
 if [ -f "$MO_FILE" ]; then
@@ -52,14 +50,12 @@ if [ -f "$MO_FILE" ]; then
     }
 fi
 
-
 # Compile the catalog
 echo "Compiling..."
 python setup.py compile_catalog || {
     echo "Error: Failed to compile catalog"
     exit 1
 }
-
 
 # Verify MO file was created
 if [ ! -f "$MO_FILE" ]; then
