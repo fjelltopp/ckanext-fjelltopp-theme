@@ -317,3 +317,12 @@ msgstr ""
 #: ckanext/fjelltopp_theme/templates/home/layout1.html:19
 msgid "Dataset groups"
 msgstr ""
+
+#: ckan/templates/group/snippets/helper.html:19
+msgid ""
+"You can use CKAN Groups to create and manage collections of datasets. This "
+"could be to catalogue datasets for a particular project or team, or on a "
+"particular theme, or as a very simple way to help people find and search "
+"your own published datasets."
+msgstr ""
+
