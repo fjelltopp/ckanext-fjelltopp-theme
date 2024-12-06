@@ -23,16 +23,16 @@ def process(input_file, source_singular, source_plural, new_singular, new_plural
 
         msgstr = entry.msgstr
 
-        # Skip template variables for both singular and plural forms
-        template_pattern = re.compile(
-            r'{\s*(' +
-            re.escape(source_singular) + '|' +
-            re.escape(source_plural) +
-            r')\s*}',
-            re.IGNORECASE
-        )
-        if template_pattern.search(msgstr):
-            continue
+        has_template = False
+        template_content = None
+        # Check for template variables
+        template_pattern = re.compile(r'{\s*(' + re.escape(source_singular) + '|' +
+                                      re.escape(source_plural) + r')\s*}')
+
+        if template_match := template_pattern.search(msgstr):
+            has_template = True
+            template_content = template_match.group()
+            msgstr = msgstr.replace(template_content, '###########')
 
         # Replace singular forms (both capitalized and lowercase)
         msgstr = re.sub(rf'\b{source_singular.capitalize()}\b', new_singular.capitalize(), msgstr)
@@ -41,6 +41,10 @@ def process(input_file, source_singular, source_plural, new_singular, new_plural
         # Replace plural forms (both capitalized and lowercase)
         msgstr = re.sub(rf'\b{source_plural.capitalize()}\b', new_plural.capitalize(), msgstr)
         msgstr = re.sub(rf'\b{source_plural.lower()}\b', new_plural.lower(), msgstr)
+
+
+        if has_template:
+            msgstr = msgstr.replace('###########', template_content)
 
         entry.msgstr = msgstr
 
