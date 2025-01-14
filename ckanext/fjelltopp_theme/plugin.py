@@ -30,6 +30,7 @@ class FjelltoppThemePlugin(plugins.SingletonPlugin, DefaultTranslation):
             'get_user_obj': theme_helpers.get_user_obj,
             'get_license': theme_helpers.get_license,
             'get_deployment_info': theme_helpers.get_deployment_info,
+            'get_site_statistics': theme_helpers.get_site_statistics,
         }
 
     def update_config(self, config: CKANConfig):
