@@ -1,0 +1,28 @@
+{% ckan_extends %}
+
+
+{% block maintag %}<div class="main groups-page">{% endblock %}
+
+
+{% block primary_content_inner %}
+  {% block groups_list %}
+    {% if page.items or request.args %}
+      {% if page.items %}
+        {% snippet "group/snippets/group_list.html", groups=page.items %}
+      {% endif %}
+    {% else %}
+      <p class="empty">
+        {{ h.humanize_entity_type('group', group_type, 'no any objects') or _('There are currently no groups for this site') }}.
+        {% if h.check_access('group_create') %}
+          {% link_for _('How about creating one?'), named_route=group_type+'.new' %}</a>.
+        {% endif %}
+      </p>
+    {% endif %}
+  {% endblock %}
+  {% block page_pagination %}
+    {{ page.pager(q=q or '', sort=sort_by_selected or '') }}
+  {% endblock %}
+{% endblock %}
+
+{% block secondary_content %}
+{% endblock %}

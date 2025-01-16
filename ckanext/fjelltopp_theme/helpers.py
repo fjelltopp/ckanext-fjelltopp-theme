@@ -3,6 +3,17 @@ from ckan.common import c, request, is_flask_request, g
 from datetime import datetime, timedelta
 from ckan.plugins import toolkit
 
+def get_site_statistics() -> dict[str, int]:
+    '''This function used be a core helper but it was removed in CKAN 2.11.0
+    We reproduce it here to templates can continue working as usual.
+    '''
+    stats = {}
+    stats['dataset_count'] = toolkit.get_action('package_search')(
+        {}, {"rows": 1})['count']
+    stats['group_count'] = len(toolkit.get_action('group_list')({}, {}))
+    stats['organization_count'] = len(
+        toolkit.get_action('organization_list')({}, {}))
+    return stats
 
 def format_locale(locale):
     locale_name = locale.display_name if locale.display_name is not None else locale.english_name
@@ -40,7 +51,7 @@ def get_featured_datasets():
 
 
 def get_datahub_stats(config_data):
-    stats = toolkit.h.get_site_statistics()
+    stats = get_site_statistics()
 
     total_datasets = {'label': 'Total datasets', 'value': stats['dataset_count']}
     org = {'label': 'Organizations', 'value': stats['organization_count']}
