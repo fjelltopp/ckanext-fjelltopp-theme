@@ -9,7 +9,7 @@ import ckanext.fjelltopp_theme.blueprints as fjelltopp_theme_blueprints
 log = logging.getLogger(__name__)
 
 
-class FjelltoppThemePlugin(plugins.SingletonPlugin, DefaultTranslation):
+class FjelltoppThemePlugin(plugins.SingletonPlugin):
     """An example theme plugin."""
 
     # Declare that this class implements IConfigurer.
