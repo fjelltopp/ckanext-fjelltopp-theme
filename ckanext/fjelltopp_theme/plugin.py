@@ -27,7 +27,7 @@ class FjelltoppThemePlugin(plugins.SingletonPlugin):
             'get_activity_stream_limit': theme_helpers.get_activity_stream_limit,
             'get_user_obj': theme_helpers.get_user_obj,
             'get_license': theme_helpers.get_license,
-            'get_deployment_info': theme_helpers.get_deployment_info,
+            'get_deployment_info': theme_helpers.get_deployment_info
         }
 
     def update_config(self, config: CKANConfig):
@@ -38,4 +38,3 @@ class FjelltoppThemePlugin(plugins.SingletonPlugin):
     def get_blueprint(self):
         log.info(f"Registering the following blueprints: {fjelltopp_theme_blueprints.get_blueprints()}")
         return fjelltopp_theme_blueprints.get_blueprints()
-
