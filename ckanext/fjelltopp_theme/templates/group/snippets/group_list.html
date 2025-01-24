@@ -3,8 +3,6 @@
 {% block group_list %}
     {% set groups = groups %}
         <ul class="groups">
-        {% for group in groups %}
-            {% snippet "group/snippets/group_item.html", group=group, position=loop.index %}
-        {% endfor %}
+            {% block group_list_inner %}{{ super() }}{% endblock %}
         </ul>
 {% endblock %}
