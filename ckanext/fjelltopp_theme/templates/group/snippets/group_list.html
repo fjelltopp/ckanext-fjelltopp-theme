@@ -1,0 +1,8 @@
+{% ckan_extends %}
+
+{% block group_list %}
+    {% set groups = groups %}
+        <ul class="groups">
+            {% block group_list_inner %}{{ super() }}{% endblock %}
+        </ul>
+{% endblock %}

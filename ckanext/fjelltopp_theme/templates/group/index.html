@@ -1,0 +1,17 @@
+{% ckan_extends %}
+
+
+{% block maintag %}<div class="main groups-page">{% endblock %}
+
+
+{% block primary_content_inner %}
+  {% block groups_list %}
+    {{ super() }}
+  {% endblock %}
+  {% block page_pagination %}
+    {{ page.pager(q=q or '', sort=sort_by_selected or '') }}
+  {% endblock %}
+{% endblock %}
+
+{% block secondary_content %}
+{% endblock %}
